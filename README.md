@@ -1,61 +1,38 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# TFG: Página web para la gestión de ejercicio y nutrición
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Temática
 
-## About Laravel
+Una plataforma integral que combina ejercicio y nutrición, ayudando a los usuarios a alcanzar sus objetivos de bienestar con herramientas personalizadas.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Objetivos
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**NeoCorpusFit** busca ayudar a los usuarios a alcanzar sus metas de salud y fitness a través de herramientas interactivas, incluyendo:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Cálculos de IMC, proteínas, creatina y calorías de mantenimiento según los objetivos del usuario
+- Menús de alimentación personalizados, alineados con los productos de las canastas recomendadas y las recetas sugeridas, para asegurar coherencia con los objetivos nutricionales del usuario
+- Recetas fáciles y nutritivas, creadas con los productos recomendados en la canasta de compras, alineadas con sus objetivos nutricionales
+- Optimización de la canasta de compras para ajustarse a sus objetivos nutricionales
+- Rutinas de ejercicio personalizadas basadas en los objetivos del usuario (perder peso, ganar masa muscular, etc.)
 
-## Learning Laravel
+### Funcionalidades Clave:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Calculadoras**: Se incluirán 4 calculadoras interactivas:
+  1. **Calculadora de IMC**: Permite calcular el Índice de Masa Corporal (IMC) para determinar si el usuario está en su peso ideal
+  2. **Calculadora de proteínas**: Calcula la cantidad de proteínas que un usuario debe consumir según su peso y altura
+  3. **Calculadora de creatina**: Determina la cantidad de creatina que el usuario debe consumir según su peso y altura
+  4. **Calculadora de Harris-Benedict**: Calcula las calorías de mantenimiento, ayudando a los usuarios a entrar en un déficit o superávit calórico, según sus objetivos
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Recetas personalizadas**: En función de los productos comprados, se sugieren recetas fáciles y rápidas para mantener una alimentación saludable
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Canasta de compras inteligente**: Permitirá a los usuarios seleccionar entre canastas predefinidas para objetivos específicos (como bajo azúcar, alto en proteínas, etc.) o generar opciones dinámicas basadas en rangos personalizados de calorías o proteínas. Esta sección proporcionará una lista de productos recomendados con precios aproximados y un desglose completo de sus valores nutricionales (macros), al que se podrá acceder al hacer clic en el producto. Además, se incluirá la justificación de la elección de cada producto, asegurando su coherencia con los objetivos del usuario. El sistema generará facturas simuladas de mercado con las opciones seleccionadas, que incluirán un enlace directo a recetas y menús recomendados para cada objetivo nutricional. Las canastas dinámicas se ajustarán en función de las metas de proteínas o calorías del usuario, permitiéndole elegir entre diferentes rangos y adaptarse a sus necesidades dietéticas
+  
+- **Guía de suplementos y tips para principiantes en el gimnasio**: Información sobre los suplementos básicos, además de consejos para los que recién comienzan en el gimnasio
 
-## Laravel Sponsors
+- **Personalización dinámica**: Proporciona recomendaciones personalizadas basadas en los datos ingresados por el usuario, ajustándose a sus objetivos específicos de nutrición y ejercicio
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Tecnologías utilizadas
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- **Back-End**: PHP (Laravel)
+- **Front-End**: HTML5, SCSS, JavaScript y Bootstrap 5 para el diseño responsivo
+- **Base de Datos**: MySQL (PhpMyAdmin)
+- **Control de Versiones**: GitHub
