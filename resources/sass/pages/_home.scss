@@ -1,0 +1,143 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as mx;
+
+.home-page {
+    .hero-section {
+        position: relative;
+        width: 100%;
+        min-height: variables.$hero-height;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;  
+        }
+
+        &__content {
+            z-index: 1;  
+            color: white;
+            text-align: center;
+            padding: 3rem;
+
+            h1 {
+                font-size: 1.9rem;
+                font-weight: 300;
+
+                @media (min-width: 768px) {
+                    font-size: 4rem;
+                }
+
+                @media (min-width: 992px) {
+                    font-size: 5rem;
+                }
+
+                span {
+                    font-weight: 300;
+                }
+
+                strong {
+                    font-weight: bold;
+                }
+            }
+
+            p {
+                background-color: rgba(0, 0, 0, 0.75);
+                padding: 1rem;
+                border-radius: 0.5rem;
+                font-size: 1.1rem;
+                font-weight: 400;
+
+                @media (min-width: 768px) {
+                    font-size: 1.25rem;
+                }
+
+                @media (min-width: 992px) {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    .custom-title {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: variables.$secondary-color;
+
+        @media (min-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    .custom-paragraph {
+        font-size: 1.1rem;
+        font-weight: 300;
+        font-family: "Open Sans", sans-serif;
+        height: auto;
+
+        @media (min-width: 768px) {
+            font-size: 1.25rem;
+            width: auto;
+            height: 6rem;
+        }
+    }
+
+    .custom-bg-secondary {
+        background-color: variables.$secondary-color;
+    }
+
+    .custom-paragraph-black {
+        font-family: "Open Sans", sans-serif;
+        color: variables.$dark-color;
+        line-height: 1.3;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0;
+
+        @media (min-width: 768px) {
+            font-size: 1.25rem;
+        }
+    }
+
+    .custom-bg-light {
+        background-color: variables.$light-color;
+    }
+
+    .custom-card-white {
+        background-color: variables.$white;
+        border-radius: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+        @media (min-width: 768px) {
+            box-shadow: 19px 45px 79px rgba(0, 0, 0, 0.25);
+        }
+    }
+
+    .custom-heading {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: variables.$dark-color;
+
+        @media (min-width: 768px) {
+            font-size: 1.4rem;
+        }
+    }
+
+    .icon-inline {
+        height: 2rem;
+
+        @media (min-width: 768px) {
+            height: 2.2rem;
+            width: auto;
+        }
+    }
+}

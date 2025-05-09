@@ -1,0 +1,101 @@
+@use "../base/variables" as variables;
+
+header {
+    background-color: variables.$black;
+    padding: 1rem 0;
+}
+
+.navbar {
+    background-color: variables.$black;
+
+    .navbar-toggler {
+        border: none;
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        font-weight: 600;
+        font-family: "Open Sans", sans-serif;
+        padding: 1rem;
+        color: variables.$text-secondary;
+
+        &:hover {
+            background-color: variables.$accent-2;
+            color: variables.$black !important;
+        }
+
+        &.active {
+            color: variables.$accent-1 !important;
+        }
+    }
+
+    .dropdown-toggle::after {
+        margin-left: 0.5rem;
+    }
+
+    .dropdown-menu {
+        background-color: variables.$black;
+        border-radius: 0 0 0.5rem 0.5rem;
+        box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.2);
+        min-width: 13.75rem;
+        --bs-dropdown-padding-y: 0;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+        visibility: hidden;
+        opacity: 0;
+        list-style: none !important;  
+        padding-left: 0 !important; 
+        margin: 0 !important;
+
+        &.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        hr {
+            margin: 0 !important;
+        }
+
+        .dropdown-item {
+            font-size: 0.95rem;
+            font-family: "Open Sans", sans-serif;
+            color: variables.$text-secondary;
+            padding: 0.75rem 1.5rem;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: variables.$accent-1;
+                color: variables.$black !important;
+            }
+        }
+
+        .dropdown-item.highlight-option {
+            background-color: #613599 !important;
+            color: variables.$black !important;
+
+            &:hover {
+                background-color: variables.$accent-1 !important;
+                color: variables.$black !important;
+            }
+        }
+    }
+
+    .dropdown-menu li {
+        list-style-type: none;
+      }
+      .dropdown-menu li::marker {
+        content: none;
+      }
+}
+
+.navbar-brand img {
+    max-height: 6.25rem;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}

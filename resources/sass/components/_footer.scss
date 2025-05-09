@@ -1,0 +1,40 @@
+@use "../base/variables" as variables;
+
+.footer {
+    background-color: variables.$black;
+    padding: 2rem 1rem;
+    color: variables.$text-color;
+
+    &__title {
+        font-size: 1.3rem;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+    }
+
+    &__text {
+        font-size: 0.9rem;
+        color: variables.$text-secondary;
+    }
+
+    &__social {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+
+        &-link {
+            color: variables.$text-color;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+
+            &:hover {
+                color: variables.$accent-1;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        &__social {
+            margin-top: 0;
+        }
+    }
+}

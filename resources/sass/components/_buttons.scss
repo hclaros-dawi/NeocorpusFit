@@ -1,0 +1,17 @@
+@use "../base/mixins" as mx;
+
+.button {
+    @include mx.custom-button-font;
+
+    &--accent {
+        @include mx.custom-button-font2;
+    }
+
+    &--alt {
+        @include mx.custom-button-font3;
+    }
+
+    &--yellow {
+        @include mx.yellow-button;
+    }
+}

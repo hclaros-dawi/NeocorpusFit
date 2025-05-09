@@ -1,0 +1,265 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as mx;
+@use "../components/buttons";
+
+.recetas {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 3rem 0;
+    min-height: 100vh;
+
+    @media (min-width: 768px) {
+        padding: 5rem 0;
+    }
+
+    &__icon {
+        width: 3.75rem;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+        margin-top: 4rem;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        @media (min-width: 768px) {
+            width: 4.375rem;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 1.75rem;
+        margin-bottom: 4rem;
+        color: variables.$white;
+
+        @media (min-width: 768px) {
+            font-size: 2.5rem;
+        }
+    }
+
+    
+    &__search {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+
+        input[type="text"] {
+            background-color: #2a2a2a;
+            border: 1px solid #a85cf9;
+            color: #ffffff;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                border-color: #fcce3a;
+                outline: none;
+                box-shadow: 0 0 0 0.15rem rgba(252, 206, 58, 0.4);
+            }
+
+            &::placeholder {
+                color: #bbb;
+            }
+        }
+
+        button[type="submit"] {
+            margin: auto 1rem 0;
+            background-color: #a85cf9;
+            color: #fff;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #a85cf9, 10%;
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 0 0.15rem rgba(168, 92, 249, 0.4);
+            }
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        @media (min-width: 576px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width: 992px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .recetas__card {
+            background-color: #333333;
+            border: none;
+            color: #fff;
+
+            .card-title {
+                font-weight: bold;
+            }
+
+            .card-img,
+            .card-img-top {
+                width: auto;
+                height: 18.75rem;
+                object-fit: cover;
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+            }
+
+            .recetas__btn {
+                @extend .button--alt;
+                margin: 0 auto 1rem auto;
+            }
+        }
+    }
+
+    .pagination {
+        justify-content: center;
+        margin-top: 2rem;
+
+        .page-item {
+            margin: 0 0.2rem;
+
+            .page-link {
+                background-color: transparent;
+                border: 1px solid #a85cf9;  
+                color: #a85cf9; 
+                border-radius: 0.5rem;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: #a85cf9;
+                    color: #fff;
+                }
+            }
+
+            &.active .page-link {
+                background-color: #a85cf9;
+                border-color: #a85cf9;
+                color: #fff;
+            }
+
+            &.disabled .page-link {
+                color: #666;
+                background-color: #2a2a2a;
+                border-color: #444;
+            }
+        }
+    }
+
+    .recetas__modal {
+        .modal-dialog {
+            max-width: 700px;
+            margin: 2rem auto;
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, #a866ff, #9514ff);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            font-family: "Inter", sans-serif;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            overflow-y: auto;
+
+            &:hover {
+                transform: scale(1.01);
+            }
+        }
+
+        .modal-header {
+            border-bottom: none;
+            display: flex;
+            justify-content: space-between;   
+            align-items: center;   
+            position: relative;   
+            padding: 0;           
+            width: 100%;          
+        }
+
+        .modal-recetas-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+            border-bottom: 0;
+            flex-grow: 1;         
+        }
+
+        .modal-receta-body {
+            overflow-y: auto;
+            font-size: 1.1rem;
+            color: #fff;
+            line-height: 1.6;
+
+            p {
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: #fcce3a;
+                margin-top: 1.5rem;
+                margin-bottom: 0.5rem;
+                text-transform: uppercase;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin-bottom: 1.5rem;
+            }
+
+            li {
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 0.5rem 1rem;
+                border-radius: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .btn-close {
+            position: absolute;
+            right: 0;   
+            top: 50%;
+            transform: translateY(-50%);   
+            opacity: 0.8;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .recetas__nutricion {
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+            color: #000;
+            font-weight: 700;
+
+            display: flex;
+            flex-wrap: wrap;   
+            gap: 1rem;        
+            overflow: hidden;  
+            flex-grow: 1;      
+
+            div {
+                flex: 1 1 180px;     
+                min-width: 180px;     
+                max-width: 250px;    
+                word-wrap: break-word;
+            }
+        }
+    }
+} 

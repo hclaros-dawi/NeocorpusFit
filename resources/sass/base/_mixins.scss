@@ -1,0 +1,122 @@
+@use "./variables" as variables;
+
+@mixin custom-button-font {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    background-color: variables.$dark-color;
+    color: variables.$text-color;
+    border: 0.2rem solid variables.$primary-color;
+    border-radius: 4rem;
+    display: inline-block;
+    width: 12rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: variables.$primary-color;
+        color: variables.$text-color;
+        border-color: variables.$primary-color;
+        text-decoration: none;
+    }
+}
+
+@mixin custom-button-font2 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    background-color: variables.$primary-color;
+    color: variables.$text-color;
+    border: 0.2rem solid variables.$primary-color;
+    border-radius: 4rem;
+    display: inline-block;
+    width: 12rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: variables.$secondary-color;
+        color: variables.$dark-color;
+        border-color: variables.$secondary-color;
+        text-decoration: none;
+    }
+}
+
+@mixin custom-button-font3 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    background-color: variables.$primary-color;
+    color: variables.$text-color;
+    border: 0.2rem solid variables.$primary-color;
+    border-radius: 4rem;
+    display: inline-block;
+    width: 12rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: variables.$secondary-color;
+        color: variables.$dark-color;
+        border-color: variables.$secondary-color;
+        text-decoration: none;
+    }
+}
+
+@mixin yellow-button {
+    background-color: #e8b931;
+    color: variables.$black;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 3rem;
+    font-size: 1rem;
+
+    @include responsive(tablet) {
+        width: auto;
+    }
+
+    &:hover {
+        background-color: #e0a800;
+        color: #212529;
+    }
+}
+
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint == tablet {
+        @media (min-width: 768px) {
+            @content;
+        } // ≥768px
+    }
+    @if $breakpoint == desktop {
+        @media (min-width: 992px) {
+            @content;
+        } // ≥992px
+    }
+    @if $breakpoint == large-desktop {
+        @media (min-width: 1200px) {
+            @content;
+        } // ≥1200px
+    }
+}

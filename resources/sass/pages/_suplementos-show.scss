@@ -1,0 +1,90 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as mx;
+@use "../components/buttons";
+
+.supplements-show {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 3rem 0;
+    min-height: 100vh;
+
+    @media (min-width: 768px) {
+        padding: 5rem 0;
+    }
+
+    &__icon {
+        width: 3.75rem;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+        margin-top: 4rem;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        @media (min-width: 768px) {
+            width: 4.375rem;
+        }
+    }
+
+    &__title-section {
+        color: variables.$primary-color;  
+        font-weight: 700;
+        margin-bottom: 2.5rem;
+
+        @media (min-width: 768px) {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__card {
+        background-color: #333333;
+        color: variables.$white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        overflow: hidden;
+        min-height: 100%;
+
+        .card-title {
+            background-color: variables.$secondary-color;  
+            color: black;
+            border-radius: 8px;
+            padding: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            overflow: hidden;
+        }
+    }
+}
+
+.btn-primary {
+    background-color: variables.$secondary-color;
+    color: variables.$black;
+    font-weight: bold;
+    margin-top: 2.3rem;
+}
+
+.btn-outline-secondary {
+    border-color: variables.$white;
+    color: variables.$white;
+    font-weight: bold;
+    text-decoration: none;
+
+    i {
+        padding-right: 0.5rem;
+    }
+
+    &:hover {
+        background-color: variables.$white;
+        color: variables.$black;
+    }
+}

@@ -6,6 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Canasta extends Model
 {
+    protected $fillable = [
+        'nombre', 
+        'menu_id', 
+        'categoria_id', 
+        'precio_total'
+    ];
+
+    protected $primaryKey = 'id_canasta';
+    
     public function categoria() {
         return $this->belongsTo(Categoria::class, 'categoria_id');
     }
@@ -15,10 +24,9 @@ class Canasta extends Model
     }
     
     public function ingredientes() {
-        return $this->belongsToMany(Ingrediente::class, 'canasta_ingrediente')
+        return $this->belongsToMany(Ingrediente::class, 'canasta_ingrediente', 'id_canasta', 'id_ingrediente')
                     ->using(CanastaIngrediente::class)
-                    ->withPivot('cantidad', 'unidad_base', 'precio_total')
+                    ->withPivot('cantidad', 'unidad_base', 'subtotal')
                     ->withTimestamps();
     }
-    
 }

@@ -1,0 +1,72 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as mx;
+@use "./buttons";
+@use "../pages/home";
+
+.card-feature {
+    background-color: variables.$section-bg;
+    border: none;
+    padding: 1.5rem;
+    width: 100%;
+    height: auto;
+
+    &__body {
+        @include mx.flex-column-center;
+        text-align: center;
+    }
+
+    &__image {
+        width: 6rem;
+        height: 6rem;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    &__title {
+        @extend .custom-title;
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    &__button {
+        @extend .button;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+.card-feature-section-1 {
+    background-color: variables.$dark-gray;
+    color: variables.$white;
+    border-radius: 0;
+
+    .card-feature__title {
+        color: variables.$secondary-color;
+    }
+
+    .card-feature__text {
+        color: variables.$light-gray;
+        width: auto;
+        height: 6rem;
+    }
+}
+
+.card-feature-section-2 {
+    background-color: variables.$white;
+    border-radius: 2rem;
+    box-shadow: 19px 45px 79px rgba(0, 0, 0, 0.25);
+
+    .card-feature__title {
+        color: variables.$dark-color;
+    }
+
+    .card-feature__text {
+        color: variables.$dark-color;
+        width: auto;
+        height: 6.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

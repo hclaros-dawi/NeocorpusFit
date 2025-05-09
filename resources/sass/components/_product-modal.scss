@@ -1,0 +1,42 @@
+.modal-content {
+    background: linear-gradient(145deg, #a866ff, #9514ff);
+    border-radius: 1.5rem;
+    padding: 3rem;
+    font-family: "Inter", sans-serif;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal-content:hover {
+    transform: scale(1.05);
+}
+
+.modal-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+    border-bottom: 0;
+}
+
+.modal-body {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+.modal-body p {
+    border-left: 5px solid #fcce3a;
+    font-size: 1rem;
+}
+
+.btn-close {
+    opacity: 0.8;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
