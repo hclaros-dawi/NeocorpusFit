@@ -40,7 +40,7 @@
                             @endphp
                             @foreach ($tabla as $dia => $comidas)
                                 <tr>
-                                    <td class="fw-bold">{{ ucfirst($dia) }}</td>
+                                    <td class="fw-bold" data-label="Día">{{ ucfirst($dia) }}</td>
 
                                     @foreach (['Desayuno', 'Comida', 'Cena', 'Snack'] as $tipo)
                                         @php
@@ -50,7 +50,7 @@
                                                 $totalProteinas += $receta['proteinas'];
                                             }
                                         @endphp
-                                        <td>
+                                        <td data-label="{{ $tipo }}">
                                             @if ($receta)
                                                 {{ $receta['nombre'] }}<br>
                                                 <a href="{{ $receta['enlace'] }}" target="_blank"
@@ -64,11 +64,16 @@
                     </table>
                 </div>
 
-                <div class="totales text-white mt-4 text-start ps-2">
+                <div class="totales mt-4 text-center ps-2 py-2 px-2">
                     <p class="mb-1"><strong>Total proteínas menú:</strong> {{ $totalProteinas }} g</p>
                     <p class="mb-0"><strong>Total calorías menú:</strong> {{ $totalCalorias }} kcal</p>
                 </div>
 
+            </div>
+            <div class="container text-center py-5">
+                <a href="{{ route('home') }}" class="btn btn-outline-secondary px-4 py-2">
+                    <i class="fas fa-arrow-left me-2"></i> Volver a la página de inicio
+                </a>
             </div>
         </div>
     </section>

@@ -7,9 +7,7 @@
         width: 100%;
         min-height: variables.$hero-height;
         overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include mx.flex-center;
 
         &__image {
             position: absolute;
@@ -18,126 +16,86 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -1;  
+            z-index: -1;
         }
 
         &__content {
-            z-index: 1;  
-            color: white;
+            z-index: 1;
+            color: variables.$text-color;
             text-align: center;
             padding: 3rem;
 
+            @include mx.responsive(tablet) {
+                padding: 3rem 2rem;
+            }
+
+            @include mx.responsive(desktop) {
+                padding: 4rem 3rem;
+            }
+
             h1 {
-                font-size: 1.9rem;
-                font-weight: 300;
-
-                @media (min-width: 768px) {
-                    font-size: 4rem;
-                }
-
-                @media (min-width: 992px) {
-                    font-size: 5rem;
-                }
+                font-size: 1.7rem;
+                font-weight: variables.$font-light;
 
                 span {
-                    font-weight: 300;
+                    font-weight: variables.$font-light;
                 }
 
                 strong {
-                    font-weight: bold;
-                }
-            }
-
-            p {
-                background-color: rgba(0, 0, 0, 0.75);
-                padding: 1rem;
-                border-radius: 0.5rem;
-                font-size: 1.1rem;
-                font-weight: 400;
-
-                @media (min-width: 768px) {
-                    font-size: 1.25rem;
+                    font-weight: variables.$font-bold;
                 }
 
-                @media (min-width: 992px) {
-                    font-size: 1.5rem;
+                @include mx.responsive(tablet) {
+                    font-size: 3.5rem;
+                }
+
+                @include mx.responsive(desktop) {
+                    font-size: 4.5rem;
+                }
+
+                @include mx.responsive(large-desktop) {
+                    font-size: 5rem;
                 }
             }
         }
-    }
 
-    .custom-title {
-        font-family: "Open Sans", sans-serif;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: variables.$secondary-color;
+        &__quote {
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: variables.$font-regular;
 
-        @media (min-width: 768px) {
-            font-size: 2rem;
+            @include mx.responsive(tablet) {
+                font-size: 1.25rem;
+                padding: 1.5rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 1.5rem;
+                padding: 2rem;
+            }
         }
     }
 
-    .custom-paragraph {
-        font-size: 1.1rem;
-        font-weight: 300;
-        font-family: "Open Sans", sans-serif;
-        height: auto;
-
-        @media (min-width: 768px) {
-            font-size: 1.25rem;
-            width: auto;
-            height: 6rem;
-        }
-    }
-
-    .custom-bg-secondary {
+    &__highlight-info {
         background-color: variables.$secondary-color;
-    }
 
-    .custom-paragraph-black {
-        font-family: "Open Sans", sans-serif;
-        color: variables.$dark-color;
-        line-height: 1.3;
-        font-size: 1.1rem;
-        font-weight: 700;
-        margin-bottom: 0;
-
-        @media (min-width: 768px) {
-            font-size: 1.25rem;
+        p {
+            font-weight: variables.$font-semibold;
+            font-size: 1.1rem;
         }
-    }
 
-    .custom-bg-light {
-        background-color: variables.$light-color;
-    }
-
-    .custom-card-white {
-        background-color: variables.$white;
-        border-radius: 2rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-
-        @media (min-width: 768px) {
-            box-shadow: 19px 45px 79px rgba(0, 0, 0, 0.25);
+        @include mx.responsive(tablet) {
+            font-size: 1.2rem;
         }
-    }
 
-    .custom-heading {
-        font-family: "Open Sans", sans-serif;
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: variables.$dark-color;
-
-        @media (min-width: 768px) {
+        @include mx.responsive(desktop) {
             font-size: 1.4rem;
         }
     }
 
-    .icon-inline {
-        height: 2rem;
-
-        @media (min-width: 768px) {
-            height: 2.2rem;
-            width: auto;
-        }
+    &__custom-bg-light {
+        background-color: variables.$light-color;
     }
 }

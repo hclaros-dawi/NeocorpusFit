@@ -4,6 +4,7 @@
 
 .menus {
     background-color: #1a1a1a;
+    text-align: center;
     padding: 3rem 0;
     min-height: 100vh;
 
@@ -13,12 +14,9 @@
 
     &__icon {
         width: 3.75rem;
-        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
         transition: transform 0.3s ease;
-        padding-top: 4rem;
-        display: block;
-        margin: 0 auto 1rem auto;  
-        
+        margin-top: 4rem;
 
         &:hover {
             transform: scale(1.1);
@@ -33,64 +31,90 @@
         font-weight: 700;
         font-size: 1.75rem;
         margin-bottom: 4rem;
-        color: variables.$primary-color;
-        text-align: center;
+        color: variables.$white;
 
         @media (min-width: 768px) {
             font-size: 2.5rem;
         }
     }
 
-    table {
-        border-collapse: collapse;
-        color: #fff;
+    &__grid {
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "item1 item2"
+            "item3 item4"
+            "item5 item5";
+        max-width: 56.25rem;
+        margin: 2rem auto 0;
 
-        th {
-            background-color: #613599;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: variables.$white;
-            border-bottom: none;
-        }
-
-        th:not(:last-child) {
-            border-right: solid 1px;
-          }
-          
-
-        td {
-            vertical-align: top;
-            padding: 0.75rem;
-            border-color: #333;
-            background-color: rgba(137, 43, 226, 0);
-            color: variables.$white !important;
-        }
-
-        td:first-child {
-            color: #613599 !important;
-                text-align: center;
-    vertical-align: middle;
-        }
-
-        .btn-sm {
-            background-color: #4c2882;
-            border: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: background-color 0.2s ease;
-
-            &:hover {
-                background-color: #6d3abf;
-            }
+        @media (max-width: 767px) {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "item1"
+                "item2"
+                "item3"
+                "item4"
+                "item5";
         }
     }
 
-    .totales {
-         font-size: 1.125rem;
-        margin-top: 2rem;
-        background-color: white;
-        width: 25rem;
-        height: 5rem;
-        border-radius: 0.4rem;
+    &__item {
+        display: flex;
+        align-items: stretch;
+        justify-content: stretch;
+
+        &--1 {
+            grid-area: item1;
+        }
+        &--2 {
+            grid-area: item2;
+        }
+        &--3 {
+            grid-area: item3;
+        }
+        &--4 {
+            grid-area: item4;
+        }
+        &--5 {
+            grid-area: item5;
+        }
+    }
+
+    &__card {
+        border-radius: 0.5rem;
+        padding: 1rem;
+        width: 100%;
+        min-height: 8rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: variables.$section-bg;
+        color: variables.$white;
+        border: 0.0625rem solid variables.$primary-color;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-0.25rem);
+            box-shadow: 0 0.25rem 0.625rem #613599;
+            background-color: #613599;
+        }
+    }
+
+    &__card-title {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: variables.$secondary-color;
+    }
+
+    &__button {
+        @extend .button;
+        margin-top: 1rem;
+        align-self: center;
     }
 }

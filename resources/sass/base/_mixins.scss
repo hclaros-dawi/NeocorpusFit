@@ -4,7 +4,7 @@
     font-family: "Open Sans", sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.0313rem;
     text-decoration: none;
     background-color: variables.$dark-color;
     color: variables.$text-color;
@@ -29,7 +29,7 @@
     font-family: "Open Sans", sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.0313rem;
     text-decoration: none;
     background-color: variables.$primary-color;
     color: variables.$text-color;
@@ -54,7 +54,7 @@
     font-family: "Open Sans", sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.0313rem;
     text-decoration: none;
     background-color: variables.$primary-color;
     color: variables.$text-color;
@@ -63,9 +63,6 @@
     display: inline-block;
     width: 12rem;
     height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     &:hover {
         background-color: variables.$secondary-color;
@@ -103,20 +100,26 @@
     justify-content: center;
 }
 
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @mixin responsive($breakpoint) {
     @if $breakpoint == tablet {
         @media (min-width: 768px) {
             @content;
-        } // ≥768px
+        }
     }
     @if $breakpoint == desktop {
         @media (min-width: 992px) {
             @content;
-        } // ≥992px
+        }
     }
     @if $breakpoint == large-desktop {
         @media (min-width: 1200px) {
             @content;
-        } // ≥1200px
+        }
     }
 }

@@ -60,20 +60,26 @@
                 </div>
             </div>
 
-<section class="info-card">
-    <h2 class="info-card__title">¿Cómo calcular tu dosis y evaluar tu progreso?</h2>
-<p class="info-card__description">
-    Contamos con varias calculadoras diseñadas para ayudarte a gestionar tu salud y rendimiento de forma precisa. 
-    Desde el cálculo de tu proteína y creatina, hasta herramientas como el IMC, el porcentaje de grasa corporal 
-    y la fórmula de Harris-Benedict para conocer tu requerimiento calórico. Todas estas calculadoras son herramientas 
-    complementarias que te permitirán evaluar tu progreso y ajustar tu plan según tus objetivos personales.  
-    Además, muchas de estas métricas te ayudarán a determinar las cantidades adecuadas de algunos suplementos clave, 
-    sobre los cuales te ofrecemos información detallada en nuestra página.
-</p>
-    <div class="info-card__buttons">
-        <a href="{{ route('pages.suplementos.index') }}" class="info-card__buttons-button">Ver Suplementos</a>
-        </div>
-</section>
+            <section class="info-card">
+                <h2 class="info-card__title">¿Cómo calcular tu dosis y evaluar tu progreso?</h2>
+                <p class="info-card__description">
+                    Contamos con varias calculadoras diseñadas para ayudarte a gestionar tu salud y rendimiento de forma
+                    precisa.
+                    Desde el cálculo de tu proteína y creatina, hasta herramientas como el IMC, el porcentaje de grasa
+                    corporal
+                    y la fórmula de Harris-Benedict para conocer tu requerimiento calórico. Todas estas calculadoras son
+                    herramientas
+                    complementarias que te permitirán evaluar tu progreso y ajustar tu plan según tus objetivos
+                    personales.
+                    Además, muchas de estas métricas te ayudarán a determinar las cantidades adecuadas de algunos
+                    suplementos clave,
+                    sobre los cuales te ofrecemos información detallada en nuestra página.
+                </p>
+                <div class="info-card__buttons">
+                    <a href="{{ route('pages.suplementos.index') }}" class="info-card__buttons-button">Ver
+                        Suplementos</a>
+                </div>
+            </section>
 
 
             <div class="container text-center py-5">
