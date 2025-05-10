@@ -80,9 +80,7 @@
                         <div class="card-feature__body">
                             <h3
                                 class="card-feature__body__custom-heading d-flex align-items-center justify-content-center gap-2">
-                                <img src="https://live.staticflickr.com/65535/54493455850_423ca23aa9_s.jpg"
-                                    alt="icono-idea" class="card-feature__body__icon-inline" /> RECETAS
-                            </h3>
+                                RECETAS</h3>
                             <p class="card-feature__text">Comidas fáciles y nutritivas, alineadas con tu meta y
                                 productos. Sin vueltas</p>
                             <a href="{{ route('pages.recetas') }}" class="button button--accent mt-3">Ver Más</a>
@@ -92,10 +90,7 @@
                 <div class="col-md-4">
                     <div class="card-feature card-feature-section-2">
                         <div class="card-feature__body">
-                            <h3 class="card-feature__body__custom-heading">
-                                <img src="https://live.staticflickr.com/65535/54493455850_423ca23aa9_s.jpg"
-                                    alt="icono-idea" class="card-feature__body__icon-inline" /> MENÚS
-                            </h3>
+                            <h3 class="card-feature__body__custom-heading">MENÚS</h3>
                             <p class="card-feature__text">Planes organizados para cada objetivo. Elige uno y síguelo sin
                                 penas</p>
                             <a href="{{ route('pages.menus.index') }}" class="button button--accent mt-3">Ver Más</a>
@@ -105,10 +100,7 @@
                 <div class="col-md-4">
                     <div class="card-feature card-feature-section-2">
                         <div class="card-feature__body">
-                            <h3 class="card-feature__body__custom-heading">
-                                <img src="https://live.staticflickr.com/65535/54493455850_423ca23aa9_s.jpg"
-                                    alt="icono-idea" class="card-feature__body__icon-inline" /> CANASTAS
-                            </h3>
+                            <h3 class="card-feature__body__custom-heading"> CANASTAS</h3>
                             <p class="card-feature__text">Productos seleccionados según el menú que elijas. Todo listo
                                 para comprar</p>
                             <a href="{{ route('pages.canastas.index') }}" class="button button--accent mt-3">Ver Más</a>

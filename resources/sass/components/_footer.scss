@@ -1,4 +1,5 @@
 @use "../base/variables" as variables;
+@use "../base/mixins" as mx;
 
 .footer {
     background-color: variables.$black;
@@ -6,14 +7,38 @@
     color: variables.$text-color;
 
     &__title {
-        font-size: 1.3rem;
-        font-weight: 400;
+        font-size: 1.4rem;
+        font-weight: variables.$font-regular;
         margin-bottom: 0.5rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.5rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.6rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 1.7rem;
+        }
     }
 
     &__text {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
         color: variables.$text-secondary;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.4rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.5rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 1.5rem;
+        }
     }
 
     &__social {
@@ -23,18 +48,24 @@
 
         &-link {
             color: variables.$text-color;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             transition: color 0.3s;
 
             &:hover {
                 color: variables.$accent-1;
             }
-        }
-    }
 
-    @media (min-width: 768px) {
-        &__social {
-            margin-top: 0;
+            @include mx.responsive(tablet) {
+                font-size: 1.8rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 1.9rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 2rem;
+            }
         }
     }
 }

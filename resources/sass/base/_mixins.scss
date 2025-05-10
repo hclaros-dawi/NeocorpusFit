@@ -3,7 +3,7 @@
 @mixin custom-button-font {
     font-family: "Open Sans", sans-serif;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: variables.$font-bold;
     letter-spacing: 0.0313rem;
     text-decoration: none;
     background-color: variables.$dark-color;
@@ -13,9 +13,7 @@
     display: inline-block;
     width: 12rem;
     height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
 
     &:hover {
         background-color: variables.$primary-color;
@@ -23,12 +21,24 @@
         border-color: variables.$primary-color;
         text-decoration: none;
     }
+
+    @include responsive(tablet) {
+        font-size: 1.3rem;
+    }
+
+    @include responsive(desktop) {
+        font-size: 1.4rem;
+    }
+
+    @include responsive(large-desktop) {
+        font-size: 1.5rem;
+    }
 }
 
 @mixin custom-button-font2 {
     font-family: "Open Sans", sans-serif;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: variables.$font-bold;
     letter-spacing: 0.0313rem;
     text-decoration: none;
     background-color: variables.$primary-color;
@@ -38,9 +48,7 @@
     display: inline-block;
     width: 12rem;
     height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
 
     &:hover {
         background-color: variables.$secondary-color;
@@ -48,27 +56,51 @@
         border-color: variables.$secondary-color;
         text-decoration: none;
     }
+
+    @include responsive(tablet) {
+        font-size: 1.3rem;
+    }
+
+    @include responsive(desktop) {
+        font-size: 1.4rem;
+    }
+
+    @include responsive(large-desktop) {
+        font-size: 1.5rem;
+    }
 }
 
 @mixin custom-button-font3 {
     font-family: "Open Sans", sans-serif;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: variables.$font-bold;
     letter-spacing: 0.0313rem;
     text-decoration: none;
     background-color: variables.$primary-color;
     color: variables.$text-color;
     border: 0.2rem solid variables.$primary-color;
     border-radius: 4rem;
-    display: inline-block;
     width: 12rem;
     height: 5rem;
+    @include flex-center;
 
     &:hover {
         background-color: variables.$secondary-color;
         color: variables.$dark-color;
         border-color: variables.$secondary-color;
         text-decoration: none;
+    }
+
+    @include responsive(tablet) {
+        font-size: 1.3rem;
+    }
+
+    @include responsive(desktop) {
+        font-size: 1.4rem;
+    }
+
+    @include responsive(large-desktop) {
+        font-size: 1.5rem;
     }
 }
 
@@ -77,7 +109,7 @@
     color: variables.$black;
     border: none;
     padding: 0.75rem 1.5rem;
-    font-weight: bold;
+    font-weight: variables.$font-bold;
     border-radius: 0.5rem;
     width: 100%;
     height: 3rem;
@@ -90,6 +122,18 @@
     &:hover {
         background-color: #e0a800;
         color: #212529;
+    }
+
+    @include responsive(tablet) {
+        font-size: 1.3rem;
+    }
+
+    @include responsive(desktop) {
+        font-size: 1.4rem;
+    }
+
+    @include responsive(large-desktop) {
+        font-size: 1.5rem;
     }
 }
 

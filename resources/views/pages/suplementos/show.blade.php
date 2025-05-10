@@ -27,7 +27,7 @@
                     @foreach ($suplementos as $suplemento)
                         <div class="col-lg-4 col-md-6">
                             <div class="card supplements-show__card w-100 d-flex flex-column">
-        <div class="card-body d-flex flex-column flex-grow-1">
+                                <div class="card-body d-flex flex-column flex-grow-1">
                                     <h3 class="card-title text-center">{{ $suplemento->nombre }}</h3>
                                     <p class="card-text flex-grow-1">{{ $suplemento->descripcion }}</p>
                                 </div>
@@ -57,7 +57,6 @@
                     Ir a las calculadoras
                 </a>
             </section>
-
 
             <div class="container text-center py-2">
                 <a href="{{ route('pages.suplementos.index') }}" class="btn btn-outline-secondary px-4 py-2">

@@ -14,21 +14,20 @@
         text-align: center;
 
         &__custom-heading {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: variables.$font-bold;
             color: variables.$dark-color;
 
             @include mx.responsive(tablet) {
-                font-size: 1.4rem;
+                font-size: 2rem;
             }
-        }
 
-        &__icon-inline {
-            height: 2rem;
+            @include mx.responsive(desktop) {
+                font-size: 2rem;
+            }
 
-            @include mx.responsive(tablet) {
-                height: 2.2rem;
-                width: auto;
+            @include mx.responsive(large-desktop) {
+                font-size: 2rem;
             }
         }
 
@@ -37,6 +36,21 @@
             height: 6rem;
             object-fit: cover;
             margin-bottom: 1rem;
+
+            @include mx.responsive(tablet) {
+                width: 6.3rem;
+                height: 6.3rem;
+            }
+
+            @include mx.responsive(desktop) {
+                width: 6.4rem;
+                height: 6.4rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                width: 9.5rem;
+                height: 9.5rem;
+            }
         }
 
         &__title {
@@ -65,6 +79,19 @@
         color: variables.$light-gray;
         width: auto;
         height: 6rem;
+        font-size: 1.2rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.3rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.5rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 1.7rem;
+        }
     }
 }
 
@@ -82,5 +109,20 @@
         width: auto;
         height: 6.5rem;
         @include mx.flex-center;
+        font-size: 1.2rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.1rem;
+            margin-top: 1.4rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.2rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 1.4rem;
+            margin-top: 1rem;
+        }
     }
 }

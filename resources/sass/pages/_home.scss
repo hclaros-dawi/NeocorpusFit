@@ -34,7 +34,7 @@
             }
 
             h1 {
-                font-size: 1.7rem;
+                font-size: 2.1rem;
                 font-weight: variables.$font-light;
 
                 span {
@@ -46,15 +46,15 @@
                 }
 
                 @include mx.responsive(tablet) {
-                    font-size: 3.5rem;
+                    font-size: 4rem;
                 }
 
                 @include mx.responsive(desktop) {
-                    font-size: 4.5rem;
+                    font-size: 6rem;
                 }
 
                 @include mx.responsive(large-desktop) {
-                    font-size: 5rem;
+                    font-size: 7rem;
                 }
             }
         }
@@ -63,17 +63,21 @@
             background-color: rgba(0, 0, 0, 0.75);
             padding: 1rem;
             border-radius: 0.5rem;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             font-weight: variables.$font-regular;
 
             @include mx.responsive(tablet) {
-                font-size: 1.25rem;
+                font-size: 1.2rem;
                 padding: 1.5rem;
             }
 
             @include mx.responsive(desktop) {
-                font-size: 1.5rem;
-                padding: 2rem;
+                font-size: 1.4rem;
+                padding: 1.6rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 1.9rem;
             }
         }
     }
@@ -83,16 +87,20 @@
 
         p {
             font-weight: variables.$font-semibold;
-            font-size: 1.1rem;
-            font-weight: variables.$font-bold;
-        }
+            font-size: 1.5rem;
+            color: variables.$dark-color;
 
-        @include mx.responsive(tablet) {
-            font-size: 1.2rem;
-        }
+            @include mx.responsive(tablet) {
+                font-size: 2rem;
+            }
 
-        @include mx.responsive(desktop) {
-            font-size: 1.4rem;
+            @include mx.responsive(desktop) {
+                font-size: 2rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 2rem;
+            }
         }
     }
 
