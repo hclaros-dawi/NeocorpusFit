@@ -84,6 +84,7 @@
         p {
             font-weight: variables.$font-semibold;
             font-size: 1.1rem;
+            font-weight: variables.$font-bold;
         }
 
         @include mx.responsive(tablet) {

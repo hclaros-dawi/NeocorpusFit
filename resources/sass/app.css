@@ -487,6 +487,7 @@ header {
 .home-page__highlight-info p {
   font-weight: 600;
   font-size: 1.1rem;
+  font-weight: 700;
 }
 @media (min-width: 768px) {
   .home-page__highlight-info {
