@@ -48,6 +48,10 @@
         @include mx.responsive(desktop) {
             font-size: 3rem;
         }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 3rem;
+        }
     }
 
     &__grid {
@@ -123,16 +127,16 @@
     &__card-title {
         font-family: "Inter", sans-serif;
         font-weight: variables.$font-bold;
-        font-size: 1.125rem;
+        font-size: 1.3rem;
         margin-bottom: 0.4rem;
         color: variables.$secondary-color;
 
         @include mx.responsive(tablet) {
-            font-size: 1.25rem;
+            font-size: 1.4rem;
         }
 
         @include mx.responsive(desktop) {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
         }
     }
 

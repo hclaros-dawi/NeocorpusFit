@@ -8,7 +8,7 @@
     padding: 3rem 0;
     min-height: 100vh;
 
-    @media (min-width: 768px) {
+    @include mx.responsive(tablet) {
         padding: 5rem 0;
     }
 
@@ -22,23 +22,32 @@
             transform: scale(1.1);
         }
 
-        @media (min-width: 768px) {
+        @include mx.responsive(tablet) {
             width: 4.375rem;
         }
     }
 
     &__title-section {
-        color: variables.$primary-color;  
-        font-weight: 700;
+        color: variables.$primary-color;
+        font-weight: variables.$font-bold;
+        font-size: 1.75rem;
         margin-bottom: 2.5rem;
 
-        @media (min-width: 768px) {
+        @include mx.responsive(tablet) {
             font-size: 2.5rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 3rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 3rem;
         }
     }
 
     &__card {
-        background-color: #333333;
+        background-color: variables.$dark-gray;
         color: variables.$white;
         display: flex;
         flex-direction: column;
@@ -48,20 +57,73 @@
         overflow: hidden;
         min-height: 100%;
 
-        .card-title {
-            background-color: variables.$secondary-color;  
-            color: black;
-            border-radius: 8px;
+        &__card-title {
+            background-color: variables.$secondary-color;
+            color: variables.$dark-color;
+            border-radius: 0.5rem;
             padding: 0.75rem;
             font-size: 1.1rem;
-            font-weight: 700;
+            font-weight: variables.$font-bold;
             margin-bottom: 1rem;
+
+            @include mx.responsive(tablet) {
+                font-size: 1.2rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 1.3rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 1.4rem;
+            }
         }
 
-        .card-text {
-            font-size: 0.95rem;
+        &__card-text {
+            font-size: 1rem;
             line-height: 1.6;
             overflow: hidden;
+
+            @include mx.responsive(tablet) {
+                font-size: 1.1rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 1.2rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    &__btn-outline-secondary {
+        border-color: variables.$white;
+        color: variables.$white;
+        font-weight: variables.$font-bold;
+        text-decoration: none;
+        font-size: 1.2rem;
+
+        i {
+            padding-right: 0.5rem;
+        }
+
+        &:hover {
+            background-color: variables.$white;
+            color: variables.$black;
+        }
+
+        @include mx.responsive(tablet) {
+            font-size: 1.3rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.4rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 1.5rem;
         }
     }
 }
@@ -69,22 +131,6 @@
 .btn-primary {
     background-color: variables.$secondary-color;
     color: variables.$black;
-    font-weight: bold;
+    font-weight: variables.$font-bold;
     margin-top: 2.3rem;
-}
-
-.btn-outline-secondary {
-    border-color: variables.$white;
-    color: variables.$white;
-    font-weight: bold;
-    text-decoration: none;
-
-    i {
-        padding-right: 0.5rem;
-    }
-
-    &:hover {
-        background-color: variables.$white;
-        color: variables.$black;
-    }
 }

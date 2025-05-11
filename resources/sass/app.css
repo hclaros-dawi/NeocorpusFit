@@ -129,12 +129,12 @@ body {
 }
 @media (min-width: 992px) {
   .header__dropdown .dropdown-item {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 @media (min-width: 1200px) {
   .header__dropdown .dropdown-item {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 .header__dropdown .header__highlight {
@@ -836,6 +836,11 @@ body {
     font-size: 3rem;
   }
 }
+@media (min-width: 1200px) {
+  .supplements__title {
+    font-size: 3rem;
+  }
+}
 .supplements__grid {
   display: grid;
   gap: 0.5rem;
@@ -898,18 +903,18 @@ body {
 .supplements__card-title {
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 1.3rem;
   margin-bottom: 0.4rem;
   color: #fcce3a;
 }
 @media (min-width: 768px) {
   .supplements__card-title {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
   }
 }
 @media (min-width: 992px) {
   .supplements__card-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 }
 .supplements__button {
@@ -956,11 +961,22 @@ body {
 .supplements-show__title-section {
   color: #a259ff;
   font-weight: 700;
+  font-size: 1.75rem;
   margin-bottom: 2.5rem;
 }
 @media (min-width: 768px) {
   .supplements-show__title-section {
     font-size: 2.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .supplements-show__title-section {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  .supplements-show__title-section {
+    font-size: 3rem;
   }
 }
 .supplements-show__card {
@@ -974,40 +990,85 @@ body {
   overflow: hidden;
   min-height: 100%;
 }
-.supplements-show__card .card-title {
+.supplements-show__card__card-title {
   background-color: #fcce3a;
-  color: black;
-  border-radius: 8px;
+  color: #000000;
+  border-radius: 0.5rem;
   padding: 0.75rem;
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
-.supplements-show__card .card-text {
-  font-size: 0.95rem;
+@media (min-width: 768px) {
+  .supplements-show__card__card-title {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 992px) {
+  .supplements-show__card__card-title {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 1200px) {
+  .supplements-show__card__card-title {
+    font-size: 1.4rem;
+  }
+}
+.supplements-show__card__card-text {
+  font-size: 1rem;
   line-height: 1.6;
   overflow: hidden;
+}
+@media (min-width: 768px) {
+  .supplements-show__card__card-text {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 992px) {
+  .supplements-show__card__card-text {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .supplements-show__card__card-text {
+    font-size: 1.3rem;
+  }
+}
+.supplements-show__btn-outline-secondary {
+  border-color: #ffffff;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.supplements-show__btn-outline-secondary i {
+  padding-right: 0.5rem;
+}
+.supplements-show__btn-outline-secondary:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+@media (min-width: 768px) {
+  .supplements-show__btn-outline-secondary {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 992px) {
+  .supplements-show__btn-outline-secondary {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 1200px) {
+  .supplements-show__btn-outline-secondary {
+    font-size: 1.5rem;
+  }
 }
 
 .btn-primary {
   background-color: #fcce3a;
   color: #000000;
-  font-weight: bold;
+  font-weight: 700;
   margin-top: 2.3rem;
-}
-
-.btn-outline-secondary {
-  border-color: #ffffff;
-  color: #ffffff;
-  font-weight: bold;
-  text-decoration: none;
-}
-.btn-outline-secondary i {
-  padding-right: 0.5rem;
-}
-.btn-outline-secondary:hover {
-  background-color: #ffffff;
-  color: #000000;
 }
 
 .menus {

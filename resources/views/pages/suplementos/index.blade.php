@@ -41,8 +41,10 @@
             <section class="info-card text-center">
                 <h2 class="info-card__title">¿Cómo calcular tu dosis?</h2>
                 <p class="info-card__description">
-                    Los suplementos como la proteína y la creatina requieren un cálculo adecuado de las dosis para lograr
-                    resultados óptimos. ¡Con nuestras calculadoras podrás saber cuánto necesitas de cada suplemento según
+                    Los suplementos como la proteína y la creatina requieren un cálculo adecuado de las dosis para
+                    lograr
+                    resultados óptimos. ¡Con nuestras calculadoras podrás saber cuánto necesitas de cada suplemento
+                    según
                     tu peso y objetivos!
                 </p>
                 <div class="info-card__buttons">

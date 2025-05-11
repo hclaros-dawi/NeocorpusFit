@@ -28,8 +28,10 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="card supplements-show__card w-100 d-flex flex-column">
                                 <div class="card-body d-flex flex-column flex-grow-1">
-                                    <h3 class="card-title text-center">{{ $suplemento->nombre }}</h3>
-                                    <p class="card-text flex-grow-1">{{ $suplemento->descripcion }}</p>
+                                    <h3 class="supplements-show__card__card-title text-center">{{ $suplemento->nombre }}
+                                    </h3>
+                                    <p class="supplements-show__card__card-text flex-grow-1">
+                                        {{ $suplemento->descripcion }}</p>
                                 </div>
                             </div>
                         </div>
@@ -59,7 +61,8 @@
             </section>
 
             <div class="container text-center py-2">
-                <a href="{{ route('pages.suplementos.index') }}" class="btn btn-outline-secondary px-4 py-2">
+                <a href="{{ route('pages.suplementos.index') }}"
+                    class="btn supplements-show__btn-outline-secondary px-4 py-2">
                     <i class="fas fa-arrow-left me-2"></i> Volver a todos los suplementos
                 </a>
             </div>
