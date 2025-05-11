@@ -21,24 +21,26 @@
                 class="recetas__icon">
             <h1 class="recetas__title">RECETAS</h1>
 
-            <form id="searchForm" class="recetas__search" action="{{ route('pages.recetas') }}" method="GET" class="d-flex mb-4">
+            <form id="searchForm" class="recetas__search" action="{{ route('pages.recetas') }}" method="GET"
+                class="d-flex mb-4">
                 <input type="text" name="search" class="form-control me-2" placeholder="Buscar recetas..."
                     value="{{ request('search') }}" id="searchInput">
-                <button type="submit" class="btn btn-primary">Buscar</button>
+                <button type="submit" class="btn recetas__btn-primary">Buscar</button>
             </form>
 
             <div class="recetas__grid container">
                 @foreach ($recetas as $receta)
-                    <div class="recetas__card card">
-                        <img src="{{ $receta->imagen_url }}" class="card-img-top" alt="{{ $receta->nombre }}">
+                    <div class="recetas__grid__card card">
+                        <img src="{{ $receta->imagen_url }}" class="recetas__grid__card__img-top"
+                            alt="{{ $receta->nombre }}">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $receta->nombre }}</h5>
+                            <h5 class="recetas__grid__card__title">{{ $receta->nombre }}</h5>
                             <p class="card-text">
                                 Tiempo: {{ $receta->tiempo_preparacion }} min <br>
                                 Dificultad: {{ $receta->dificultad }}
                             </p>
 
-                            <button class="btn btn-primary recetas__btn" data-bs-toggle="modal"
+                            <button class="btn recetas__grid__card__btn" data-bs-toggle="modal"
                                 data-bs-target="#modal-{{ $receta->id_receta }}">
                                 Ver Receta
                             </button>
@@ -106,13 +108,13 @@
                 {{ $recetas->links() }}
             </div>
 
-                    @if (isset($searchTerm) && $searchTerm !== "")
-            <div class="container text-center py-5">
-                <a href="{{ route('pages.recetas') }}" class="btn btn-outline-secondary px-4 py-2">
-                    <i class="fas fa-arrow-left me-2"></i> Ver todas las recetas
-                </a>
-            </div>
-        @endif
+            @if (isset($searchTerm) && $searchTerm !== '')
+                <div class="container text-center py-5">
+                    <a href="{{ route('pages.recetas') }}" class="btn btn-outline-secondary px-4 py-2">
+                        <i class="fas fa-arrow-left me-2"></i> Ver todas las recetas
+                    </a>
+                </div>
+            @endif
         </div>
 
         <div class="container text-center py-5">
