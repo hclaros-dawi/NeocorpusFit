@@ -15,11 +15,11 @@
 
 <body class="bg-dark-gray home-page">
     <x-navbar />
-    <section class="menus">
-        <div class="menus__container container">
+    <section class="menus-show">
+        <div class="menus-show__container container">
             <img src="https://live.staticflickr.com/65535/54494721744_e55ea8e546_s.jpg" alt="Icono menús"
-                class="menus__icon">
-            <h1 class="menus__title">CLÁSICO</h1>
+                class="menus-show__icon">
+            <h1 class="menus-show__title">{{ mb_strtoupper($categoria->nombre, 'UTF-8') }}</h1>
 
             <div class="container py-4">
                 <div class="table-responsive">

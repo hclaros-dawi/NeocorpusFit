@@ -28,7 +28,7 @@
                             <h2 class="canastas__card-title">{{ $categoria->nombre }}</h2>
                             <a href="{{ route('pages.canastas.show', $categoria->id_categoria) }}"
                                 class="canastas__button button--alt">
-                                Ver Más
+                                Ver Canasta
                             </a>
                         </div>
                     </div>

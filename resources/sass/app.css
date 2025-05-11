@@ -1083,6 +1083,11 @@ body {
     padding: 5rem 0;
   }
 }
+@media (min-width: 992px) {
+  .menus {
+    padding: 6rem 3rem;
+  }
+}
 .menus__icon {
   width: 3.75rem;
   margin-bottom: 1.5rem;
@@ -1097,6 +1102,11 @@ body {
     width: 4.375rem;
   }
 }
+@media (min-width: 992px) {
+  .menus__icon {
+    width: 5rem;
+  }
+}
 .menus__title {
   font-weight: 700;
   font-size: 1.75rem;
@@ -1106,6 +1116,16 @@ body {
 @media (min-width: 768px) {
   .menus__title {
     font-size: 2.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .menus__title {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  .menus__title {
+    font-size: 3rem;
   }
 }
 .menus__grid {
@@ -1162,160 +1182,228 @@ body {
   box-shadow: 0 0.25rem 0.625rem #613599;
   background-color: #613599;
 }
+@media (min-width: 992px) {
+  .menus__card {
+    padding: 1.5rem;
+  }
+}
 .menus__card-title {
   font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
   color: #fcce3a;
+}
+@media (min-width: 768px) {
+  .menus__card-title {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 992px) {
+  .menus__card-title {
+    font-size: 1.5rem;
+  }
 }
 .menus__button {
   margin-top: 1rem;
   align-self: center;
 }
+@media (min-width: 768px) {
+  .menus__button {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .menus__button {
+    font-size: 1.1rem;
+  }
+}
 
-.menus {
+.menus-show {
   background-color: #1a1a1a;
   padding: 3rem 0;
+  text-align: center;
   min-height: 100vh;
 }
 @media (min-width: 768px) {
-  .menus {
+  .menus-show {
     padding: 5rem 0;
   }
 }
-.menus__container {
+.menus-show__container {
   padding: 1rem;
 }
 @media (min-width: 768px) {
-  .menus__container {
+  .menus-show__container {
     padding: 2rem;
   }
 }
-.menus__icon {
+.menus-show__icon {
   width: 3.75rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
   transition: transform 0.3s ease;
-  padding-top: 4rem;
-  display: block;
-  margin: 0 auto 1rem auto;
+  margin-top: 4rem;
 }
-.menus__icon:hover {
+.menus-show__icon:hover {
   transform: scale(1.1);
 }
 @media (min-width: 768px) {
-  .menus__icon {
+  .menus-show__icon {
     width: 4.375rem;
   }
 }
-.menus__title {
+.menus-show__title {
+  color: #a259ff;
   font-weight: 700;
   font-size: 1.75rem;
-  margin-bottom: 4rem;
-  color: #a259ff;
-  text-align: center;
+  margin-bottom: 2.5rem;
 }
 @media (min-width: 768px) {
-  .menus__title {
+  .menus-show__title {
     font-size: 2.5rem;
   }
 }
-.menus table {
+@media (min-width: 992px) {
+  .menus-show__title {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  .menus-show__title {
+    font-size: 3rem;
+  }
+}
+.menus-show table {
   width: 100%;
   border-collapse: collapse;
   color: #fff;
 }
-.menus table th {
+.menus-show table th {
   background-color: #613599;
   font-weight: 700;
   text-transform: uppercase;
   color: #ffffff;
   border-bottom: none;
 }
-.menus table th:not(:last-child) {
-  border-right: solid 1px;
+.menus-show table th:not(:last-child) {
+  border-right: solid 0.0625rem;
 }
-.menus table td {
+.menus-show table td {
   vertical-align: top;
   padding: 0.75rem;
   border-color: #333;
   background-color: rgba(137, 43, 226, 0);
   color: #ffffff !important;
 }
-.menus table td:first-child {
+.menus-show table td:first-child {
   color: #613599 !important;
   text-align: center;
   vertical-align: middle;
 }
-.menus table td,
-.menus table th {
+.menus-show table td,
+.menus-show table th {
   padding: 0.5rem;
+  font-size: 1.1rem;
 }
 @media (min-width: 768px) {
-  .menus table td,
-  .menus table th {
+  .menus-show table td,
+  .menus-show table th {
+    font-size: 1.2rem;
     padding: 1rem;
   }
 }
-.menus table .btn-sm {
+@media (min-width: 992px) {
+  .menus-show table td,
+  .menus-show table th {
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .menus-show table td,
+  .menus-show table th {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+}
+.menus-show table td a,
+.menus-show table th a {
+  text-decoration: underline !important;
+}
+.menus-show table td a:hover,
+.menus-show table th a:hover {
+  color: #6d3abf !important;
+}
+.menus-show table .btn-sm {
   background-color: #4c2882;
   border: none;
   font-size: 0.85rem;
   font-weight: 600;
   transition: background-color 0.2s ease;
 }
-.menus table .btn-sm:hover {
+.menus-show table .btn-sm:hover {
   background-color: #6d3abf;
 }
 @media (max-width: 767.98px) {
-  .menus table {
+  .menus-show table {
     display: block;
   }
-  .menus table thead {
+  .menus-show table thead {
     display: none;
   }
-  .menus table tbody {
+  .menus-show table tbody {
     display: block;
   }
-  .menus table tbody tr {
+  .menus-show table tbody tr {
     display: block;
     margin-bottom: 1rem;
     padding: 1rem;
-    border: 1px solid #444;
+    border: 0.0625rem solid #444;
     border-radius: 0.5rem;
     background-color: #2a2a2a;
   }
-  .menus table tbody td {
+  .menus-show table tbody td {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #444;
+    border-bottom: 0.0625rem solid #444;
     padding: 0.5rem 0;
   }
-  .menus table tbody td::before {
+  .menus-show table tbody td::before {
     content: attr(data-label);
-    font-weight: bold;
+    font-weight: 700;
     color: #a259ff;
     margin-right: 1rem;
   }
-  .menus table tbody td:last-child {
+  .menus-show table tbody td:last-child {
     border-bottom: none;
   }
 }
-.menus .totales {
-  font-size: 1rem;
+.menus-show .totales {
+  font-size: 1.1rem;
   padding: 1rem;
   width: 100%;
   max-width: 25rem;
   margin-left: auto;
   margin-right: auto;
 }
-.menus .totales p {
+.menus-show .totales p {
   color: #a259ff;
 }
 @media (min-width: 768px) {
-  .menus .totales {
-    font-size: 1.125rem;
+  .menus-show .totales {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 992px) {
+  .menus-show .totales {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 1200px) {
+  .menus-show .totales {
+    font-size: 1.4rem;
   }
 }
 

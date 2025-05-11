@@ -28,7 +28,7 @@
                             <h2 class="menus__card-title">{{ $categoria->nombre }}</h2>
                             <a href="{{ route('pages.menus.show', $categoria->id_categoria) }}"
                                 class="menus__button button--alt">
-                                Ver Más
+                                Ver Menús
                             </a>
                         </div>
                     </div>
@@ -36,21 +36,26 @@
             </div>
         </div>
 
-        <section class="info-card">
-            <h2 class="info-card__title">¿Qué incluyen las menús?</h2>
-            <p class="info-card__description">
-                Los menús que encontrarás en esta sección están diseñados para adaptarse a distintos objetivos y estilos
-                de vida.
-                Cada menú puede prepararse utilizando los productos incluidos en nuestras canastas, las cuales han sido
-                pensadas
-                específicamente para cada tipo de opción seleccionada. Además, si no sabes cómo preparar alguna comida,
-                también
-                te ofrecemos recetas detalladas para ayudarte a armar tu menú de forma práctica y deliciosa. </p>
-            <div class="info-card__buttons">
-                <a href="{{ route('pages.canastas.index') }}" class="info-card__buttons-button">Ver Canastas</a>
-                <a href="{{ route('pages.recetas') }}" class="info-card__buttons-button">Ver Recetas</a>
-            </div>
-        </section>
+        <div class="container my-5 d-flex justify-content-center align-items-center">
+            <section class="info-card">
+                <h2 class="info-card__title">¿Qué incluyen las menús?</h2>
+                <p class="info-card__description">
+                    Los menús que encontrarás en esta sección están diseñados para adaptarse a distintos objetivos y
+                    estilos
+                    de vida.
+                    Cada menú puede prepararse utilizando los productos incluidos en nuestras canastas, las cuales han
+                    sido
+                    pensadas
+                    específicamente para cada tipo de opción seleccionada. Además, si no sabes cómo preparar alguna
+                    comida,
+                    también
+                    te ofrecemos recetas detalladas para ayudarte a armar tu menú de forma práctica y deliciosa. </p>
+                <div class="info-card__buttons">
+                    <a href="{{ route('pages.canastas.index') }}" class="info-card__buttons-button">Ver Canastas</a>
+                    <a href="{{ route('pages.recetas') }}" class="info-card__buttons-button">Ver Recetas</a>
+                </div>
+            </section>
+        </div>
 
         <div class="container text-center py-5">
             <a href="{{ route('home') }}" class="btn btn-outline-secondary px-4 py-2">
