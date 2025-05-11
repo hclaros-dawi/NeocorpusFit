@@ -8,8 +8,12 @@
     padding: 3rem 0;
     min-height: 100vh;
 
-    @media (min-width: 768px) {
+    @include mx.responsive(tablet) {
         padding: 5rem 0;
+    }
+
+    @include mx.responsive(desktop) {
+        padding: 6rem 3rem;
     }
 
     &__icon {
@@ -22,19 +26,31 @@
             transform: scale(1.1);
         }
 
-        @media (min-width: 768px) {
+        @include mx.responsive(tablet) {
             width: 4.375rem;
+        }
+
+        @include mx.responsive(desktop) {
+            width: 5rem;
         }
     }
 
     &__title {
-        font-weight: 700;
+        font-weight: variables.$font-bold;
         font-size: 1.75rem;
         margin-bottom: 4rem;
         color: variables.$white;
 
-        @media (min-width: 768px) {
+        @include mx.responsive(tablet) {
             font-size: 2.5rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 3rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 3rem;
         }
     }
 
@@ -102,19 +118,40 @@
             box-shadow: 0 0.25rem 0.625rem #613599;
             background-color: #613599;
         }
+
+        @include mx.responsive(desktop) {
+            padding: 1.5rem;
+        }
     }
 
     &__card-title {
         font-family: "Inter", sans-serif;
-        font-weight: 600;
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
+        font-weight: variables.$font-bold;
+        font-size: 1.3rem;
+        margin-bottom: 0.4rem;
         color: variables.$secondary-color;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.4rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.5rem;
+        }
     }
 
     &__button {
         @extend .button;
         margin-top: 1rem;
         align-self: center;
+
+        @include mx.responsive(tablet) {
+            font-size: 1rem;
+            padding: 0.6rem 1.5rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.1rem;
+        }
     }
 }

@@ -19,7 +19,7 @@
     <section class="canasta-show">
         <div class="container text-center">
             <img src="https://live.staticflickr.com/65535/54494799353_7a0d18885c_q.jpg" alt="Icono canastas"
-                 class="canastas__icon">
+                class="canasta-show__icon">
             <h1 class="canasta-show__title">{{ mb_strtoupper($categoria->nombre, 'UTF-8') }}</h1>
 
             @php
@@ -46,7 +46,7 @@
                                 <td>{{ number_format($ingrediente->pivot->subtotal, 2) }} €</td>
                                 <td>
                                     <a href="#" class="btn btn-dark btn-sm" data-bs-toggle="modal"
-                                       data-bs-target="#modal-{{ $i }}">Ver Producto</a>
+                                        data-bs-target="#modal-{{ $i }}">Ver Producto</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -70,15 +70,8 @@
         </div>
 
         @foreach ($ingredientes as $i => $ingrediente)
-            <x-product-modal 
-                :id="$i" 
-                :nombre="$ingrediente->nombre" 
-                :descripcion="$ingrediente->descripcion" 
-                :calorias="$ingrediente->calorias . ' kcal'"
-                :proteinas="$ingrediente->proteinas . ' g'" 
-                :carbohidratos="$ingrediente->carbohidratos . ' g'" 
-                :grasas="$ingrediente->grasas . ' g'" 
-            />
+            <x-product-modal :id="$i" :nombre="$ingrediente->nombre" :descripcion="$ingrediente->descripcion" :calorias="$ingrediente->calorias . ' kcal'" :proteinas="$ingrediente->proteinas . ' g'"
+                :carbohidratos="$ingrediente->carbohidratos . ' g'" :grasas="$ingrediente->grasas . ' g'" />
         @endforeach
 
         <div class="container text-center mt-5">

@@ -97,35 +97,6 @@
             }
         }
     }
-
-    &__btn-outline-secondary {
-        border-color: variables.$white;
-        color: variables.$white;
-        font-weight: variables.$font-bold;
-        text-decoration: none;
-        font-size: 1.2rem;
-
-        i {
-            padding-right: 0.5rem;
-        }
-
-        &:hover {
-            background-color: variables.$white;
-            color: variables.$black;
-        }
-
-        @include mx.responsive(tablet) {
-            font-size: 1.3rem;
-        }
-
-        @include mx.responsive(desktop) {
-            font-size: 1.4rem;
-        }
-
-        @include mx.responsive(large-desktop) {
-            font-size: 1.5rem;
-        }
-    }
 }
 
 .btn-primary {
@@ -133,4 +104,33 @@
     color: variables.$black;
     font-weight: variables.$font-bold;
     margin-top: 2.3rem;
+}
+
+.btn-outline-secondary {
+    border-color: variables.$white;
+    color: variables.$white;
+    font-weight: variables.$font-bold;
+    text-decoration: none;
+    font-size: 1.2rem;
+
+    i {
+        padding-right: 0.5rem;
+    }
+
+    &:hover {
+        background-color: variables.$white;
+        color: variables.$black;
+    }
+
+    @include mx.responsive(tablet) {
+        font-size: 1.3rem;
+    }
+
+    @include mx.responsive(desktop) {
+        font-size: 1.4rem;
+    }
+
+    @include mx.responsive(large-desktop) {
+        font-size: 1.5rem;
+    }
 }

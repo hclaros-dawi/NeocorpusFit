@@ -61,8 +61,7 @@
             </section>
 
             <div class="container text-center py-2">
-                <a href="{{ route('pages.suplementos.index') }}"
-                    class="btn supplements-show__btn-outline-secondary px-4 py-2">
+                <a href="{{ route('pages.suplementos.index') }}" class="btn btn-outline-secondary px-4 py-2">
                     <i class="fas fa-arrow-left me-2"></i> Volver a todos los suplementos
                 </a>
             </div>

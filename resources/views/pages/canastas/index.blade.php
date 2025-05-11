@@ -36,18 +36,21 @@
             </div>
         </div>
 
-        <section class="info-card">
-            <h2 class="info-card__title">¿Qué incluyen las canastas?</h2>
-            <p class="info-card__description">
-                Nuestras canastas están pensadas para facilitarte la vida: cada una incluye productos seleccionados con
-                menús ya preparados.
-                ¿No sabes cómo cocinarlos? No te preocupes, te damos recetas rápidas y fáciles para que disfrutes de
-                comidas completas sin complicaciones. </p>
-            <div class="info-card__buttons">
-                <a href="{{ route('pages.menus.index') }}" class="info-card__buttons-button">Ver Menús</a>
-                <a href="{{ route('pages.recetas') }}" class="info-card__buttons-button">Ver Recetas</a>
-            </div>
-        </section>
+        <div class="container my-5 d-flex justify-content-center align-items-center">
+            <section class="info-card">
+                <h2 class="info-card__title">¿Qué incluyen las canastas?</h2>
+                <p class="info-card__description">
+                    Nuestras canastas están pensadas para facilitarte la vida: cada una incluye productos seleccionados
+                    con
+                    menús ya preparados.
+                    ¿No sabes cómo cocinarlos? No te preocupes, te damos recetas rápidas y fáciles para que disfrutes de
+                    comidas completas sin complicaciones. </p>
+                <div class="info-card__buttons">
+                    <a href="{{ route('pages.menus.index') }}" class="info-card__buttons-button">Ver Menús</a>
+                    <a href="{{ route('pages.recetas') }}" class="info-card__buttons-button">Ver Recetas</a>
+                </div>
+            </section>
+        </div>
 
         <div class="container text-center py-5">
             <a href="{{ route('home') }}" class="btn btn-outline-secondary px-4 py-2">
