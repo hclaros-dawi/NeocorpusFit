@@ -2,7 +2,7 @@
 
 ## Temática
 
-Una plataforma integral que combina ejercicio y nutrición, ayudando a los usuarios a alcanzar sus objetivos de bienestar con herramientas personalizadas.
+Una plataforma integral de nutrición, ayudando a los usuarios a alcanzar sus objetivos de bienestar con herramientas personalizadas.
 
 ## Objetivos
 
@@ -12,7 +12,6 @@ Una plataforma integral que combina ejercicio y nutrición, ayudando a los usuar
 -   Menús de alimentación personalizados, alineados con los productos de las canastas recomendadas y las recetas sugeridas, para asegurar coherencia con los objetivos nutricionales del usuario
 -   Recetas fáciles y nutritivas, creadas con los productos recomendados en la canasta de compras, alineadas con sus objetivos nutricionales
 -   Optimización de la canasta de compras para ajustarse a sus objetivos nutricionales
--   Rutinas de ejercicio personalizadas basadas en los objetivos del usuario (perder peso, ganar masa muscular, etc.)
 
 ### Funcionalidades Clave:
 
