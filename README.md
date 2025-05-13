@@ -1,4 +1,4 @@
-# TFG: Página web para la gestión de ejercicio y nutrición
+# TFG: Página web para la gestión nutrición
 
 ## Temática
 
