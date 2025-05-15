@@ -34,7 +34,7 @@
             }
 
             h1 {
-                font-size: 2.1rem;
+                font-size: 3.3rem;
                 font-weight: variables.$font-light;
 
                 span {
@@ -46,15 +46,15 @@
                 }
 
                 @include mx.responsive(tablet) {
-                    font-size: 4rem;
-                }
-
-                @include mx.responsive(desktop) {
                     font-size: 6rem;
                 }
 
+                @include mx.responsive(desktop) {
+                    font-size: 8rem;
+                }
+
                 @include mx.responsive(large-desktop) {
-                    font-size: 7rem;
+                    font-size: 9.5rem;
                 }
             }
         }
@@ -67,17 +67,17 @@
             font-weight: variables.$font-regular;
 
             @include mx.responsive(tablet) {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
                 padding: 1.5rem;
             }
 
             @include mx.responsive(desktop) {
-                font-size: 1.4rem;
+                font-size: 2rem;
                 padding: 1.6rem;
             }
 
             @include mx.responsive(large-desktop) {
-                font-size: 1.9rem;
+                font-size: 2.5rem;
             }
         }
     }

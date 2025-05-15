@@ -57,7 +57,7 @@
 
             <div id="resultado" class="imc__result result-container" style="opacity: 0; transition: opacity 0.5s;">
                 <h2 class="imc__result-text">Tu IMC es: <span id="imc-valor">--</span></h2>
-                <p id="clasificacion-imc" class="imc__classification text-center fs-4 mt-3"></p>
+                <p id="clasificacion-imc" class="imc__classification text-center mt-3"></p>
             </div>
         </div>
 

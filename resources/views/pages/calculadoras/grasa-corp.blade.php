@@ -34,7 +34,7 @@
                                     <label for="edad" class="grasa-corp__label">Tu edad</label>
                                     <input type="number" class="grasa-corp__input form-control" id="edad"
                                         placeholder="Introduce tu edad" required step="0.1" min="1">
-                                    <div class="grasa-corp__error invalid-feedback" id="edad-error"></div>
+                                    <div class="grasa-corp__text-danger invalid-feedback" id="edad-error"></div>
                                 </div>
                                 <div class="col-md-6 grasa-corp__form-group">
                                     <label for="sexo-trigger" class="grasa-corp__label">Tu sexo</label>
@@ -49,7 +49,7 @@
                                         </div>
                                         <input type="hidden" name="sexo" id="sexo" required>
                                     </div>
-                                    <div id="sexo-error" class="text-danger" style="display:none;"></div>
+                                    <div id="sexo-error" class="grasa-corp__text-danger" style="display:none;"></div>
                                 </div>
                             </div>
 
@@ -58,18 +58,19 @@
                                     <label for="peso" class="grasa-corp__label">Tu peso (kg)</label>
                                     <input type="number" class="grasa-corp__input form-control" id="peso"
                                         placeholder="Introduce tu peso en kg." required step="0.1" min="1">
-                                    <div class="grasa-corp__error invalid-feedback" id="peso-error"></div>
+                                    <div class="grasa-corp__text-danger invalid-feedback" id="peso-error"></div>
                                 </div>
                                 <div class="col-md-6 grasa-corp__form-group">
                                     <label for="altura" class="grasa-corp__label">Tu altura (cm)</label>
                                     <input type="number" class="grasa-corp__input form-control" id="altura"
                                         placeholder="Introduce tu altura en cm." required step="1" min="50">
-                                    <div class="grasa-corp__error invalid-feedback" id="altura-error"></div>
+                                    <div class="grasa-corp__text-danger invalid-feedback" id="altura-error"></div>
                                 </div>
                             </div>
 
-                            <div class="grasa-corp__button-wrapper d-grid gap-2 mt-4">
-                                <button type="submit" class="btn button button--yellow">Calcular</button>
+                            <div class="d-grid gap-2 mt-4">
+                                <button type="submit"
+                                    class="grasa-corp__button btn button button--yellow">Calcular</button>
                             </div>
                         </form>
                     </div>

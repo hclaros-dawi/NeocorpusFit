@@ -16,18 +16,19 @@ class MenuController extends Controller
 
     public function show($id_categoria)
     {
-
         $categoria = Categoria::find($id_categoria);
-    
+
         if (!$categoria) {
             return redirect()->route('pages.menus.index')->with('error', 'Categoría no encontrada');
         }
-    
-  
-        $menus = Menu::with(['recetas' => function ($query) {
-            
-        }])->where('categoria_id', $categoria->id_categoria)->get();
-    
+
+        $menus = Menu::with('recetas')
+            ->where('categoria_id', $categoria->id_categoria)
+            ->get();
+
+        // If you need a specific menu, you can get the first one
+        $menu = $menus->first();
+
         $numeroADia = [
             '1' => 'lunes',
             '2' => 'martes',
@@ -37,37 +38,45 @@ class MenuController extends Controller
             '6' => 'sábado',
             '7' => 'domingo',
         ];
-    
-         $tiposComida = ['Desayuno', 'Comida', 'Cena', 'Snack'];
-    
+
+        $tiposComida = ['Desayuno', 'Comida', 'Cena', 'Snack'];
+
         $tabla = [];
-         foreach ($numeroADia as $diaNumero => $nombreDia) {  
+        foreach ($numeroADia as $diaNumero => $nombreDia) {
             foreach ($tiposComida as $tipo) {
                 $tabla[$nombreDia][$tipo] = null;
             }
         }
-    
-        foreach ($menus as $menu) {
-            foreach ($menu->recetas as $receta) {
+
+        foreach ($menus as $menuItem) {
+            foreach ($menuItem->recetas as $receta) {
                 $diaNumero = $receta->pivot->dia_semana;
-                $diaNombre = $numeroADia[(string)$diaNumero] ?? null;  
-                
-    
-                $tipoComidaOriginal = $receta->pivot->tipo_comida;  
-        
-                 if ($diaNombre && in_array($tipoComidaOriginal, $tiposComida)) {
-                     $tabla[$diaNombre][$tipoComidaOriginal] = [
+                $diaNombre = $numeroADia[(string)$diaNumero] ?? null;
+
+                $tipoComidaOriginal = $receta->pivot->tipo_comida;
+
+                if ($diaNombre && in_array($tipoComidaOriginal, $tiposComida)) {
+                    $tabla[$diaNombre][$tipoComidaOriginal] = [
                         'nombre' => $receta->nombre,
                         'enlace' => $receta->pivot->enlace_receta,
-                        'calorias' => $menu->calorias, 
-                        'proteinas' => $menu->proteinas,
+                        'calorias' => $menuItem->calorias,
+                        'proteinas' => $menuItem->proteinas,
                     ];
                 }
             }
         }
-    
-        return view('pages.menus.show', compact('categoria', 'tabla'));
-    }   
-    
-}
 
+        return view('pages.menus.show', compact('categoria', 'tabla', 'menus', 'menu'));
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'nombre' => 'required|string|max:255',
+        ]);
+
+        Menu::create($data);
+
+        return back()->with('success', 'Menú guardado correctamente.');
+    }
+}

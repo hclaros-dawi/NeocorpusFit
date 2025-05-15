@@ -44,12 +44,40 @@
                                 data-bs-target="#modal-{{ $receta->id_receta }}">
                                 Ver Receta
                             </button>
+                            @auth
+                                @if (auth()->user()->hasFavorited($receta->id_receta, 'receta'))
+                                    <form
+                                        action="{{ route('favorites.destroy', ['type' => 'receta', 'itemId' => $receta->id_receta]) }}"
+                                        method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="recetas__btn-fav btn btn-sm btn-outline-danger">
+                                            <i class="fas fa-heart"></i> Quitar
+                                        </button>
+                                    </form>
+                                @else
+                                    <form
+                                        action="{{ route('favorites.store', ['type' => 'receta', 'itemId' => $receta->id_receta]) }}"
+                                        method="POST">
+                                        @csrf
+                                        <button type="submit" class="recetas__btn-fav btn btn-sm btn-outline-secondary">
+                                            <i class="far fa-heart"></i> Guardar
+                                        </button>
+                                    </form>
+                                @endif
+                            @else
+                                <a href="{{ route('login') }}" class="btn btn-outline-secondary"
+                                    title="Inicia sesión para guardar">
+                                    <i class="far fa-heart"></i> Favorito
+                                </a>
+                            @endauth
+
                         </div>
                     </div>
 
                     <div class="modal fade recetas__modal" id="modal-{{ $receta->id_receta }}" tabindex="-1"
                         aria-labelledby="modalLabel-{{ $receta->id_receta }}" aria-hidden="true">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content recetas__modal">
                                 <div class="modal-header">
                                     <h5 class="modal-recetas-title" id="modalLabel-{{ $receta->id_receta }}">
@@ -96,7 +124,6 @@
                                             @endforeach
                                         </div>
                                     @endif
-
                                 </div>
                             </div>
                         </div>
@@ -115,6 +142,23 @@
                     </a>
                 </div>
             @endif
+        </div>
+
+        <div class="container my-5 d-flex justify-content-center align-items-center">
+            <section class="info-card">
+                <h2 class="info-card__title">¿Qué encontrarás en esta sección?</h2>
+                <p class="info-card__description">
+                    Aquí encontrarás todas las recetas detalladas que componen los menús disponibles en nuestra
+                    plataforma.
+                    Estas recetas están pensadas para que no tengas que empezar desde cero y puedas preparar, día a día,
+                    cada comida del menú de forma fácil y organizada.
+                    Además, todos los ingredientes necesarios estarán incluidos en la canasta correspondiente a tu menú
+                    seleccionado, para que solo tengas que enfocarte en cocinar y disfrutar. </p>
+                <div class="info-card__buttons">
+                    <a href="{{ route('pages.canastas.index') }}" class="info-card__buttons-button">Ver Canastas</a>
+                    <a href="{{ route('pages.menus.index') }}" class="info-card__buttons-button">Ver Menús</a>
+                </div>
+            </section>
         </div>
 
         <div class="container text-center py-5">

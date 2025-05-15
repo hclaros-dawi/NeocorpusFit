@@ -19,34 +19,43 @@
     &__title {
         font-family: "Inter", sans-serif;
         font-weight: variables.$font-extra-bold;
-        font-size: 1.5rem;
+        font-size: 2rem;
         margin-bottom: 2rem;
         color: #fff;
 
         @include mx.responsive(tablet) {
-            font-size: 2rem;
+            font-size: 2.3rem;
         }
 
         @include mx.responsive(desktop) {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 2.7rem;
         }
     }
 
     &__description {
         font-family: "Open Sans", sans-serif;
         font-weight: variables.$font-extra-light;
-        font-size: 1.125rem;
+        font-size: 1.5rem;
         line-height: 1.6;
         color: #f0f0f0;
         max-width: 50rem;
         margin: 0 auto;
+        padding-bottom: 3.5rem;
 
         @include mx.responsive(tablet) {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
         }
 
         @include mx.responsive(desktop) {
-            font-size: 1.35rem;
+            font-size: 1.8rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 2rem;
         }
     }
 
@@ -66,7 +75,7 @@
             color: variables.$black;
             font-weight: variables.$font-semibold;
             padding: 1.25rem 2.5rem;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             border-radius: 1.5rem;
             border: 0.125rem solid #9d4edd;
             text-decoration: none;
@@ -79,17 +88,15 @@
             }
 
             @include mx.responsive(tablet) {
-                font-size: 1.1rem;
+                font-size: 1.5rem;
             }
 
             @include mx.responsive(desktop) {
-                font-size: 1.2rem;
-                padding: 1.5rem 3rem;
+                font-size: 1.8rem;
             }
 
-            @media (max-width: 576px) {
-                padding: 1rem 2rem;
-                font-size: 1rem;
+            @include mx.responsive(large-desktop) {
+                font-size: 2rem;
             }
         }
     }

@@ -17,15 +17,15 @@ class CanastaController extends Controller
     public function show($id_categoria)
     {
         $categoria = Categoria::find($id_categoria);
-        
+
         if (!$categoria) {
             return redirect()->route('pages.canastas.index')->with('error', 'Categoría no encontrada');
         }
-        
-        $canastas = Canasta::where('categoria_id', $categoria->id_categoria)->paginate(6);
-        
-        return view('pages.canastas.show', compact('categoria', 'canastas'));
+
+        $canasta = Canasta::where('categoria_id', $categoria->id_categoria)->first();
+
+        $canastas = collect([$canasta]);
+
+        return view('pages.canastas.show', compact('categoria', 'canasta', 'canastas'));
     }
-    
-    
 }

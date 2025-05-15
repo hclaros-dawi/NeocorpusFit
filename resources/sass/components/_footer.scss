@@ -7,20 +7,20 @@
     color: variables.$text-color;
 
     &__title {
-        font-size: 1.4rem;
         font-weight: variables.$font-regular;
         margin-bottom: 0.5rem;
+        font-size: 1.6rem;
 
         @include mx.responsive(tablet) {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
 
         @include mx.responsive(desktop) {
-            font-size: 1.6rem;
+            font-size: 2rem;
         }
 
         @include mx.responsive(large-desktop) {
-            font-size: 1.7rem;
+            font-size: 2.5rem;
         }
     }
 
@@ -29,7 +29,7 @@
         color: variables.$text-secondary;
 
         @include mx.responsive(tablet) {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
 
         @include mx.responsive(desktop) {
@@ -37,7 +37,7 @@
         }
 
         @include mx.responsive(large-desktop) {
-            font-size: 1.5rem;
+            font-size: 1.9rem;
         }
     }
 
@@ -48,7 +48,7 @@
 
         &-link {
             color: variables.$text-color;
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             transition: color 0.3s;
 
             &:hover {
@@ -60,11 +60,11 @@
             }
 
             @include mx.responsive(desktop) {
-                font-size: 1.9rem;
+                font-size: 2rem;
             }
 
             @include mx.responsive(large-desktop) {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
         }
     }

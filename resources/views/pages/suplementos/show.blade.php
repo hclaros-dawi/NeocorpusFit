@@ -32,14 +32,40 @@
                                     </h3>
                                     <p class="supplements-show__card__card-text flex-grow-1">
                                         {{ $suplemento->descripcion }}</p>
+
+                                    @auth
+                                        @if (auth()->user()->hasFavorited($suplemento->id_suplemento, 'suplemento'))
+                                            <form
+                                                action="{{ route('favorites.destroy', ['type' => 'suplemento', 'itemId' => $suplemento->id_suplemento]) }}"
+                                                method="POST" class="mt-2">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit"
+                                                    class="supplements-show__btn-fav btn btn-sm btn-outline-danger">
+                                                    <i class="fas fa-heart"></i> Quitar
+                                                </button>
+                                            </form>
+                                        @else
+                                            <form
+                                                action="{{ route('favorites.store', ['type' => 'suplemento', 'itemId' => $suplemento->id_suplemento]) }}"
+                                                method="POST" class="mt-2">
+                                                @csrf
+                                                <button type="submit"
+                                                    class="supplements-show__btn-fav btn btn-sm btn-outline-secondary">
+                                                    <i class="far fa-heart"></i> Guardar
+                                                </button>
+                                            </form>
+                                        @endif
+                                    @else
+                                        <a href="{{ route('login') }}" class="btn btn-sm btn-outline-secondary mt-2"
+                                            title="Inicia sesión para guardar">
+                                            <i class="far fa-heart"></i> Favorito
+                                        </a>
+                                    @endauth
                                 </div>
                             </div>
                         </div>
                     @endforeach
-                </div>
-
-                <div class="mt-4 d-flex justify-content-center">
-                    {{ $suplementos->links() }}
                 </div>
             </div>
 
@@ -55,7 +81,7 @@
                     Por eso, ponemos a tu disposición diferentes <strong>calculadoras</strong> que te ayudarán a
                     personalizar tu plan.
                 </p>
-                <a href="{{ route('pages.calculadoras.index') }}" class="btn btn-primary">
+                <a href="{{ route('pages.calculadoras.index') }}" class="info-card__buttons-button">
                     Ir a las calculadoras
                 </a>
             </section>

@@ -16,15 +16,24 @@ class SuplementoController extends Controller
 
     public function show($id_categoria)
     {
-        $categoria = Categoria::find($id_categoria);
-        
-        if (!$categoria) {
-            return redirect()->route('pages.suplementos.index')->with('error', 'Categoría no encontrada');
-        }
-        
-        $suplementos = Suplemento::where('categoria_id', $categoria->id_categoria)->paginate(6);
-        
+        $categoria = Categoria::findOrFail($id_categoria);
+        $suplementos = Suplemento::where('categoria_id', $id_categoria)->paginate(6);
+
         return view('pages.suplementos.show', compact('categoria', 'suplementos'));
     }
-}
 
+    public function showSingle(Suplemento $suplemento)
+    {
+        return view('pages.suplementos.single', compact('suplemento'));
+    }
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'nombre' => 'required|string|max:255',
+        ]);
+
+        Suplemento::create($data);
+
+        return back()->with('success', 'Suplemento guardado correctamente.');
+    }
+}

@@ -143,9 +143,23 @@ function validarSelect(selectInput, errorElement, mensaje) {
     }
 }
 
-sexoInput.addEventListener("change", () => validarSelect(sexoInput, sexoError, "Debes seleccionar tu sexo"));
-actividadInput.addEventListener("change", () => validarSelect(actividadInput, actividadError, "Debes seleccionar tu nivel de actividad"));
-entrenamientoInput.addEventListener("change", () => validarSelect(entrenamientoInput, entrenamientoError, "Debes seleccionar tu entrenamiento"));
+sexoInput.addEventListener("change", () =>
+    validarSelect(sexoInput, sexoError, "Debes seleccionar tu sexo")
+);
+actividadInput.addEventListener("change", () =>
+    validarSelect(
+        actividadInput,
+        actividadError,
+        "Debes seleccionar tu nivel de actividad"
+    )
+);
+entrenamientoInput.addEventListener("change", () =>
+    validarSelect(
+        entrenamientoInput,
+        entrenamientoError,
+        "Debes seleccionar tu entrenamiento"
+    )
+);
 
 pesoInput.addEventListener("input", validarPeso);
 grasaInput.addEventListener("input", validarGrasa);

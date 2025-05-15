@@ -15,12 +15,44 @@
 
 <body>
     <x-navbar />
-
     <section class="canasta-show">
         <div class="container text-center">
             <img src="https://live.staticflickr.com/65535/54494799353_7a0d18885c_q.jpg" alt="Icono canastas"
                 class="canasta-show__icon">
             <h1 class="canasta-show__title">{{ mb_strtoupper($categoria->nombre, 'UTF-8') }}</h1>
+            @auth
+                @if (isset($canasta) && $canasta)
+                    <div class="mb-5">
+                        @if (auth()->user()->hasFavorited($canasta->id_canasta, 'canasta'))
+                            <form
+                                action="{{ route('favorites.destroy', ['type' => 'canasta', 'itemId' => $canasta->id_canasta]) }}"
+                                method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="canasta-show__btn-fav btn btn-sm btn-outline-danger">
+                                    <i class="fas fa-heart"></i> Quitar
+                                </button>
+                            </form>
+                        @else
+                            <form
+                                action="{{ route('favorites.store', ['type' => 'canasta', 'itemId' => $canasta->id_canasta]) }}"
+                                method="POST">
+                                @csrf
+                                <button type="submit" class="canasta-show__btn-fav btn btn-sm btn-outline-secondary">
+                                    <i class="far fa-heart"></i> Guardar
+                                </button>
+                            </form>
+                        @endif
+                    </div>
+                @endif
+            @else
+                <div class="mb-3">
+                    <a href="{{ route('login') }}" class="btn btn-outline-secondary" title="Inicia sesión para guardar">
+                        <i class="far fa-heart"></i> Favorito
+                    </a>
+                </div>
+            @endauth
+
 
             @php
                 $ingredientes = $canastas->first()->ingredientes;

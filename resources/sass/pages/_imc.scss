@@ -7,37 +7,52 @@
     padding: 3rem 0;
     min-height: 100vh;
 
-    @media (min-width: 768px) {
+    @include mx.responsive(tablet) {
         padding: 5rem 0;
     }
 
+    @include mx.responsive(desktop) {
+        padding: 6rem 3rem;
+    }
+
     &__icon {
-        width: 3.75rem;
-        padding-bottom: 1.5rem;
+        width: 5rem;
+        margin-bottom: 1.5rem;
         transition: transform 0.3s ease;
-        padding-top: 4rem;
-        display: block;
-        margin: 0 auto 1rem auto;  
-        
 
         &:hover {
             transform: scale(1.1);
         }
 
-        @media (min-width: 768px) {
-            width: 4.375rem;
+        @include mx.responsive(tablet) {
+            width: 6rem;
+        }
+
+        @include mx.responsive(desktop) {
+            width: 7rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            width: 8rem;
         }
     }
 
     &__title {
-        font-weight: 700;
-        font-size: 1.75rem;
-        margin-bottom: 4rem;
         color: variables.$primary-color;
-        text-align: center;
+        font-weight: variables.$font-bold;
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
 
-        @media (min-width: 768px) {
-            font-size: 2.5rem;
+        @include mx.responsive(tablet) {
+            font-size: 3rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 4rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 5rem;
         }
     }
 
@@ -48,6 +63,19 @@
         margin-right: auto;
         margin-bottom: 4rem;
         text-align: center;
+        font-size: 1.5rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.5rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.8rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 2rem;
+        }
     }
 
     &__form-container {
@@ -55,7 +83,7 @@
         padding: 2rem;
         border-radius: 0.9375rem;
 
-        @media (min-width: 768px) {
+        @include mx.responsive(tablet) {
             padding: 3rem;
         }
     }
@@ -63,13 +91,28 @@
     &__label {
         color: variables.$dark-color;
         margin-bottom: 0.5rem;
-        font-weight: bold;
+        font-weight: variables.$font-bold;
+        display: block;
+        font-size: 1.5rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.5rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.8rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 2rem;
+        }
     }
 
     &__input {
         background-color: #f2f2f2;
         border: solid 0.09rem #ced4da;
         color: #212529;
+        font-size: 1.5rem;
 
         &::placeholder {
             color: #6c757d;
@@ -81,19 +124,35 @@
             border: none;
             color: #212529;
         }
-    }
 
-    &__button {
-        @extend .button;
-        @extend .button--yellow;
-        @media (min-width: 768px) {
-            width: auto;
+        @include mx.responsive(tablet) {
+            font-size: 1.5rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.8rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 2rem;
         }
     }
 
     &__error {
         color: red;
-        font-size: 0.875rem;
+        font-size: 1.5rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.5rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.8rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 2rem;
+        }
     }
 
     &__result {
@@ -105,10 +164,51 @@
         margin-bottom: 1.5rem;
         color: variables.$white;
         text-align: center;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.8rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 2rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 2.4rem;
+        }
     }
 
     &__classification {
         text-align: center;
-        font-size: 1.25rem;
+        font-size: 1.5rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.8rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 2rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 2.4rem;
+        }
+    }
+
+    &__button {
+        height: 4.5rem;
+        font-size: 1.5rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.5rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.6rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 1.7rem;
+        }
     }
 }

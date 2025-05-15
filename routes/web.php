@@ -1,41 +1,60 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController; 
+use Illuminate\Support\Facades\Auth;
+
+// Controladores
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SuplementoController;
 use App\Http\Controllers\CanastaController;
 use App\Http\Controllers\RecetaController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\CalculadoraController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\FavoriteController;
 
-//Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/home', [HomeController::class, 'index'])->name('home.alternative');
 
-//Suplementos
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::post('/logout', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
 Route::get("/suplementos", [SuplementoController::class, "index"])->name("pages.suplementos.index");
 Route::get("/suplementos/{id_categoria}", [SuplementoController::class, "show"])->name("pages.suplementos.show");
+Route::get("/suplemento/{suplemento}", [SuplementoController::class, "showSingle"])->name("pages.suplementos.single");
 
-//Canastas  
 Route::get("/canastas", [CanastaController::class, "index"])->name("pages.canastas.index");
-Route::get("/canastas/{id_categoria}", [CanastaController::class, "show"])->name("pages.canastas.show");
+Route::get("/canastas/{canasta}", [CanastaController::class, "show"])->name("pages.canastas.show");
 
-//Recetas 
 Route::get('/recetas', [RecetaController::class, 'index'])->name('pages.recetas');
- 
-//Menus 
-Route::get("/menus", [MenuController::class, "index"])->name("pages.menus.index");
-Route::get("/menus/{id_categoria}", [MenuController::class, "show"])->name("pages.menus.show");
+Route::get('/recetas/{receta}', [RecetaController::class, 'show'])->name('recetas.show');
 
-//Calculadoras 
+Route::get("/menus", [MenuController::class, "index"])->name("pages.menus.index");
+Route::get("/menus/{menu}", [MenuController::class, "show"])->name("pages.menus.show");
+
 Route::get('/calculadoras', [CalculadoraController::class, 'index'])->name('pages.calculadoras.index');
 Route::get('/calculadoras/imc', [CalculadoraController::class, 'imc'])->name('pages.calculadoras.imc');
-Route::get('/calculadoras/harrisB', [CalculadoraController::class, 'harrisB'])->name('pages.calculadoras.harris-b');
-Route::get('/calculadoras/grasa-corp', [CalculadoraController::class, 'grasaCorp'])->name('pages.calculadoras.grasa-corp');
-Route::get('/calculadoras/creatina', [CalculadoraController::class, 'creatina'])->name('pages.calculadoras.creatina');
-Route::get('/calculadoras/proteina', [CalculadoraController::class, 'proteina'])->name('pages.calculadoras.proteina');
+Route::get('/calculadoras/macros', [CalculadoraController::class, 'harrisB'])->name('pages.calculadoras.harris-b');
+Route::get('/calculadoras/suplementos', [CalculadoraController::class, 'grasaCorp'])->name('pages.calculadoras.grasa-corp');
+Route::get('/calculadoras/gasto-calorico', [CalculadoraController::class, 'creatina'])->name('pages.calculadoras.creatina');
+Route::get('/calculadoras/agua', [CalculadoraController::class, 'proteina'])->name('pages.calculadoras.proteina');
 
+Route::middleware('auth')->group(function () {
+    Route::post('/favorites/{type}/{itemId}', [FavoriteController::class, 'store'])
+        ->name('favorites.store');
+    Route::delete('/favorites/{type}/{itemId}', [FavoriteController::class, 'destroy'])
+        ->name('favorites.destroy');
+    Route::get('/mi-area', [UserController::class, 'area'])->name('user.area');
+});
 
-
-
+require __DIR__ . '/auth.php';

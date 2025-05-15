@@ -35,7 +35,7 @@
                                     <label for="peso" class="proteina__label">Tu peso (kg)</label>
                                     <input type="number" class="proteina__input form-control" id="peso"
                                         placeholder="Introduce tu peso en kg." required step="0.1" min="1">
-                                    <div class="proteina__error invalid-feedback" id="peso-error"></div>
+                                    <div class="proteina__text-danger invalid-feedback" id="peso-error"></div>
                                 </div>
 
                                 <div class="col-md-6 proteina__form-group">
@@ -51,7 +51,7 @@
                                         </div>
                                         <input type="hidden" name="sexo" id="sexo" required>
                                     </div>
-                                    <div id="sexo-error" class="text-danger" style="display:none;"></div>
+                                    <div id="sexo-error" class="proteina__text-danger" style="display:none;"></div>
                                 </div>
                             </div>
 
@@ -80,7 +80,7 @@
                                         </div>
                                         <input type="hidden" name="actividad" id="actividad" required>
                                     </div>
-                                    <div id="actividad-error" class="text-danger" style="display:none;"></div>
+                                    <div id="actividad-error" class="proteina__text-danger" style="display:none;"></div>
                                 </div>
 
                             </div>
@@ -101,7 +101,8 @@
                                         </div>
                                         <input type="hidden" name="entrenamiento" id="entrenamiento" required>
                                     </div>
-                                    <div id="entrenamiento-error" class="text-danger" style="display:none;"></div>
+                                    <div id="entrenamiento-error" class="proteina__text-danger"
+                                        style="display:none;"></div>
                                 </div>
                             </div>
 
@@ -109,17 +110,18 @@
                                 <div class="col-12 proteina__form-group">
                                     <label for="grasa" class="proteina__label">
                                         Tu grasa corporal (%) <a href="{{ route('pages.calculadoras.grasa-corp') }}"
-                                            style="font-size: 0.875rem;">(Calcularla)</a>
+                                            class="proteina__link">(Calcularla)</a>
                                     </label>
                                     <input type="number" class="proteina__input form-control" id="grasa"
                                         placeholder="Introduce tu % de grasa corporal" min="1" max="60"
                                         step="0.1">
-                                    <div id="grasa-error" class="text-danger" style="display:none;"></div>
+                                    <div id="grasa-error" class="proteina__text-danger" style="display:none;"></div>
                                 </div>
                             </div>
 
-                            <div class="proteina__button-wrapper d-grid gap-2 mt-4">
-                                <button type="submit" class="btn button button--yellow">Calcular</button>
+                            <div class="d-grid gap-2 mt-4">
+                                <button type="submit"
+                                    class="proteina__button btn button button--yellow">Calcular</button>
                             </div>
 
                         </form>

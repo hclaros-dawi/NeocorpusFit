@@ -12,8 +12,12 @@
         padding: 5rem 0;
     }
 
+    @include mx.responsive(desktop) {
+        padding: 6rem 3rem;
+    }
+
     &__icon {
-        width: 3.75rem;
+        width: 5rem;
         margin-bottom: 1.5rem;
         transition: transform 0.3s ease;
         margin-top: 4rem;
@@ -23,26 +27,34 @@
         }
 
         @include mx.responsive(tablet) {
-            width: 4.375rem;
+            width: 6rem;
+        }
+
+        @include mx.responsive(desktop) {
+            width: 7rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            width: 8rem;
         }
     }
 
     &__title-section {
         color: variables.$primary-color;
         font-weight: variables.$font-bold;
-        font-size: 1.75rem;
+        font-size: 2.5rem;
         margin-bottom: 2.5rem;
 
         @include mx.responsive(tablet) {
-            font-size: 2.5rem;
+            font-size: 3rem;
         }
 
         @include mx.responsive(desktop) {
-            font-size: 3rem;
+            font-size: 4rem;
         }
 
         @include mx.responsive(large-desktop) {
-            font-size: 3rem;
+            font-size: 5rem;
         }
     }
 
@@ -62,48 +74,45 @@
             color: variables.$dark-color;
             border-radius: 0.5rem;
             padding: 0.75rem;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             font-weight: variables.$font-bold;
             margin-bottom: 1rem;
 
             @include mx.responsive(tablet) {
-                font-size: 1.2rem;
+                font-size: 1.8rem;
             }
 
             @include mx.responsive(desktop) {
-                font-size: 1.3rem;
+                font-size: 2rem;
             }
 
             @include mx.responsive(large-desktop) {
-                font-size: 1.4rem;
+                font-size: 2.4rem;
             }
         }
 
         &__card-text {
-            font-size: 1rem;
+            font-size: 1.5rem;
             line-height: 1.6;
             overflow: hidden;
 
             @include mx.responsive(tablet) {
-                font-size: 1.1rem;
+                font-size: 1.5rem;
             }
 
             @include mx.responsive(desktop) {
-                font-size: 1.2rem;
+                font-size: 1.8rem;
             }
 
             @include mx.responsive(large-desktop) {
-                font-size: 1.3rem;
+                font-size: 2rem;
             }
         }
     }
-}
 
-.btn-primary {
-    background-color: variables.$secondary-color;
-    color: variables.$black;
-    font-weight: variables.$font-bold;
-    margin-top: 2.3rem;
+    &__btn-fav {
+        font-size: 2rem !important;
+    }
 }
 
 .btn-outline-secondary {
@@ -111,7 +120,7 @@
     color: variables.$white;
     font-weight: variables.$font-bold;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 
     i {
         padding-right: 0.5rem;
@@ -123,14 +132,14 @@
     }
 
     @include mx.responsive(tablet) {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     @include mx.responsive(desktop) {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
 
     @include mx.responsive(large-desktop) {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 }

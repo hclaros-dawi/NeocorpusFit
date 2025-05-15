@@ -8,23 +8,23 @@ use App\Models\Suplemento;
 
 class CategoriaController extends Controller
 {
-    public function index()
-    {
-         $categorias = Categoria::all();
-        
-         return view('categorias.index', compact('categorias'));
-    }
+     public function index()
+     {
+          $categorias = Categoria::all();
 
-    public function show($id)
-    {
-         $categoria = Categoria::find($id);
-        
-         $suplementos = Suplemento::where('categoria_id', $id)->get();
-        
-         if (!$categoria) {
-            return redirect()->route('categorias.index')->with('error', 'Categoría no encontrada');
-        }
+          return view('categorias.index', compact('categorias'));
+     }
 
-         return view('categorias.show', compact('categoria', 'suplementos'));
-    }
+     public function show($id)
+     {
+          $categoria = Categoria::find($id);
+
+          $suplementos = Suplemento::where('categoria_id', $id)->get();
+
+          if (!$categoria) {
+               return redirect()->route('categorias.index')->with('error', 'Categoría no encontrada');
+          }
+
+          return view('categorias.show', compact('categoria', 'suplementos'));
+     }
 }

@@ -12,6 +12,10 @@
         padding: 5rem 0;
     }
 
+    @include mx.responsive(desktop) {
+        padding: 6rem 3rem;
+    }
+
     &__container {
         padding: 1rem;
 
@@ -21,7 +25,7 @@
     }
 
     &__icon {
-        width: 3.75rem;
+        width: 5rem;
         margin-bottom: 1.5rem;
         transition: transform 0.3s ease;
         margin-top: 4rem;
@@ -31,26 +35,34 @@
         }
 
         @include mx.responsive(tablet) {
-            width: 4.375rem;
+            width: 6rem;
+        }
+
+        @include mx.responsive(desktop) {
+            width: 7rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            width: 8rem;
         }
     }
 
     &__title {
         color: variables.$primary-color;
         font-weight: variables.$font-bold;
-        font-size: 1.75rem;
+        font-size: 2.5rem;
         margin-bottom: 2.5rem;
 
         @include mx.responsive(tablet) {
-            font-size: 2.5rem;
+            font-size: 3rem;
         }
 
         @include mx.responsive(desktop) {
-            font-size: 3rem;
+            font-size: 4rem;
         }
 
         @include mx.responsive(large-desktop) {
-            font-size: 3rem;
+            font-size: 5rem;
         }
     }
 
@@ -88,21 +100,18 @@
         td,
         th {
             padding: 0.5rem;
-            font-size: 1.1rem;
+            font-size: 1.4rem;
 
             @include mx.responsive(tablet) {
-                font-size: 1.2rem;
-                padding: 1rem;
+                font-size: 1.8rem;
             }
 
             @include mx.responsive(desktop) {
-                font-size: 1.3rem;
-                padding: 1rem;
+                font-size: 2rem;
             }
 
             @include mx.responsive(large-desktop) {
-                font-size: 1.4rem;
-                padding: 1rem;
+                font-size: 2.2rem;
             }
 
             a {
@@ -168,7 +177,7 @@
     }
 
     .totales {
-        font-size: 1.1rem;
+        font-size: 1.7rem;
         padding: 1rem;
         width: 100%;
         max-width: 25rem;
@@ -180,15 +189,30 @@
         }
 
         @include mx.responsive(tablet) {
-            font-size: 1.2rem;
+            font-size: 1.8rem;
         }
 
         @include mx.responsive(desktop) {
-            font-size: 1.3rem;
+            font-size: 2rem;
         }
 
         @include mx.responsive(large-desktop) {
-            font-size: 1.4rem;
+            font-size: 2.2rem;
         }
+    }
+
+    &__btn-fav {
+        font-size: 2.1rem;
+    }
+}
+
+@include mx.responsive(large-desktop) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 137.5rem;
     }
 }

@@ -37,7 +37,7 @@
                                         <input type="number" class="creatina__input form-control" id="peso"
                                             placeholder="Introduce tu peso en kg." required step="0.1"
                                             min="1">
-                                        <div class="creatina__error invalid-feedback" id="peso-error"></div>
+                                        <div class="creatina__text-danger invalid-feedback" id="peso-error"></div>
                                     </div>
                                 </div>
                             </div>
@@ -57,14 +57,14 @@
                                         </div>
                                         <input type="hidden" name="cargaBool" id="cargaBool" required>
                                     </div>
-                                    <div id="cargaBool-error" class="text-danger" style="display:none;"></div>
+                                    <div id="cargaBool-error" class="proteina__text-danger" style="display:none;"></div>
                                 </div>
                             </div>
 
-                            <div class="creatina__button-wrapper d-grid gap-2 mt-4">
-                                <button type="submit" class="btn button button--yellow">Calcular</button>
+                            <div class="d-grid gap-2 mt-4">
+                                <button type="submit"
+                                    class="creatina__button btn button button--yellow">Calcular</button>
                             </div>
-
                         </form>
                     </div>
                 </div>

@@ -28,7 +28,7 @@
                             <h2 class="menus__card-title">{{ $categoria->nombre }}</h2>
                             <a href="{{ route('pages.menus.show', $categoria->id_categoria) }}"
                                 class="menus__button button--alt">
-                                Ver Menús
+                                Ver Menú
                             </a>
                         </div>
                     </div>

@@ -17,7 +17,7 @@
     }
 
     &__icon {
-        width: 3.75rem;
+        width: 5rem;
         margin-bottom: 1.5rem;
         transition: transform 0.3s ease;
         margin-top: 4rem;
@@ -27,30 +27,34 @@
         }
 
         @include mx.responsive(tablet) {
-            width: 4.375rem;
+            width: 6rem;
         }
 
         @include mx.responsive(desktop) {
-            width: 5rem;
+            width: 7rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            width: 8rem;
         }
     }
 
     &__title {
-        font-weight: variables.$font-bold;
-        font-size: 1.75rem;
-        margin-bottom: 4rem;
         color: variables.$white;
+        font-weight: variables.$font-bold;
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
 
         @include mx.responsive(tablet) {
-            font-size: 2.5rem;
+            font-size: 3rem;
         }
 
         @include mx.responsive(desktop) {
-            font-size: 3rem;
+            font-size: 4rem;
         }
 
         @include mx.responsive(large-desktop) {
-            font-size: 3rem;
+            font-size: 5rem;
         }
     }
 
@@ -67,7 +71,7 @@
             color: variables.$white;
             border-radius: 0.5rem;
             padding: 0.75rem 1rem;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             transition: border-color 0.3s ease;
 
             &:focus {
@@ -81,15 +85,15 @@
             }
 
             @include mx.responsive(tablet) {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
             }
 
             @include mx.responsive(desktop) {
-                font-size: 1.3rem;
+                font-size: 1.8rem;
             }
 
             @include mx.responsive(large-desktop) {
-                font-size: 1.4rem;
+                font-size: 2rem;
             }
         }
 
@@ -104,7 +108,7 @@
             border-radius: 0.5rem;
             padding: 0.75rem 1.25rem;
             font-weight: variables.$font-semibold;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             transition: background-color 0.3s ease;
             width: 8rem;
             margin: auto;
@@ -119,15 +123,15 @@
             }
 
             @include mx.responsive(tablet) {
-                font-size: 1.2rem;
+                font-size: 1.6rem;
             }
 
             @include mx.responsive(desktop) {
-                font-size: 1.3rem;
+                font-size: 1.7rem;
             }
 
             @include mx.responsive(large-desktop) {
-                font-size: 1.4rem;
+                font-size: 1.8rem;
             }
         }
 
@@ -166,34 +170,40 @@
 
             &__title {
                 font-weight: variables.$font-bold;
-                font-size: 1.2rem;
+                font-size: 1.7rem;
+                height: 6rem;
 
                 @include mx.responsive(tablet) {
-                    font-size: 1.3rem;
+                    font-size: 1.8rem;
+                    height: 5rem;
                 }
 
                 @include mx.responsive(desktop) {
-                    font-size: 1.4rem;
+                    font-size: 2rem;
+                    height: 7.5rem;
                 }
 
                 @include mx.responsive(large-desktop) {
-                    font-size: 1.5rem;
+                    font-size: 2.4rem;
+                    height: 8.5rem;
+                    @include mx.flex-center;
                 }
             }
 
             p {
-                font-size: 1.1rem;
+                font-size: 1.5rem;
 
                 @include mx.responsive(tablet) {
-                    font-size: 1.2rem;
+                    font-size: 1.5rem;
                 }
 
                 @include mx.responsive(desktop) {
-                    font-size: 1.3rem;
+                    font-size: 1.8rem;
                 }
 
                 @include mx.responsive(large-desktop) {
-                    font-size: 1.4rem;
+                    font-size: 2rem;
+                    margin-bottom: 2rem;
                 }
             }
 
@@ -230,7 +240,7 @@
 
             .page-link {
                 padding: 0.5rem 0.75rem;
-                font-size: 1.1rem;
+                font-size: 1.5rem;
                 background-color: transparent;
                 border: 0.0625rem solid #a85cf9;
                 color: #a85cf9;
@@ -243,15 +253,15 @@
                 }
 
                 @include mx.responsive(tablet) {
-                    font-size: 1.2rem;
+                    font-size: 1.5rem;
                 }
 
                 @include mx.responsive(desktop) {
-                    font-size: 1.3rem;
+                    font-size: 2rem;
                 }
 
                 @include mx.responsive(large-desktop) {
-                    font-size: 1.4rem;
+                    font-size: 2.5rem;
                 }
             }
 
@@ -289,19 +299,25 @@
     }
 
     &__modal {
-        .modal-dialog {
-            max-width: 43.75rem;
-            margin: 2rem auto;
+        @include mx.responsive(tablet) {
+            --bs-modal-width: 43.75rem;
+        }
+
+        @include mx.responsive(desktop) {
+            --bs-modal-width: 50rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            --bs-modal-width: 56.25rem;
         }
 
         .modal-content {
             background: linear-gradient(145deg, #a866ff, #9514ff);
             border-radius: 1.5rem;
-            padding: 2.5rem;
+            padding: 3rem;
             font-family: "Inter", sans-serif;
             box-shadow: 0 0.9375rem 1.875rem rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease-in-out;
-            overflow-y: auto;
 
             &:hover {
                 transform: scale(1.01);
@@ -319,7 +335,7 @@
         }
 
         .modal-recetas-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: variables.$font-extra-bold;
             color: variables.$white;
             text-align: center;
@@ -328,6 +344,18 @@
             text-shadow: 0.125rem 0.125rem 0.625rem rgba(0, 0, 0, 0.25);
             border-bottom: 0;
             flex-grow: 1;
+
+            @include mx.responsive(tablet) {
+                font-size: 1.7rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 1.8rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 2.4rem;
+            }
         }
 
         .modal-receta-body {
@@ -337,12 +365,24 @@
             line-height: 1.6;
 
             p {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
                 font-weight: variables.$font-bold;
                 color: variables.$secondary-color;
                 margin-top: 1.5rem;
                 margin-bottom: 0.5rem;
                 text-transform: uppercase;
+
+                @include mx.responsive(tablet) {
+                    font-size: 1.7rem;
+                }
+
+                @include mx.responsive(desktop) {
+                    font-size: 1.8rem;
+                }
+
+                @include mx.responsive(large-desktop) {
+                    font-size: 2.3rem;
+                }
             }
 
             ul {
@@ -356,6 +396,19 @@
                 padding: 0.5rem 1rem;
                 border-radius: 0.5rem;
                 margin-bottom: 0.5rem;
+                font-size: 1.4rem;
+
+                @include mx.responsive(tablet) {
+                    font-size: 1.7rem;
+                }
+
+                @include mx.responsive(desktop) {
+                    font-size: 1.8rem;
+                }
+
+                @include mx.responsive(large-desktop) {
+                    font-size: 1.9rem;
+                }
             }
         }
 
@@ -390,7 +443,24 @@
                 min-width: 11.25rem;
                 max-width: 15.625rem;
                 word-wrap: break-word;
+                font-size: 1.4rem;
+
+                @include mx.responsive(tablet) {
+                    font-size: 1.7rem;
+                }
+
+                @include mx.responsive(desktop) {
+                    font-size: 1.8rem;
+                }
+
+                @include mx.responsive(large-desktop) {
+                    font-size: 1.9rem;
+                }
             }
         }
+    }
+
+    &__btn-fav {
+        font-size: 2.1rem;
     }
 }

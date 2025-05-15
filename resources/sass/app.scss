@@ -8,7 +8,7 @@
 @use "components/footer";
 @use "components/info-card";
 @use "components/product-modal";
- 
+
 @use "pages/home";
 @use "pages/suplementos-index";
 @use "pages/suplementos-show";
@@ -23,5 +23,6 @@
 @use "pages/creatina";
 @use "pages/grasaCorp";
 @use "pages/recetas";
-
-
+@use "pages/area";
+@use "pages/login";
+@use "pages/register";

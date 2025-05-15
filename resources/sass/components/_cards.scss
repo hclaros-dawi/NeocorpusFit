@@ -54,12 +54,21 @@
         }
 
         &__title {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: variables.$font-bold;
             color: variables.$secondary-color;
             margin-bottom: 0.75rem;
+
             @include mx.responsive(tablet) {
                 font-size: 2rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 2.2rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 2.5rem;
             }
         }
 
@@ -78,19 +87,22 @@
     .card-feature__text {
         color: variables.$light-gray;
         width: auto;
-        height: 6rem;
-        font-size: 1.2rem;
+        height: 6.5rem;
+        font-size: 1.5rem;
 
         @include mx.responsive(tablet) {
-            font-size: 1.3rem;
+            height: 9.5rem;
+            font-size: 1.6rem;
         }
 
         @include mx.responsive(desktop) {
-            font-size: 1.5rem;
+            height: 9.5rem;
+            font-size: 1.8rem;
         }
 
         @include mx.responsive(large-desktop) {
-            font-size: 1.7rem;
+            height: 9.5rem;
+            font-size: 2rem;
         }
     }
 }
@@ -100,29 +112,42 @@
     border-radius: 2rem;
     box-shadow: 1.1875rem 2.8125rem 4.9375rem rgba(0, 0, 0, 0.25);
 
-    .card-feature__title {
-        color: variables.$dark-color;
+    .card-feature__body__custom-heading {
+        font-size: 1.8rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 2rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 2.2rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 2.5rem;
+        }
     }
 
     .card-feature__text {
         color: variables.$dark-color;
         width: auto;
-        height: 6.5rem;
+        height: 15.5rem;
         @include mx.flex-center;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
 
         @include mx.responsive(tablet) {
-            font-size: 1.1rem;
-            margin-top: 1.4rem;
+            height: 16rem;
+            font-size: 1.5rem;
         }
 
         @include mx.responsive(desktop) {
-            font-size: 1.2rem;
+            height: 16rem;
+            font-size: 1.8rem;
         }
 
         @include mx.responsive(large-desktop) {
-            font-size: 1.4rem;
-            margin-top: 1rem;
+            height: 15.5rem;
+            font-size: 2rem;
         }
     }
 }

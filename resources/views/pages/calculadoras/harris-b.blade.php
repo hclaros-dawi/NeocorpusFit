@@ -35,7 +35,7 @@
                                     <label for="edad" class="harris-b__label">Tu edad</label>
                                     <input type="number" class="harris-b__input form-control" id="edad"
                                         placeholder="Introduce tu edad" required step="0.1" min="1">
-                                    <div class="harris-b__error invalid-feedback" id="edad-error"></div>
+                                    <div class="harris-b__text-danger invalid-feedback" id="edad-error"></div>
                                 </div>
                                 <div class="col-md-6 harris-b__form-group">
                                     <label for="sexo-trigger" class="harris-b__label">Tu sexo</label>
@@ -50,7 +50,7 @@
                                         </div>
                                         <input type="hidden" name="sexo" id="sexo" required>
                                     </div>
-                                    <div id="sexo-error" class="text-danger" style="display:none;"></div>
+                                    <div id="sexo-error" class="harris-b__text-danger" style="display:none;"></div>
                                 </div>
                             </div>
 
@@ -59,13 +59,13 @@
                                     <label for="peso" class="harris-b__label">Tu peso (kg)</label>
                                     <input type="number" class="harris-b__input form-control" id="peso"
                                         placeholder="Introduce tu peso en kg." required step="0.1" min="1">
-                                    <div class="harris-b__error invalid-feedback" id="peso-error"></div>
+                                    <div class="harris-b__text-danger invalid-feedback" id="peso-error"></div>
                                 </div>
                                 <div class="col-md-6 harris-b__form-group">
                                     <label for="altura" class="harris-b__label">Tu altura (cm)</label>
                                     <input type="number" class="harris-b__input form-control" id="altura"
                                         placeholder="Introduce tu altura en cm." required step="1" min="50">
-                                    <div class="harris-b__error invalid-feedback" id="altura-error"></div>
+                                    <div class="harris-b__text-danger invalid-feedback" id="altura-error"></div>
                                 </div>
                             </div>
 
@@ -94,7 +94,8 @@
                                         </div>
                                         <input type="hidden" name="actividad" id="actividad" required>
                                     </div>
-                                    <div id="actividad-error" class="text-danger" style="display:none;"></div>
+                                    <div id="actividad-error" class="harris-b__text-danger" style="display:none;">
+                                    </div>
                                 </div>
                             </div>
 
@@ -118,12 +119,14 @@
                                         </div>
                                         <input type="hidden" name="objetivo" id="objetivo" required>
                                     </div>
-                                    <div id="objetivo-error" class="text-danger" style="display:none;"></div>
+                                    <div id="objetivo-error" class="harris-b__text-danger" style="display:none;">
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="harris-b__button-wrapper d-grid gap-2 mt-4">
-                                <button type="submit" class="btn button button--yellow">Calcular</button>
+                            <div class="d-grid gap-2 mt-4">
+                                <button type="submit"
+                                    class="harris-b__button btn button button--yellow">Calcular</button>
                             </div>
                         </form>
                     </div>

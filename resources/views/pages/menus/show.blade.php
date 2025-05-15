@@ -20,6 +20,32 @@
             <img src="https://live.staticflickr.com/65535/54494721744_e55ea8e546_s.jpg" alt="Icono menús"
                 class="menus-show__icon">
             <h1 class="menus-show__title">{{ mb_strtoupper($categoria->nombre, 'UTF-8') }}</h1>
+            @auth
+                @if (isset($menu) && $menu)
+                    @if (auth()->user()->hasFavorited($menu->id_menu, 'menu'))
+                        <form action="{{ route('favorites.destroy', ['type' => 'menu', 'itemId' => $menu->id_menu]) }}"
+                            method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="menus-show__btn-fav btn btn-sm btn-outline-danger">
+                                <i class="fas fa-heart"></i> Quitar
+                            </button>
+                        </form>
+                    @else
+                        <form action="{{ route('favorites.store', ['type' => 'menu', 'itemId' => $menu->id_menu]) }}"
+                            method="POST">
+                            @csrf
+                            <button type="submit" class="menus-show__btn-fav btn btn-sm btn-outline-secondary">
+                                <i class="far fa-heart"></i> Guardar
+                            </button>
+                        </form>
+                    @endif
+                @endif
+            @else
+                <a href="{{ route('login') }}" class="btn btn-outline-secondary" title="Inicia sesión para guardar">
+                    <i class="far fa-heart"></i> Favorito
+                </a>
+            @endauth
 
             <div class="container py-4">
                 <div class="table-responsive">
@@ -72,7 +98,7 @@
             </div>
             <div class="container text-center py-5">
                 <a href="{{ route('home') }}" class="btn btn-outline-secondary px-4 py-2">
-                    <i class="fas fa-arrow-left me-2"></i> Volver a la página de inicio
+                    <i class="fas fa-arrow-left me-2"></i> Volver a todos los menús
                 </a>
             </div>
         </div>

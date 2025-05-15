@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             RecetaMenuSeeder::class,
             CanastaIngredienteSeeder::class,
             PasoRecetaSeeder::class,
+            AdminUserSeeder::class,
          ]);
     }
 }

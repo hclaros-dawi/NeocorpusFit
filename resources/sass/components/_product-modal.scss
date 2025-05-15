@@ -1,9 +1,12 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as mx;
+
 .modal-content {
     background: linear-gradient(145deg, #a866ff, #9514ff);
     border-radius: 1.5rem;
     padding: 3rem;
     font-family: "Inter", sans-serif;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.9375rem 1.875rem rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 }
 
@@ -13,24 +16,60 @@
 
 .modal-title {
     font-size: 2.25rem;
-    font-weight: 800;
-    color: #ffffff;
+    font-weight: variables.$font-extra-bold;
+    color: variables.$white;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+    letter-spacing: 0.0938rem;
+    text-shadow: 0.125rem 0.125rem 0.625rem rgba(0, 0, 0, 0.25);
     border-bottom: 0;
+
+    @include mx.responsive(tablet) {
+        font-size: 2.4rem;
+    }
+
+    @include mx.responsive(desktop) {
+        font-size: 2.5rem;
+    }
+
+    @include mx.responsive(large-desktop) {
+        font-size: 3rem;
+    }
 }
 
 .modal-body {
-    font-size: 1.125rem;
+    font-size: 1.4rem;
     line-height: 1.6;
     margin-top: 1rem;
+
+    @include mx.responsive(tablet) {
+        font-size: 1.7rem;
+    }
+
+    @include mx.responsive(desktop) {
+        font-size: 1.8rem;
+    }
+
+    @include mx.responsive(large-desktop) {
+        font-size: 1.9rem;
+    }
 }
 
 .modal-body p {
-    border-left: 5px solid #fcce3a;
-    font-size: 1rem;
+    border-left: 0.3125rem solid variables.$secondary-color;
+    font-size: 1.4rem;
+
+    @include mx.responsive(tablet) {
+        font-size: 1.7rem;
+    }
+
+    @include mx.responsive(desktop) {
+        font-size: 1.8rem;
+    }
+
+    @include mx.responsive(large-desktop) {
+        font-size: 1.9rem;
+    }
 }
 
 .btn-close {
@@ -39,4 +78,18 @@
 
 .btn-close:hover {
     opacity: 1;
+}
+
+.modal {
+    @include mx.responsive(tablet) {
+        --bs-modal-width: 43.75rem;
+    }
+
+    @include mx.responsive(desktop) {
+        --bs-modal-width: 50rem;
+    }
+
+    @include mx.responsive(large-desktop) {
+        --bs-modal-width: 56.25rem;
+    }
 }
