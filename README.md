@@ -6,27 +6,30 @@ Una plataforma integral de nutrición, ayudando a los usuarios a alcanzar sus ob
 
 ## Objetivos
 
-**NeoCorpusFit** busca ayudar a los usuarios a alcanzar sus metas de salud y fitness a través de herramientas interactivas, incluyendo:
+- ✅ **Desarrollar una plataforma web para la gestión de la nutrición**, integrando herramientas como:
+  - Calculadora de IMC
+  - Calculadora de proteínas
+  - Calculadora de creatina
+  - Calculadora de calorías de mantenimiento (Harris-Benedict)
+  - Calculadora de porcentaje de grasa corporal
+  - 
+- **Implementar una canasta de compras inteligente**, con cinco menús predefinidos que contienen productos con desglose de precios, enlaces a recetas asociadas y justificación nutricional.
+- **Diseñar una interfaz intuitiva y accesible**, utilizando tecnologías modernas de frontend y asegurando una experiencia de usuario fluida y responsive.
+- **Brindar información detallada sobre suplementos**, clasificados por tipo y subtipo, permitiendo al usuario acceder fácilmente a los productos adecuados para sus metas.
+- **Ofrecer funcionalidades de área personal**, donde el usuario autenticado puede guardar y gestionar sus suplementos, menús, recetas y canastas favoritas, mejorando la personalización y el seguimiento de su progreso.
+- **Sugerir menús y recetas personalizadas**, alineadas con los productos recomendados en la canasta y los objetivos nutricionales definidos por el usuario.
 
--   Cálculos de IMC, proteínas, creatina y calorías de mantenimiento según los objetivos del usuario
--   Menús de alimentación personalizados, alineados con los productos de las canastas recomendadas y las recetas sugeridas, para asegurar coherencia con los objetivos nutricionales del usuario
--   Recetas fáciles y nutritivas, creadas con los productos recomendados en la canasta de compras, alineadas con sus objetivos nutricionales
--   Optimización de la canasta de compras para ajustarse a sus objetivos nutricionales
 
 ### Funcionalidades Clave:
 
--   **Calculadoras**: Se incluirán 4 calculadoras interactivas:
-
-    1. **Calculadora de IMC**: Permite calcular el Índice de Masa Corporal (IMC) para determinar si el usuario está en su peso ideal
-    2. **Calculadora de proteínas**: Calcula la cantidad de proteínas que un usuario debe consumir según su peso y altura
-    3. **Calculadora de creatina**: Determina la cantidad de creatina que el usuario debe consumir según su peso y altura
-    4. **Calculadora de Harris-Benedict**: Calcula las calorías de mantenimiento, ayudando a los usuarios a entrar en un déficit o superávit calórico, según sus objetivos
-    5. **Calculadora de porcentaje de grasa corporal**: Calcula el porcentaje de grasa corporal del usuario, lo cual es esencial para calcular con precisión las necesidades proteicas en el proceso de ganar masa muscular. Esta calculadora también puede usarse independientemente, para obtener un estimado del nivel de grasa corporal del usuario.
-
--   **Recetas personalizadas**: En función de los productos comprados, se sugieren recetas fáciles y rápidas para mantener una alimentación saludable
-
--   **Canasta de compras economizada**: Se presentan 5 menús predefinidos para objetivos específicos (como mediterráneo, alto en proteínas, etc.). Cada menú tiene su respectiva factura simulada, lo que incluye una lista de productos recomendados con precios aproximados. Los usuarios podrán ver los productos de la lista y sus valores nutricionales (macros) al hacer clic en ellos. Además, cada producto se justifica según su coherencia con los objetivos del usuario.
-
+- **Calculadoras Interactivas**
+- **Listado de suplementos (por tipos y subtipos)**
+- **Recetas filtrables con detalle en modal (ingredientes y pasos)**
+- **Canasta con productos, precios y enlaces a recetas**
+- **Menús clasificados por tipo de dieta**
+- **Gestión de favoritos** (recetas, menús, suplementos, canastas)
+- **Área Personal de usuario** con CRUD de guardados
+  
 ## Tecnologías utilizadas
 
 -   **Back-End**: PHP (Laravel)
