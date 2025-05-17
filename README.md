@@ -12,7 +12,7 @@ Una plataforma integral de nutrición, ayudando a los usuarios a alcanzar sus ob
   - Calculadora de creatina
   - Calculadora de calorías de mantenimiento (Harris-Benedict)
   - Calculadora de porcentaje de grasa corporal
-  - 
+    
 - **Implementar una canasta de compras inteligente**, con cinco menús predefinidos que contienen productos con desglose de precios, enlaces a recetas asociadas y justificación nutricional.
 - **Diseñar una interfaz intuitiva y accesible**, utilizando tecnologías modernas de frontend y asegurando una experiencia de usuario fluida y responsive.
 - **Brindar información detallada sobre suplementos**, clasificados por tipo y subtipo, permitiendo al usuario acceder fácilmente a los productos adecuados para sus metas.
