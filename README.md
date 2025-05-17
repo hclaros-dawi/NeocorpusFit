@@ -6,7 +6,7 @@ Una plataforma integral de nutrición, ayudando a los usuarios a alcanzar sus ob
 
 ## Objetivos
 
-- ✅ **Desarrollar una plataforma web para la gestión de la nutrición**, integrando herramientas como:
+- **Desarrollar una plataforma web para la gestión de la nutrición**, integrando herramientas como:
   - Calculadora de IMC
   - Calculadora de proteínas
   - Calculadora de creatina
