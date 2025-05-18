@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Sitemap\SitemapGenerator;
 
 // Controladores
 use App\Http\Controllers\ProfileController;
@@ -55,6 +56,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/favorites/{type}/{itemId}', [FavoriteController::class, 'destroy'])
         ->name('favorites.destroy');
     Route::get('/mi-area', [UserController::class, 'area'])->name('user.area');
+});
+
+Route::get('/sitemap', function () {
+    SitemapGenerator::create('https://neocorpusfit.com')
+        ->writeToFile(public_path('sitemap.xml'));
+    return 'Sitemap generado!';
 });
 
 require __DIR__ . '/auth.php';
