@@ -1,0 +1,466 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as mx;
+@use "../components/buttons";
+
+.recetas {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 3rem 0;
+    min-height: 100vh;
+
+    @include mx.responsive(tablet) {
+        padding: 5rem 0;
+    }
+
+    @include mx.responsive(desktop) {
+        padding: 6rem 3rem;
+    }
+
+    &__icon {
+        width: 5rem;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+        margin-top: 4rem;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        @include mx.responsive(tablet) {
+            width: 6rem;
+        }
+
+        @include mx.responsive(desktop) {
+            width: 7rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            width: 8rem;
+        }
+    }
+
+    &__title {
+        color: variables.$white;
+        font-weight: variables.$font-bold;
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 3rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 4rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 5rem;
+        }
+    }
+
+    &__search {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+        margin-bottom: 2rem;
+
+        input[type="text"] {
+            background-color: #2a2a2a;
+            border: 0.0625rem solid #a85cf9;
+            color: variables.$white;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            font-size: 1.5rem;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                border-color: variables.$secondary-color;
+                outline: none;
+                box-shadow: 0 0 0 0.15rem rgba(252, 206, 58, 0.4);
+            }
+
+            &::placeholder {
+                color: #bbb;
+            }
+
+            @include mx.responsive(tablet) {
+                font-size: 1.5rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 1.8rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 2rem;
+            }
+        }
+
+        &__btn-primary {
+            margin-top: 0.5rem;
+        }
+
+        button[type="submit"] {
+            background-color: #a85cf9;
+            color: #fff;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            font-weight: variables.$font-semibold;
+            font-size: 1.5rem;
+            transition: background-color 0.3s ease;
+            width: 8rem;
+            margin: auto;
+
+            &:hover {
+                background-color: #a85cf9;
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 0 0.15rem rgba(168, 92, 249, 0.4);
+            }
+
+            @include mx.responsive(tablet) {
+                font-size: 1.6rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 1.7rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 1.8rem;
+            }
+        }
+
+        @include mx.responsive(tablet) {
+            flex-direction: row;
+            align-items: center;
+
+            input[type="text"] {
+                flex: 1;
+            }
+
+            button[type="submit"] {
+                margin: 0 0 0 1rem;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        @media (min-width: 576px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width: 992px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        &__card {
+            background-color: variables.$dark-gray;
+            border: none;
+            color: #fff;
+
+            &__title {
+                font-weight: variables.$font-bold;
+                font-size: 1.7rem;
+                height: 6rem;
+
+                @include mx.responsive(tablet) {
+                    font-size: 1.8rem;
+                    height: 5rem;
+                }
+
+                @include mx.responsive(desktop) {
+                    font-size: 2rem;
+                    height: 7.5rem;
+                }
+
+                @include mx.responsive(large-desktop) {
+                    font-size: 2.4rem;
+                    height: 8.5rem;
+                    @include mx.flex-center;
+                }
+            }
+
+            p {
+                font-size: 1.5rem;
+
+                @include mx.responsive(tablet) {
+                    font-size: 1.5rem;
+                }
+
+                @include mx.responsive(desktop) {
+                    font-size: 1.8rem;
+                }
+
+                @include mx.responsive(large-desktop) {
+                    font-size: 2rem;
+                    margin-bottom: 2rem;
+                }
+            }
+
+            &__img-top {
+                width: auto;
+                height: 18.75rem;
+                object-fit: cover;
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+            }
+
+            &__btn {
+                @extend .button--alt;
+                margin: 0 auto 1rem auto;
+            }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: 2rem;
+
+        .page-item {
+            display: none;
+
+            &.active,
+            &:first-child,
+            &:last-child {
+                display: inline-block;
+            }
+
+            .page-link {
+                padding: 0.5rem 0.75rem;
+                font-size: 1.5rem;
+                background-color: transparent;
+                border: 0.0625rem solid #a85cf9;
+                color: #a85cf9;
+                border-radius: 0.5rem;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: #a85cf9;
+                    color: #fff;
+                }
+
+                @include mx.responsive(tablet) {
+                    font-size: 1.5rem;
+                }
+
+                @include mx.responsive(desktop) {
+                    font-size: 2rem;
+                }
+
+                @include mx.responsive(large-desktop) {
+                    font-size: 2.5rem;
+                }
+            }
+
+            &.active .page-link {
+                background-color: #a85cf9;
+                border-color: #a85cf9;
+                color: #fff;
+            }
+
+            &.disabled .page-link {
+                color: #666;
+                background-color: #2a2a2a;
+                border-color: #444;
+            }
+        }
+
+        @include mx.responsive(tablet) {
+            .page-item {
+                &:nth-child(n + 2):nth-child(-n + 4) {
+                    display: inline-block;
+                }
+            }
+
+            @include mx.responsive(desktop) {
+                .page-item {
+                    display: inline-block;
+                }
+
+                .page-link {
+                    padding: 0.5rem 1rem;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    &__modal {
+        @include mx.responsive(tablet) {
+            --bs-modal-width: 43.75rem;
+        }
+
+        @include mx.responsive(desktop) {
+            --bs-modal-width: 50rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            --bs-modal-width: 56.25rem;
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, #a866ff, #9514ff);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            font-family: "Inter", sans-serif;
+            box-shadow: 0 0.9375rem 1.875rem rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.01);
+            }
+        }
+
+        .modal-header {
+            border-bottom: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding: 0;
+            width: 100%;
+        }
+
+        .modal-recetas-title {
+            font-size: 1.4rem;
+            font-weight: variables.$font-extra-bold;
+            color: variables.$white;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.0938rem;
+            text-shadow: 0.125rem 0.125rem 0.625rem rgba(0, 0, 0, 0.25);
+            border-bottom: 0;
+            flex-grow: 1;
+
+            @include mx.responsive(tablet) {
+                font-size: 1.7rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 1.8rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 2.4rem;
+            }
+        }
+
+        .modal-receta-body {
+            overflow-y: auto;
+            font-size: 1.1rem;
+            color: #fff;
+            line-height: 1.6;
+
+            p {
+                font-size: 1.4rem;
+                font-weight: variables.$font-bold;
+                color: variables.$secondary-color;
+                margin-top: 1.5rem;
+                margin-bottom: 0.5rem;
+                text-transform: uppercase;
+
+                @include mx.responsive(tablet) {
+                    font-size: 1.7rem;
+                }
+
+                @include mx.responsive(desktop) {
+                    font-size: 1.8rem;
+                }
+
+                @include mx.responsive(large-desktop) {
+                    font-size: 2.3rem;
+                }
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin-bottom: 1.5rem;
+            }
+
+            li {
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 0.5rem 1rem;
+                border-radius: 0.5rem;
+                margin-bottom: 0.5rem;
+                font-size: 1.4rem;
+
+                @include mx.responsive(tablet) {
+                    font-size: 1.7rem;
+                }
+
+                @include mx.responsive(desktop) {
+                    font-size: 1.8rem;
+                }
+
+                @include mx.responsive(large-desktop) {
+                    font-size: 1.9rem;
+                }
+            }
+        }
+
+        .btn-close {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.8;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .recetas__nutricion {
+            background-color: variables.$white;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+            color: #000;
+            font-weight: variables.$font-bold;
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            overflow: hidden;
+            flex-grow: 1;
+
+            div {
+                flex: 1 1 11.25rem;
+                min-width: 11.25rem;
+                max-width: 15.625rem;
+                word-wrap: break-word;
+                font-size: 1.4rem;
+
+                @include mx.responsive(tablet) {
+                    font-size: 1.7rem;
+                }
+
+                @include mx.responsive(desktop) {
+                    font-size: 1.8rem;
+                }
+
+                @include mx.responsive(large-desktop) {
+                    font-size: 1.9rem;
+                }
+            }
+        }
+    }
+
+    &__btn-fav {
+        font-size: 2.1rem;
+    }
+}

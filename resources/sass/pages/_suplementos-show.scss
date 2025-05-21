@@ -1,0 +1,145 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as mx;
+@use "../components/buttons";
+
+.supplements-show {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 3rem 0;
+    min-height: 100vh;
+
+    @include mx.responsive(tablet) {
+        padding: 5rem 0;
+    }
+
+    @include mx.responsive(desktop) {
+        padding: 6rem 3rem;
+    }
+
+    &__icon {
+        width: 5rem;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+        margin-top: 4rem;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        @include mx.responsive(tablet) {
+            width: 6rem;
+        }
+
+        @include mx.responsive(desktop) {
+            width: 7rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            width: 8rem;
+        }
+    }
+
+    &__title-section {
+        color: variables.$primary-color;
+        font-weight: variables.$font-bold;
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 3rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 4rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 5rem;
+        }
+    }
+
+    &__card {
+        background-color: variables.$dark-gray;
+        color: variables.$white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        overflow: hidden;
+        min-height: 100%;
+
+        &__card-title {
+            background-color: variables.$secondary-color;
+            color: variables.$dark-color;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: variables.$font-bold;
+            margin-bottom: 1rem;
+
+            @include mx.responsive(tablet) {
+                font-size: 1.8rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 2rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 2.4rem;
+            }
+        }
+
+        &__card-text {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            overflow: hidden;
+
+            @include mx.responsive(tablet) {
+                font-size: 1.5rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 1.8rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &__btn-fav {
+        font-size: 2rem !important;
+    }
+}
+
+.btn-outline-secondary {
+    border-color: variables.$white;
+    color: variables.$white;
+    font-weight: variables.$font-bold;
+    text-decoration: none;
+    font-size: 1.5rem;
+
+    i {
+        padding-right: 0.5rem;
+    }
+
+    &:hover {
+        background-color: variables.$white;
+        color: variables.$black;
+    }
+
+    @include mx.responsive(tablet) {
+        font-size: 1.5rem;
+    }
+
+    @include mx.responsive(desktop) {
+        font-size: 1.8rem;
+    }
+
+    @include mx.responsive(large-desktop) {
+        font-size: 2rem;
+    }
+}

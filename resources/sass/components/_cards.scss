@@ -1,0 +1,153 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as mx;
+@use "./buttons";
+
+.card-feature {
+    background-color: variables.$section-bg;
+    border: none;
+    padding: 1.5rem;
+    width: 100%;
+    height: auto;
+
+    &__body {
+        @include mx.flex-column-center;
+        text-align: center;
+
+        &__custom-heading {
+            font-size: 1.6rem;
+            font-weight: variables.$font-bold;
+            color: variables.$dark-color;
+
+            @include mx.responsive(tablet) {
+                font-size: 2rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 2rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 2rem;
+            }
+        }
+
+        &__image {
+            width: 6rem;
+            height: 6rem;
+            object-fit: cover;
+            margin-bottom: 1rem;
+
+            @include mx.responsive(tablet) {
+                width: 6.3rem;
+                height: 6.3rem;
+            }
+
+            @include mx.responsive(desktop) {
+                width: 6.4rem;
+                height: 6.4rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                width: 9.5rem;
+                height: 9.5rem;
+            }
+        }
+
+        &__title {
+            font-size: 1.8rem;
+            font-weight: variables.$font-bold;
+            color: variables.$secondary-color;
+            margin-bottom: 0.75rem;
+
+            @include mx.responsive(tablet) {
+                font-size: 2rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 2.2rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 2.5rem;
+            }
+        }
+
+        &__button {
+            @extend .button;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+}
+
+.card-feature-section-1 {
+    color: variables.$white;
+    border-radius: 0;
+
+    .card-feature__text {
+        color: variables.$light-gray;
+        width: auto;
+        height: 6.5rem;
+        font-size: 1.5rem;
+
+        @include mx.responsive(tablet) {
+            height: 9.5rem;
+            font-size: 1.6rem;
+        }
+
+        @include mx.responsive(desktop) {
+            height: 9.5rem;
+            font-size: 1.8rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            height: 9.5rem;
+            font-size: 2rem;
+        }
+    }
+}
+
+.card-feature-section-2 {
+    background-color: variables.$white;
+    border-radius: 2rem;
+    box-shadow: 1.1875rem 2.8125rem 4.9375rem rgba(0, 0, 0, 0.25);
+
+    .card-feature__body__custom-heading {
+        font-size: 1.8rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 2rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 2.2rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 2.5rem;
+        }
+    }
+
+    .card-feature__text {
+        color: variables.$dark-color;
+        width: auto;
+        height: 15.5rem;
+        @include mx.flex-center;
+        font-size: 1.5rem;
+
+        @include mx.responsive(tablet) {
+            height: 16rem;
+            font-size: 1.5rem;
+        }
+
+        @include mx.responsive(desktop) {
+            height: 16rem;
+            font-size: 1.8rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            height: 15.5rem;
+            font-size: 2rem;
+        }
+    }
+}

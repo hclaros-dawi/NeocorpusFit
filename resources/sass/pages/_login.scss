@@ -1,0 +1,200 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as mx;
+@use "../components/buttons";
+
+.login {
+    background-color: #1a1a1a;
+    min-height: 100vh;
+    padding: 3rem 0;
+    @include mx.flex-center;
+
+    @include mx.responsive(tablet) {
+        padding: 5rem 0;
+    }
+
+    @include mx.responsive(desktop) {
+        padding: 6rem 3rem;
+    }
+
+    &__container {
+        background-color: variables.$section-bg;
+        border: 0.0625rem solid variables.$primary-color;
+        border-radius: 0.75rem;
+        padding: 3rem 2rem;
+        width: 100%;
+        max-width: 42rem;
+        color: variables.$white;
+        box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.3);
+    }
+
+    &__title {
+        color: variables.$primary-color;
+        font-size: 2rem;
+        font-weight: variables.$font-bold;
+        text-align: center;
+        margin-bottom: 2rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 2.5rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 3rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 3.5rem;
+        }
+    }
+
+    label {
+        color: variables.$white;
+        font-weight: variables.$font-semibold;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        background-color: #2a2a2a;
+        color: variables.$white;
+        border: 0.0625rem solid #444;
+        border-radius: 0.5rem;
+        padding: 0.75rem 1rem;
+        width: 100%;
+        margin-bottom: 1.5rem;
+        height: 5rem;
+
+        &:focus {
+            outline: none;
+            border-color: variables.$primary-color;
+            box-shadow: 0 0 0 0.2rem rgba(97, 53, 153, 0.5);
+        }
+
+        input[type="checkbox"] {
+            margin-left: 0.3rem;
+        }
+    }
+
+    &__form-check-input {
+        background-color: #2a2a2a;
+        border-color: #666;
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1.5rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.5rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.8rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 2rem;
+        }
+    }
+
+    &__form-check-label {
+        color: #ccc;
+        font-size: 1.5rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.5rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.8rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 2rem;
+        }
+    }
+
+    &__login-actions {
+        @include mx.flex-center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+        a {
+            color: variables.$secondary-color;
+            font-size: 1.5rem;
+            text-decoration: underline;
+
+            &:hover {
+                color: variables.$secondary-color;
+            }
+
+            @include mx.responsive(tablet) {
+                font-size: 1.5rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 1.8rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &__text-remember {
+        font-size: 1.2rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.3rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.4rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__btn-primary {
+        background-color: #6c63ff;
+        color: #fff;
+        padding: 0.5rem 1.25rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-weight: variables.$font-semibold;
+        transition: background-color 0.3s ease;
+        font-size: 1.6rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.6rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.7rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 1.8rem;
+        }
+
+        &:hover {
+            background-color: #5750d3;
+        }
+    }
+
+    &__register {
+        font-size: 1.2rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.3rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.4rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 1.5rem;
+        }
+    }
+}

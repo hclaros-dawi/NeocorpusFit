@@ -1,0 +1,71 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as mx;
+
+.footer {
+    background-color: variables.$black;
+    padding: 2rem 1rem;
+    color: variables.$text-color;
+
+    &__title {
+        font-weight: variables.$font-regular;
+        margin-bottom: 0.5rem;
+        font-size: 1.6rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.8rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 2rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__text {
+        font-size: 1.1rem;
+        color: variables.$text-secondary;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.3rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.5rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 1.9rem;
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+
+        &-link {
+            color: variables.$text-color;
+            font-size: 1.6rem;
+            transition: color 0.3s;
+
+            &:hover {
+                color: variables.$accent-1;
+            }
+
+            @include mx.responsive(tablet) {
+                font-size: 1.8rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 2rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}

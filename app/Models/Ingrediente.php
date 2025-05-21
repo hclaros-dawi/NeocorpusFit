@@ -6,18 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ingrediente extends Model
 {
-    public function recetas() {
-        return $this->belongsToMany(Receta::class, 'receta_ingrediente')
-                    ->using(RecetaIngrediente::class)
-                    ->withPivot('cantidad', 'unidad_medida')
-                    ->withTimestamps();
+    protected $table = 'ingredientes';
+    protected $primaryKey = 'id_ingrediente';
+
+    public function recetas()
+    {
+        return $this->belongsToMany(Receta::class, 'receta_ingrediente', 'id_ingrediente', 'id_receta')
+            ->withPivot('cantidad', 'unidad_medida')
+            ->withTimestamps();
     }
-    
-    public function canastas() {
+
+    public function canastas()
+    {
         return $this->belongsToMany(Canasta::class, 'canasta_ingrediente')
-                    ->using(CanastaIngrediente::class)
-                    ->withPivot('cantidad', 'unidad_base', 'precio_total')
-                    ->withTimestamps();
+            ->withPivot('cantidad', 'unidad_base', 'subtotal')
+            ->withTimestamps();
     }
-    
 }

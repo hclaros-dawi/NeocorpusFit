@@ -1,0 +1,103 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as mx;
+
+.info-card {
+    background: linear-gradient(135deg, #4703c5c5 0%, #7b2cbf 100%);
+    color: #fff;
+    border-radius: 1rem;
+    padding: 5rem 2rem;
+    width: 100%;
+    box-shadow: 0rem 0.9375rem 1.875rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 75rem;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-0.2rem);
+    }
+
+    &__title {
+        font-family: "Inter", sans-serif;
+        font-weight: variables.$font-extra-bold;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: #fff;
+
+        @include mx.responsive(tablet) {
+            font-size: 2.3rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 2.4rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 2.7rem;
+        }
+    }
+
+    &__description {
+        font-family: "Open Sans", sans-serif;
+        font-weight: variables.$font-extra-light;
+        font-size: 1.5rem;
+        line-height: 1.6;
+        color: #f0f0f0;
+        max-width: 50rem;
+        margin: 0 auto;
+        padding-bottom: 3.5rem;
+
+        @include mx.responsive(tablet) {
+            font-size: 1.5rem;
+        }
+
+        @include mx.responsive(desktop) {
+            font-size: 1.8rem;
+        }
+
+        @include mx.responsive(large-desktop) {
+            font-size: 2rem;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin-top: 3rem;
+
+        @include mx.responsive(tablet) {
+            flex-direction: row;
+        }
+
+        &-button {
+            background-color: variables.$secondary-color;
+            color: variables.$black;
+            font-weight: variables.$font-semibold;
+            padding: 1.25rem 2.5rem;
+            font-size: 1.5rem;
+            border-radius: 1.5rem;
+            border: 0.125rem solid #9d4edd;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+
+            &:hover {
+                background-color: #9d4edd;
+                color: #fff;
+                transform: scale(1.1);
+            }
+
+            @include mx.responsive(tablet) {
+                font-size: 1.5rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 1.8rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 2rem;
+            }
+        }
+    }
+}

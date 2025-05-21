@@ -1,0 +1,28 @@
+@use "base/variables" as variables;
+@use "base/mixins" as mx;
+@use "base/base" as base;
+
+@use "components/navbar";
+@use "components/buttons";
+@use "components/cards";
+@use "components/footer";
+@use "components/info-card";
+@use "components/product-modal";
+
+@use "pages/home";
+@use "pages/suplementos-index";
+@use "pages/suplementos-show";
+@use "pages/menus-index";
+@use "pages/menus-show";
+@use "pages/canastas-index";
+@use "pages/canastas-show";
+@use "pages/calculadoras";
+@use "pages/imc";
+@use "pages/proteina";
+@use "pages/harrisB";
+@use "pages/creatina";
+@use "pages/grasaCorp";
+@use "pages/recetas";
+@use "pages/area";
+@use "pages/login";
+@use "pages/register";

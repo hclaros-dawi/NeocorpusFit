@@ -6,8 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class PasoReceta extends Model
 {
-    public function receta() {
+
+    protected $table = 'pasos_receta';
+
+    protected $primaryKey = 'id_paso';
+
+    public function receta()
+    {
         return $this->belongsTo(Receta::class, 'id_receta');
     }
-    
 }

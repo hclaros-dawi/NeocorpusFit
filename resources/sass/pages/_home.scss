@@ -1,0 +1,110 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as mx;
+
+.home-page {
+    .hero-section {
+        position: relative;
+        width: 100%;
+        min-height: variables.$hero-height;
+        overflow: hidden;
+        @include mx.flex-center;
+
+        &__image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        &__content {
+            z-index: 1;
+            color: variables.$text-color;
+            text-align: center;
+            padding: 3rem;
+
+            @include mx.responsive(tablet) {
+                padding: 3rem 2rem;
+            }
+
+            @include mx.responsive(desktop) {
+                padding: 4rem 3rem;
+            }
+
+            h1 {
+                font-size: 3.3rem;
+                font-weight: variables.$font-light;
+
+                span {
+                    font-weight: variables.$font-light;
+                }
+
+                strong {
+                    font-weight: variables.$font-bold;
+                }
+
+                @include mx.responsive(tablet) {
+                    font-size: 6rem;
+                }
+
+                @include mx.responsive(desktop) {
+                    font-size: 8rem;
+                }
+
+                @include mx.responsive(large-desktop) {
+                    font-size: 9.5rem;
+                }
+            }
+        }
+
+        &__quote {
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: variables.$font-regular;
+
+            @include mx.responsive(tablet) {
+                font-size: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 2rem;
+                padding: 1.6rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+    &__highlight-info {
+        background-color: variables.$secondary-color;
+
+        p {
+            font-weight: variables.$font-semibold;
+            font-size: 1.5rem;
+            color: variables.$dark-color;
+
+            @include mx.responsive(tablet) {
+                font-size: 2rem;
+            }
+
+            @include mx.responsive(desktop) {
+                font-size: 2rem;
+            }
+
+            @include mx.responsive(large-desktop) {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &__custom-bg-light {
+        background-color: variables.$light-color;
+    }
+}
