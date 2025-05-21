@@ -60,10 +60,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @php
-                                $totalCalorias = 0;
-                                $totalProteinas = 0;
-                            @endphp
                             @foreach ($tabla as $dia => $comidas)
                                 <tr>
                                     <td class="fw-bold" data-label="Día">{{ ucfirst($dia) }}</td>
@@ -71,16 +67,17 @@
                                     @foreach (['Desayuno', 'Comida', 'Cena', 'Snack'] as $tipo)
                                         @php
                                             $receta = $comidas[$tipo] ?? null;
-                                            if ($receta) {
-                                                $totalCalorias += $receta['calorias'];
-                                                $totalProteinas += $receta['proteinas'];
-                                            }
                                         @endphp
                                         <td data-label="{{ $tipo }}">
                                             @if ($receta)
-                                                {{ $receta['nombre'] }}<br>
-                                                <a href="{{ $receta['enlace'] }}" target="_blank"
-                                                    class="text-warning fw-bold text-decoration-none">[Ver Receta]</a>
+                                                {{ $receta['receta']->nombre }}<br>
+                                                <a href="#"
+                                                    class="text-warning fw-bold text-decoration-underline mt-1 d-inline-block"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#modal-{{ $receta['receta']->id_receta }}">
+                                                    [Ver Receta]
+                                                </a>
+                                            @else
                                             @endif
                                         </td>
                                     @endforeach
@@ -90,12 +87,76 @@
                     </table>
                 </div>
 
+                @foreach ($tabla as $dia => $comidas)
+                    @foreach ($comidas as $tipo => $item)
+                        @if ($item && isset($item['receta']))
+                            @php $receta = $item['receta']; @endphp
+
+                            <div class="modal fade recetas__modal" id="modal-{{ $receta->id_receta }}" tabindex="-1"
+                                aria-labelledby="modalLabel-{{ $receta->id_receta }}" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content recetas__modal">
+                                        <div class="modal-header">
+                                            <h5 class="modal-recetas-title" id="modalLabel-{{ $receta->id_receta }}">
+                                                {{ strtoupper($receta->nombre) }}
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Cerrar"></button>
+                                        </div>
+                                        <div class="modal-body modal-receta-body">
+                                            <p><strong>Ingredientes</strong></p>
+                                            <ul>
+                                                @foreach ($receta->ingredientes ?? [] as $ingrediente)
+                                                    <li>{{ $ingrediente->nombre }} -
+                                                        {{ $ingrediente->pivot->cantidad }}
+                                                        {{ $ingrediente->pivot->unidad_medida }}</li>
+                                                @endforeach
+                                            </ul>
+
+                                            <p><strong>Preparación</strong></p>
+                                            <ul>
+                                                @foreach ($receta->pasos ?? [] as $paso)
+                                                    <li>{{ $paso->descripcion }}</li>
+                                                @endforeach
+                                            </ul>
+
+                                            @if ($receta->ingredientes->isNotEmpty())
+                                                <p><strong>Información nutricional</strong></p>
+                                                <div
+                                                    class="recetas__nutricion d-flex justify-content-between text-center">
+                                                    @foreach ($receta->ingredientes as $ingrediente)
+                                                        <div>
+                                                            <strong>{{ $ingrediente->nombre }}:</strong><br>
+                                                            @if ($ingrediente->calorias !== null)
+                                                                Calorías: {{ $ingrediente->calorias }} Kcal <br>
+                                                            @endif
+                                                            @if ($ingrediente->proteinas !== null)
+                                                                Proteínas: {{ $ingrediente->proteinas }} g <br>
+                                                            @endif
+                                                            @if ($ingrediente->grasas !== null)
+                                                                Grasas: {{ $ingrediente->grasas }} g <br>
+                                                            @endif
+                                                            @if ($ingrediente->carbohidratos !== null)
+                                                                Carbohidratos: {{ $ingrediente->carbohidratos }} g
+                                                            @endif
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                @endforeach
+
                 <div class="totales mt-4 text-center ps-2 py-2 px-2">
                     <p class="mb-1"><strong>Total proteínas menú:</strong> {{ $totalProteinas }} g</p>
                     <p class="mb-0"><strong>Total calorías menú:</strong> {{ $totalCalorias }} kcal</p>
                 </div>
-
             </div>
+
             <div class="container text-center py-5">
                 <a href="{{ route('home') }}" class="btn btn-outline-secondary px-4 py-2">
                     <i class="fas fa-arrow-left me-2"></i> Volver a todos los menús

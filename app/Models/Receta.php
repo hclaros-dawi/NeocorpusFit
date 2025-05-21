@@ -47,4 +47,18 @@ class Receta extends Model
         return $this->hasMany(Favorite::class, 'item_id', 'id_receta')
             ->where('type', 'receta');
     }
+
+    public function getTotalCaloriasAttribute()
+    {
+        return $this->ingredientes->sum(function ($ingrediente) {
+            return $ingrediente->calorias ?? 0;
+        });
+    }
+
+    public function getTotalProteinasAttribute()
+    {
+        return $this->ingredientes->sum(function ($ingrediente) {
+            return $ingrediente->proteinas ?? 0;
+        });
+    }
 }

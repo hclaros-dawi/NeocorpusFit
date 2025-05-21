@@ -22,11 +22,11 @@ class MenuController extends Controller
             return redirect()->route('pages.menus.index')->with('error', 'Categoría no encontrada');
         }
 
-        $menus = Menu::with('recetas')
-            ->where('categoria_id', $categoria->id_categoria)
-            ->get();
+        $menus = Menu::with([
+            'recetas.ingredientes',
+            'recetas.pasos'
+        ])->where('categoria_id', $categoria->id_categoria)->get();
 
-        // If you need a specific menu, you can get the first one
         $menu = $menus->first();
 
         $numeroADia = [
@@ -42,6 +42,9 @@ class MenuController extends Controller
         $tiposComida = ['Desayuno', 'Comida', 'Cena', 'Snack'];
 
         $tabla = [];
+        $totalCalorias = 0;
+        $totalProteinas = 0;
+
         foreach ($numeroADia as $diaNumero => $nombreDia) {
             foreach ($tiposComida as $tipo) {
                 $tabla[$nombreDia][$tipo] = null;
@@ -52,21 +55,26 @@ class MenuController extends Controller
             foreach ($menuItem->recetas as $receta) {
                 $diaNumero = $receta->pivot->dia_semana;
                 $diaNombre = $numeroADia[(string)$diaNumero] ?? null;
-
                 $tipoComidaOriginal = $receta->pivot->tipo_comida;
 
                 if ($diaNombre && in_array($tipoComidaOriginal, $tiposComida)) {
+                    $calorias = $receta->total_calorias ?? 0;
+                    $proteinas = $receta->total_proteinas ?? 0;
+
+                    $totalCalorias += $calorias;
+                    $totalProteinas += $proteinas;
+
                     $tabla[$diaNombre][$tipoComidaOriginal] = [
-                        'nombre' => $receta->nombre,
+                        'receta' => $receta,
                         'enlace' => $receta->pivot->enlace_receta,
-                        'calorias' => $menuItem->calorias,
-                        'proteinas' => $menuItem->proteinas,
+                        'calorias' => $calorias,
+                        'proteinas' => $proteinas,
                     ];
                 }
             }
         }
 
-        return view('pages.menus.show', compact('categoria', 'tabla', 'menus', 'menu'));
+        return view('pages.menus.show', compact('categoria', 'tabla', 'menus', 'menu', 'totalCalorias', 'totalProteinas'));
     }
 
     public function store(Request $request)
