@@ -9,15 +9,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('canasta_ingrediente', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_ingrediente')->nullable()->change();  
+            $table->unsignedBigInteger('id_ingrediente')->nullable()->change();
         });
     }
-
 
     public function down(): void
     {
         Schema::table('canasta_ingrediente', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_ingrediente')->nullable(false)->change(); 
+            $table->unsignedBigInteger('id_ingrediente')->nullable(false)->change();
         });
     }
 };

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Área Personal</title>
     <link rel="icon" href="https://live.staticflickr.com/65535/54501688131_7e4cf65737_n.jpg" type="image/jpeg" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -11,11 +12,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    @vite(['resources/sass/app.scss'])
+    @vite(['resources/js/app.js', 'resources/js/snackbar.js', 'resources/sass/app.scss'])
 </head>
 
 <body>
     <x-navbar />
+    <div id="menu-success-alert" class="alert alert-success" style="display: none;">
+        Menú actualizado correctamente
+    </div>
+
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
     <div class="personal-area">
         <div class="personal-area__header">
             <h1>MI ÁREA PERSONAL</h1>
@@ -45,18 +56,76 @@
                                     </div>
                                 </div>
                                 <div class="favorite-item__actions">
-                                    @if ($favorite->receta)
-                                        <a href="{{ route('recetas.show', ['receta' => $favorite->receta->id_receta]) }}"
-                                            class="btn btn-primary btn-sm">Ver Receta</a>
-                                    @endif
+                                    <button type="button" class="btn-view-item" data-bs-toggle="modal"
+                                        data-bs-target="#modalReceta{{ $favorite->receta->id_receta }}">
+                                        Ver Receta
+                                    </button>
 
                                     <form
                                         action="{{ route('favorites.destroy', ['type' => $favorite->type, 'itemId' => $favorite->item_id]) }}"
                                         method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-outline-danger btn-sm">Eliminar</button>
+                                        <button type="submit" class="btn-delete-item">Eliminar</button>
                                     </form>
+                                </div>
+                            </div>
+
+                            <div class="modal fade recetas__modal" id="modalReceta{{ $favorite->receta->id_receta }}"
+                                tabindex="-1" aria-labelledby="modalLabelReceta{{ $favorite->receta->id_receta }}"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content recetas__modal">
+                                        <div class="modal-header">
+                                            <h5 class="modal-recetas-title"
+                                                id="modalLabelReceta{{ $favorite->receta->id_receta }}">
+                                                {{ strtoupper($favorite->receta->nombre) }}
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Cerrar"></button>
+                                        </div>
+                                        <div class="modal-body modal-receta-body">
+                                            <p><strong>Ingredientes</strong></p>
+                                            <ul>
+                                                @foreach ($favorite->receta->ingredientes ?? [] as $ingrediente)
+                                                    <li>{{ $ingrediente->nombre }} -
+                                                        {{ $ingrediente->pivot->cantidad }}
+                                                        {{ $ingrediente->pivot->unidad_medida }}</li>
+                                                @endforeach
+                                            </ul>
+
+                                            <p><strong>Preparación</strong></p>
+                                            <ul>
+                                                @foreach ($favorite->receta->pasos ?? [] as $paso)
+                                                    <li>{{ $paso->descripcion }}</li>
+                                                @endforeach
+                                            </ul>
+
+                                            @if ($favorite->receta->ingredientes->isNotEmpty())
+                                                <p><strong>Información nutricional</strong></p>
+                                                <div
+                                                    class="recetas__nutricion d-flex justify-content-between text-center">
+                                                    @foreach ($favorite->receta->ingredientes as $ingrediente)
+                                                        <div>
+                                                            <strong>{{ $ingrediente->nombre }}:</strong><br>
+                                                            @if ($ingrediente->calorias !== null)
+                                                                Calorías: {{ $ingrediente->calorias }} Kcal <br>
+                                                            @endif
+                                                            @if ($ingrediente->proteinas !== null)
+                                                                Proteínas: {{ $ingrediente->proteinas }} g <br>
+                                                            @endif
+                                                            @if ($ingrediente->grasas !== null)
+                                                                Grasas: {{ $ingrediente->grasas }} g <br>
+                                                            @endif
+                                                            @if ($ingrediente->carbohidratos !== null)
+                                                                Carbohidratos: {{ $ingrediente->carbohidratos }} g
+                                                            @endif
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         @endif
@@ -64,7 +133,6 @@
                 @endif
             </div>
         </div>
-
         <div class="personal-area__card personal-area__card--menus">
             <div class="personal-area__card-header">Mis Menús Favoritos</div>
             <div class="personal-area__card-body">
@@ -84,55 +152,24 @@
 
                                 <div class="favorite-item__actions">
                                     @if ($favorite->menu)
-                                        <a href="{{ route('pages.menus.show', $favorite->menu->categoria_id) }}"
-                                            class="btn btn-primary btn-sm"> Ver Menú </a>
-                                    @endif
-                                    <form
-                                        action="{{ route('favorites.destroy', ['type' => $favorite->type, 'itemId' => $favorite->item_id]) }}"
-                                        method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-outline-danger btn-sm">Eliminar</button>
-                                    </form>
-                                </div>
-                            </div>
-                        @endif
-                    @endforeach
-                @endif
-            </div>
-        </div>
+                                        <a href="{{ route('user.menus.show', $favorite->menu->categoria_id) }}?modo=ver"
+                                            class="btn-view-menu">
+                                            Ver Menú
+                                        </a>
 
-        <div class="personal-area__card personal-area__card--suplementos">
-            <div class="personal-area__card-header">Mis Suplementos Favoritos</div>
-            <div class="personal-area__card-body">
-                @if ($favoriteSuplementos->isEmpty())
-                    <div class="empty">
-                        <p>No tienes suplementos favoritos aún</p>
-                    </div>
-                @else
-                    @foreach ($favoriteSuplementos as $favorite)
-                        @if ($favorite->suplemento)
-                            <div class="favorite-item">
-                                <div class="d-flex align-items-center">
-                                    @if ($favorite->suplemento->imagen_url)
-                                        <img src="{{ $favorite->suplemento->imagen_url }}"
-                                            alt="{{ $favorite->suplemento->nombre }}" class="favorite-item__img" />
-                                    @endif
-                                    <div class="favorite-item__info">
-                                        <h5>{{ $favorite->suplemento->nombre }}</h5>
-                                    </div>
-                                </div>
-                                <div class="favorite-item__actions">
-                                    @if ($favorite->suplemento)
-                                        <a href="{{ route('pages.suplementos.show', $favorite->suplemento->categoria_id) }}"
-                                            class="btn btn-primary btn-sm"> Ver Suplemento </a>
+                                        <a href="{{ route('user.menus.edit', ['menu' => $favorite->menu->id_menu]) }}"
+                                            class="btn-edit-menu">
+                                            Editar
+                                        </a>
                                     @endif
                                     <form
                                         action="{{ route('favorites.destroy', ['type' => $favorite->type, 'itemId' => $favorite->item_id]) }}"
                                         method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-outline-danger btn-sm">Eliminar</button>
+                                        <button type="submit" class="btn-delete-menu">
+                                            Eliminar
+                                        </button>
                                     </form>
                                 </div>
                             </div>
@@ -162,14 +199,18 @@
                                 <div class="favorite-item__actions">
                                     @if ($favorite->canasta)
                                         <a href="{{ route('pages.canastas.show', $favorite->canasta->categoria_id) }}"
-                                            class="btn btn-primary btn-sm"> Ver Canasta </a>
+                                            class="btn-view-item">
+                                            Ver Canasta
+                                        </a>
                                     @endif
                                     <form
                                         action="{{ route('favorites.destroy', ['type' => $favorite->type, 'itemId' => $favorite->item_id]) }}"
                                         method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-outline-danger btn-sm">Eliminar</button>
+                                        <button type="submit" class="btn-delete-item">
+                                            Eliminar
+                                        </button>
                                     </form>
                                 </div>
                             </div>

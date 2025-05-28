@@ -341,8 +341,8 @@ class IngredienteSeeder extends Seeder
                 'descripcion' => 'Cereal integral rico en fibra, ideal para acompañar ensaladas y bowls.',
                 'unidad' => 'g',
             ],
-             // Yogur natural
-             [
+            // Yogur natural
+            [
                 'nombre' => 'Yogur natural',
                 'calorias' => 59,
                 'proteinas' => 3.5,
@@ -505,7 +505,7 @@ class IngredienteSeeder extends Seeder
                 'precio_estimado' => 1.57,
                 'descripcion' => 'Hortaliza de hojas verdes con un sabor ligeramente picante, usada en ensaladas.',
                 'unidad' => 'g',
-            ], 
+            ],
             // Espinaca
             [
                 'nombre' => 'Espinaca',
@@ -538,7 +538,7 @@ class IngredienteSeeder extends Seeder
                 'precio_estimado' => 2.99,
                 'descripcion' => 'Fruta cítrica jugosa y rica en vitamina C.',
                 'unidad' => 'g',
-            ], 
+            ],
             // Mango
             [
                 'nombre' => 'Mango',
@@ -770,8 +770,8 @@ class IngredienteSeeder extends Seeder
                 'descripcion' => 'Especia hecha de pimientos secos, ideal para guisos.',
                 'unidad' => 'g',
             ],
-             // Mermelada
-             [
+            // Mermelada
+            [
                 'nombre' => 'Mermelada',
                 'calorias' => 250,
                 'proteinas' => 0,
@@ -1176,7 +1176,7 @@ class IngredienteSeeder extends Seeder
                 'precio_estimado' => 3.59,
                 'descripcion' => 'Mezcla energética de frutos secos como nueces, almendras y avellanas.',
                 'unidad' => 'g',
-            ],  
+            ],
             // Gelatina light
             [
                 'nombre' => 'Gelatina light',

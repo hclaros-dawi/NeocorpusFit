@@ -51,14 +51,14 @@ class Receta extends Model
     public function getTotalCaloriasAttribute()
     {
         return $this->ingredientes->sum(function ($ingrediente) {
-            return $ingrediente->calorias ?? 0;
+            return ($ingrediente->calorias ?? 0) * ($ingrediente->pivot->cantidad ?? 1);
         });
     }
 
     public function getTotalProteinasAttribute()
     {
         return $this->ingredientes->sum(function ($ingrediente) {
-            return $ingrediente->proteinas ?? 0;
+            return ($ingrediente->proteinas ?? 0) * ($ingrediente->pivot->cantidad ?? 1);
         });
     }
 }

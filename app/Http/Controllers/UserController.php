@@ -15,10 +15,22 @@ class UserController extends Controller
         }
 
         $favorites = Auth::user()->favorites()
-            ->with(['receta', 'menu', 'suplemento', 'canasta'])
+            ->with([
+                'receta',
+                'menu' => function ($query) {
+                    $query->with(['recetas' => function ($q) {
+                        $q->withPivot('orden', 'dia_semana', 'tipo_comida', 'enlace_receta')
+                            ->orderBy('pivot_orden');
+                    }]);
+                },
+                'suplemento',
+                'canasta'
+            ])
             ->get();
 
         $hasFavorites = $favorites->isNotEmpty();
+
+        $modo = request()->get('modo', 'ver');
 
         return view('user.area', [
             'hasFavorites' => $hasFavorites,
@@ -26,7 +38,8 @@ class UserController extends Controller
             'favoriteRecetas' => $favorites->where('type', 'receta'),
             'favoriteMenus' => $favorites->where('type', 'menu'),
             'favoriteSuplementos' => $favorites->where('type', 'suplemento'),
-            'favoriteCanastas' => $favorites->where('type', 'canasta')
+            'favoriteCanastas' => $favorites->where('type', 'canasta'),
+            'modo' => $modo,
         ]);
     }
 }

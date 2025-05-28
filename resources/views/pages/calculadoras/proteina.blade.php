@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-yE4GvHQuZc/.../" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    @vite(['resources/js/proteina.js', 'resources/js/select.js', 'resources/js/dropdown.js', 'resources/sass/app.scss'])
+    @vite(['resources/js/app.js', 'resources/js/proteina.js', 'resources/js/select.js', 'resources/js/dropdown.js', 'resources/sass/app.scss'])
 </head>
 
 <body class="bg-dark-gray home-page">

@@ -23,36 +23,34 @@ class CanastaSeeder extends Seeder
         $catExpress = Categoria::where('nombre', 'Canasta express')->first();
         $catProteica = Categoria::where('nombre', 'Canasta proteica')->first();
 
-        Canasta::create([
+        Canasta::firstOrCreate([
             'nombre' => 'Canasta Mediterránea',
             'menu_id' => $mediterraneoMenu->id_menu,
             'categoria_id' => $catMediterranea->id_categoria
         ]);
 
-        Canasta::create([
+        Canasta::firstOrCreate([
             'nombre' => 'Canasta Vegana',
             'menu_id' => $veganoMenu->id_menu,
             'categoria_id' => $catVegana->id_categoria
         ]);
 
-        Canasta::create([
+        Canasta::firstOrCreate([
             'nombre' => 'Canasta de Casa',
             'menu_id' => $clasicoMenu->id_menu,
             'categoria_id' => $catClasica->id_categoria
         ]);
 
-        Canasta::create([
+        Canasta::firstOrCreate([
             'nombre' => 'Canasta Express',
             'menu_id' => $expressMenu->id_menu,
             'categoria_id' => $catExpress->id_categoria
         ]);
 
-        Canasta::create([
+        Canasta::firstOrCreate([
             'nombre' => 'Canasta Proteica',
             'menu_id' => $proteicoMenu->id_menu,
             'categoria_id' => $catProteica->id_categoria
         ]);
     }
 }
-
-

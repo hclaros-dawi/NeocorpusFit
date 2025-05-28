@@ -25,7 +25,10 @@ class MenuController extends Controller
         $menus = Menu::with([
             'recetas.ingredientes',
             'recetas.pasos'
-        ])->where('categoria_id', $categoria->id_categoria)->get();
+        ])
+            ->where('categoria_id', $categoria->id_categoria)
+            ->whereNull('user_id')
+            ->get();
 
         $menu = $menus->first();
 

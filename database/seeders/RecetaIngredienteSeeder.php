@@ -27,29 +27,29 @@ class RecetaIngredienteSeeder extends Seeder
             'Yogur con nueces' => [
                 ['nombre' => 'Yogur natural', 'cantidad' => 150, 'unidad_medida' => 'g'],
                 ['nombre' => 'Nueces', 'cantidad' => 20, 'unidad_medida' => 'g'],
-            ],            
+            ],
             //3. Pan integral con aceite de oliva
             'Pan integral con aceite de oliva' => [
                 ['nombre' => 'Pan integral', 'cantidad' => 2, 'unidad_medida' => 'g'],
                 ['nombre' => 'Aceite de oliva', 'cantidad' => 10, 'unidad_medida' => 'g'],
-            ],            
+            ],
             //4. Yogur natural con chía
             'Yogur natural con chía' => [
                 ['nombre' => 'Yogur natural', 'cantidad' => 150, 'unidad_medida' => 'g'],
                 ['nombre' => 'Chía', 'cantidad' => 10, 'unidad_medida' => 'g'],
-            ],            
+            ],
             //5. Smoothie de frutas
             'Smoothie de frutas' => [
                 ['nombre' => 'Banana', 'cantidad' => 1, 'unidad_medida' => 'g'],
                 ['nombre' => 'Frutos rojos', 'cantidad' => 50, 'unidad_medida' => 'g'],
                 ['nombre' => 'Leche', 'cantidad' => 150, 'unidad_medida' => 'g'],
-            ],            
+            ],
             //6. Avena y semillas
             'Avena y semillas' => [
                 ['nombre' => 'Avena', 'cantidad' => 50, 'unidad_medida' => 'g'],
                 ['nombre' => 'Leche', 'cantidad' => 150, 'unidad_medida' => 'g'],
                 ['nombre' => 'Chía', 'cantidad' => 10, 'unidad_medida' => 'g'],
-            ],            
+            ],
             //7. Tostadas integrales
             'Tostadas integrales' => [
                 ['nombre' => 'Pan integral', 'cantidad' => 2, 'unidad_medida' => 'g'],
@@ -72,20 +72,20 @@ class RecetaIngredienteSeeder extends Seeder
                 ['nombre' => 'Ajo', 'cantidad' => 5, 'unidad_medida' => 'g'],
                 ['nombre' => 'Aceite de oliva', 'cantidad' => 10, 'unidad_medida' => 'g'],
                 ['nombre' => 'Cebolla', 'cantidad' => 50, 'unidad_medida' => 'g'],
-            ],            
+            ],
             //3. Pollo al limón
             'Pollo al limón' => [
                 ['nombre' => 'Pollo', 'cantidad' => 150, 'unidad_medida' => 'g'],
                 ['nombre' => 'Limón', 'cantidad' => 10, 'unidad_medida' => 'g'],
                 ['nombre' => 'Orégano', 'cantidad' => 2, 'unidad_medida' => 'g'],
-            ],            
+            ],
             //4. Pollo asado con batatas
             'Pollo asado con batatas' => [
                 ['nombre' => 'Pollo', 'cantidad' => 150, 'unidad_medida' => 'g'],
                 ['nombre' => 'Batata', 'cantidad' => 200, 'unidad_medida' => 'g'],
                 ['nombre' => 'Ajo', 'cantidad' => 5, 'unidad_medida' => 'g'],
                 ['nombre' => 'Orégano', 'cantidad' => 2, 'unidad_medida' => 'g'],
-            ],            
+            ],
             //5. Verduras grilladas
             'Verduras grilladas' => [
                 ['nombre' => 'Berenjena', 'cantidad' => 100, 'unidad_medida' => 'g'],
@@ -99,13 +99,13 @@ class RecetaIngredienteSeeder extends Seeder
                 ['nombre' => 'Aceite de oliva', 'cantidad' => 10, 'unidad_medida' => 'g'],
                 ['nombre' => 'Piñones', 'cantidad' => 10, 'unidad_medida' => 'g'],
                 ['nombre' => 'Queso parmesano', 'cantidad' => 10, 'unidad_medida' => 'g'],
-            ],            
+            ],
             //7. Arroz integral con verduras
             'Arroz integral con verduras' => [
                 ['nombre' => 'Arroz integral', 'cantidad' => 80, 'unidad_medida' => 'g'],
                 ['nombre' => 'Vegetales mixtos', 'cantidad' => 100, 'unidad_medida' => 'g'],
             ],
-    
+
             //*******CENA*********/
             //1. Lentejas mediterráneas
             'Lentejas mediterráneas' => [
@@ -120,14 +120,14 @@ class RecetaIngredienteSeeder extends Seeder
                 ['nombre' => 'Papa', 'cantidad' => 200, 'unidad_medida' => 'g'],
                 ['nombre' => 'Ajo', 'cantidad' => 5, 'unidad_medida' => 'g'],
             ],
-             //3. Pollo con ensalada de rúcula 
+            //3. Pollo con ensalada de rúcula 
             'Pollo con ensalada de rúcula' => [
                 ['nombre' => 'Pollo', 'cantidad' => 150, 'unidad_medida' => 'g'],
                 ['nombre' => 'Rúcula', 'cantidad' => 50, 'unidad_medida' => 'g'],
                 ['nombre' => 'Aceite de oliva', 'cantidad' => 10, 'unidad_medida' => 'g'],
                 ['nombre' => 'Tomate', 'cantidad' => 50, 'unidad_medida' => 'g'],
             ],
-             //4. Omelette con espinacas
+            //4. Omelette con espinacas
             'Omelette con espinacas' => [
                 ['nombre' => 'Huevo', 'cantidad' => 120, 'unidad_medida' => 'g'],
                 ['nombre' => 'Espinaca', 'cantidad' => 50, 'unidad_medida' => 'g'],
@@ -153,7 +153,7 @@ class RecetaIngredienteSeeder extends Seeder
                 ['nombre' => 'Queso feta', 'cantidad' => 30, 'unidad_medida' => 'g'],
                 ['nombre' => 'Aceite de oliva', 'cantidad' => 10, 'unidad_medida' => 'g'],
             ],
- 
+
             //*******SNACK*********/
             //1. Fruta + Almendras
             'Fruta + Almendras' => [
@@ -199,7 +199,7 @@ class RecetaIngredienteSeeder extends Seeder
                 ['nombre' => 'Aceite de oliva', 'cantidad' => 10, 'unidad_medida' => 'g'],
                 ['nombre' => 'Orégano', 'cantidad' => 2, 'unidad_medida' => 'g'],
             ],
-            
+
             //::::::::::::::VEGANO
             //*******DESAYUNO*********/
             //1. Avena cocida con leche vegetal y frutas 
@@ -224,7 +224,7 @@ class RecetaIngredienteSeeder extends Seeder
             'Yogur vegetal con granola' => [
                 ['nombre' => 'Yogur vegetal', 'cantidad' => 150, 'unidad_medida' => 'g'],
                 ['nombre' => 'Granola', 'cantidad' => 30, 'unidad_medida' => 'g'],
-            ],            
+            ],
             //5. Pudding de chía con leche vegetal
             'Pudding de chía con leche vegetal' => [
                 ['nombre' => 'Chía', 'cantidad' => 15, 'unidad_medida' => 'g'],
@@ -391,7 +391,7 @@ class RecetaIngredienteSeeder extends Seeder
             'Chocolate amargo' => [
                 ['nombre' => 'Chocolate amargo', 'cantidad' => 20, 'unidad_medida' => 'g']
             ],
- 
+
             //::::::::::::::CLÁSICO
             //*******DESAYUNO*********/
             //1. Tostadas con mermelada
@@ -430,7 +430,7 @@ class RecetaIngredienteSeeder extends Seeder
                 ['nombre' => 'Yerba mate', 'cantidad' => 20, 'unidad_medida' => 'g'],
                 ['nombre' => 'Galletas dulces', 'cantidad' => 30, 'unidad_medida' => 'g'],
             ],
-            
+
             //*******COMIDA*********/
             //1. Milanesas al horno
             'Milanesas al horno' => [
@@ -490,7 +490,7 @@ class RecetaIngredienteSeeder extends Seeder
                 ['nombre' => 'Pechuga de pollo', 'cantidad' => 100, 'unidad_medida' => 'g'],
                 ['nombre' => 'Crutones', 'cantidad' => 20, 'unidad_medida' => 'g'],
                 ['nombre' => 'Salsa César', 'cantidad' => 30, 'unidad_medida' => 'g'],
-            ],  
+            ],
             //3. Empanadas de carne
             'Empanadas de carne' => [
                 ['nombre' => 'Masa para empanadas', 'cantidad' => 100, 'unidad_medida' => 'g'],
@@ -539,8 +539,8 @@ class RecetaIngredienteSeeder extends Seeder
                 ['nombre' => 'Yerba mate', 'cantidad' => 20, 'unidad_medida' => 'g'],
                 ['nombre' => 'Galletas dulces', 'cantidad' => 20, 'unidad_medida' => 'g'],
             ],
-             //4. Yogur bebible
-             'Yogur bebible' => [
+            //4. Yogur bebible
+            'Yogur bebible' => [
                 ['nombre' => 'Yogur bebible', 'cantidad' => 200, 'unidad_medida' => 'g'],
             ],
             //5. Helado casero
@@ -817,7 +817,7 @@ class RecetaIngredienteSeeder extends Seeder
                 ['nombre' => 'Pasta', 'cantidad' => 100, 'unidad_medida' => 'g'],
                 ['nombre' => 'Vegetales mixtos', 'cantidad' => 80, 'unidad_medida' => 'g'],
             ],
- 
+
             //*******CENA*********/
             //1. Pollo grillado con ensalada
             'Pollo grillado con ensalada' => [
@@ -900,11 +900,11 @@ class RecetaIngredienteSeeder extends Seeder
         foreach ($data as $nombreReceta => $ingredientesReceta) {
             $idReceta = $recetas[$nombreReceta] ?? null;
             if (!$idReceta) continue;
-        
+
             foreach ($ingredientesReceta as $item) {
                 $idIngrediente = $ingredientes[$item['nombre']] ?? null;
                 if (!$idIngrediente) continue;
-        
+
                 DB::table('receta_ingrediente')->insert([
                     'id_receta' => $idReceta,
                     'id_ingrediente' => $idIngrediente,
@@ -915,4 +915,3 @@ class RecetaIngredienteSeeder extends Seeder
         }
     }
 }
-        

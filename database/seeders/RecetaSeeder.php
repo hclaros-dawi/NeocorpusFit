@@ -49,7 +49,7 @@ class RecetaSeeder extends Seeder
             ['nombre' => 'Sopa de lentejas', 'categoria_id' => $mediterranea, 'tiempo_preparacion' => 40, 'dificultad' => 'Media', 'imagen_url' => 'https://live.staticflickr.com/65535/54469800037_6b36ce7c35_z.jpg'],
             ['nombre' => 'Ensalada de garbanzos', 'categoria_id' => $mediterranea, 'tiempo_preparacion' => 15, 'dificultad' => 'Fácil', 'imagen_url' => 'https://live.staticflickr.com/65535/54470833429_dfc1c856bd.jpg'],
             ['nombre' => 'Tortilla de espinaca y queso feta', 'categoria_id' => $mediterranea, 'tiempo_preparacion' => 5, 'dificultad' => 'Fácil', 'imagen_url' => 'https://live.staticflickr.com/65535/54478431202_42082fc2ae.jpg'],
-         
+
             //*******SNACK*********/
             ['nombre' => 'Fruta + Almendras', 'categoria_id' => $mediterranea, 'tiempo_preparacion' => 5, 'dificultad' => 'Fácil', 'imagen_url' => 'https://live.staticflickr.com/65535/54470624676_a040c18632_z.jpg'],
             ['nombre' => 'Queso bajo en grasa', 'categoria_id' => $mediterranea, 'tiempo_preparacion' => 5, 'dificultad' => 'Fácil', 'imagen_url' => 'https://live.staticflickr.com/65535/54470892828_dd5429b804.jpg'],
@@ -58,7 +58,7 @@ class RecetaSeeder extends Seeder
             ['nombre' => 'Pan de centeno con aguacate', 'categoria_id' => $mediterranea, 'tiempo_preparacion' => 10, 'dificultad' => 'Fácil', 'imagen_url' => 'https://live.staticflickr.com/65535/54470634846_b3015f915b.jpg'],
             ['nombre' => 'Frutas variadas', 'categoria_id' => $mediterranea, 'tiempo_preparacion' => 5, 'dificultad' => 'Fácil', 'imagen_url' => 'https://live.staticflickr.com/65535/54470841654_acf1bebef3_z.jpg'],
             ['nombre' => 'Ensalada griega', 'categoria_id' => $mediterranea, 'tiempo_preparacion' => 15, 'dificultad' => 'Fácil', 'imagen_url' => 'https://live.staticflickr.com/65535/54468617097_a43518cf41.jpg'],
-     
+
             //::::::::::::::VEGANO
             //*******DESAYUNO*********/
             ['nombre' => 'Avena cocida con leche vegetal y frutas', 'categoria_id' => $vegano, 'tiempo_preparacion' => 10, 'dificultad' => 'Fácil', 'imagen_url' => 'https://live.staticflickr.com/65535/54485477570_abea92f420.jpg'],
@@ -77,7 +77,7 @@ class RecetaSeeder extends Seeder
             ['nombre' => 'Lasaña de vegetales', 'categoria_id' => $vegano, 'tiempo_preparacion' => 40, 'dificultad' => 'Media', 'imagen_url' => 'https://live.staticflickr.com/65535/54469654708_841aac89ae.jpg'],
             ['nombre' => 'Guiso de lentejas', 'categoria_id' => $vegano, 'tiempo_preparacion' => 45, 'dificultad' => 'Media', 'imagen_url' => 'https://live.staticflickr.com/65535/54469743770_411e1a7d02.jpg'],
             ['nombre' => 'Lentejas con arroz', 'categoria_id' => $vegano, 'tiempo_preparacion' => 25, 'dificultad' => 'Fácil', 'imagen_url' => 'https://live.staticflickr.com/65535/54469388426_df8df0f01c_w.jpg'],
-            
+
             //*******CENA*********/
             ['nombre' => 'Ensalada de quinoa con vegetales asados', 'categoria_id' => $vegano, 'tiempo_preparacion' => 20, 'dificultad' => 'Fácil', 'imagen_url' => 'https://live.staticflickr.com/65535/54485322604_bc3137db84.jpg'],
             ['nombre' => 'Hamburguesas veganas caseras', 'categoria_id' => $vegano, 'tiempo_preparacion' => 35, 'dificultad' => 'Media', 'imagen_url' => 'https://live.staticflickr.com/65535/54473175155_c07e5b87de_z.jpg'],

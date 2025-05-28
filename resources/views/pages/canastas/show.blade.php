@@ -53,7 +53,6 @@
                 </div>
             @endauth
 
-
             @php
                 $ingredientes = $canastas->first()->ingredientes;
             @endphp

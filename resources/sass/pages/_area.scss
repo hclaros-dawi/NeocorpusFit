@@ -20,7 +20,7 @@
 
         h1 {
             font-weight: variables.$font-bold;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 4rem;
             color: variables.$white;
 
@@ -84,7 +84,7 @@
         &-header {
             padding: 1.2rem 1.5rem;
             font-weight: variables.$font-bold;
-            font-size: 2rem;
+            font-size: 1.2rem;
             background-color: #613599;
             color: variables.$secondary-color;
 
@@ -107,7 +107,7 @@
             .empty {
                 text-align: center;
                 color: variables.$dark-color;
-                font-size: 1.5rem;
+                font-size: 1.1rem;
                 padding: 2rem 1rem;
 
                 @include mx.responsive(tablet) {
@@ -123,7 +123,7 @@
                 }
 
                 i {
-                    font-size: 1.5rem;
+                    font-size: 1.1rem;
                     margin-bottom: 0.5rem;
                     color: variables.$dark-color;
 
@@ -141,12 +141,124 @@
                 }
             }
 
+            .btn-base {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: variables.$font-semibold;
+                border-radius: 0.5rem;
+                padding: 0.6rem 1.2rem;
+                font-size: 1.1rem;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                border: 0.125rem solid transparent;
+                cursor: pointer;
+                text-decoration: none;
+
+                @include mx.responsive(tablet) {
+                    padding: 0.8rem 1.5rem;
+                    font-size: 1.6rem;
+                }
+
+                @include mx.responsive(desktop) {
+                    padding: 1rem 1.8rem;
+                    font-size: 1.8rem;
+                }
+
+                @include mx.responsive(large-desktop) {
+                    padding: 1.2rem 2rem;
+                    font-size: 2rem;
+                }
+
+                i {
+                    margin-right: 0.5rem;
+                }
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+                }
+
+                &:active {
+                    transform: translateY(0);
+                }
+            }
+
+            .btn-view-item {
+                @extend .btn-base;
+                background-color: variables.$primary-color;
+                color: variables.$white;
+
+                &:hover {
+                    background-color: variables.$primary-color;
+                    color: variables.$white;
+                }
+            }
+
+            .btn-view-menu {
+                @extend .btn-base;
+                background-color: variables.$primary-color;
+                color: variables.$white;
+
+                &:hover {
+                    background-color: variables.$primary-color;
+                    color: variables.$white;
+                }
+            }
+
+            .btn-edit-menu {
+                @extend .btn-base;
+                background-color: variables.$secondary-color;
+                color: variables.$dark-color;
+
+                &:hover {
+                    background-color:variables.$secondary-color;
+                    color: variables.$dark-color;
+                }
+            }
+
+            .btn-delete-menu {
+                @extend .btn-base;
+                background-color: transparent;
+                color: #dc3545;
+                border-color: #dc3545;
+
+                &:hover {
+                    background-color: #dc3545;
+                    color: variables.$white;
+                }
+            }
+
+            .btn-delete-item {
+                @extend .btn-base;
+                background-color: transparent;
+                color: #dc3545;
+                border-color: #dc3545;
+
+                &:hover {
+                    background-color: #dc3545;
+                    color: variables.$white;
+                }
+            }
+
+            .btn-back-home {
+                @extend .btn-base;
+                background-color: transparent;
+                color: variables.$secondary-color;
+                border-color: variables.$secondary-color;
+                padding: 0.8rem 1.8rem;
+
+                &:hover {
+                    background-color: variables.$secondary-color;
+                    color: variables.$dark-color;
+                }
+            }
+
             .favorite-item {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 gap: 1rem;
-                align-items: center;
                 flex: 1;
                 padding: 1rem 0;
                 min-width: 0;
@@ -213,7 +325,7 @@
                     justify-content: center;
 
                     h5 {
-                        font-size: 1.5rem;
+                        font-size: 1.2rem;
                         margin: 0;
                         text-align: center;
                         font-weight: variables.$font-semibold;
@@ -234,7 +346,7 @@
 
                     p {
                         color: variables.$dark-color;
-                        font-size: 1.4rem;
+                        font-size: 1.1rem;
                         text-align: center;
 
                         @include mx.responsive(tablet) {
@@ -253,22 +365,19 @@
 
                 &__actions {
                     display: flex;
-                    gap: 1.5rem;
+                    gap: 1rem;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    margin-top: 1rem;
 
-                    .btn {
-                        font-size: 1.6rem;
+                    @include mx.responsive(tablet) {
+                        gap: 1.5rem;
+                        justify-content: flex-end;
+                        margin-top: 0;
+                    }
 
-                        @include mx.responsive(tablet) {
-                            font-size: 1.8rem;
-                        }
-
-                        @include mx.responsive(desktop) {
-                            font-size: 2rem;
-                        }
-
-                        @include mx.responsive(large-desktop) {
-                            font-size: 2.2rem;
-                        }
+                    @include mx.responsive(desktop) {
+                        gap: 2rem;
                     }
                 }
             }
@@ -282,7 +391,7 @@
         a {
             font-weight: variables.$font-semibold;
             padding: 0.75rem 2rem;
-            font-size: 2rem;
+            font-size: 1.1rem;
 
             @include mx.responsive(tablet) {
                 font-size: 2.1rem;
@@ -294,10 +403,6 @@
 
             @include mx.responsive(large-desktop) {
                 font-size: 2.5rem;
-            }
-
-            @include mx.responsive(tablet) {
-                font-size: 1.4rem;
             }
 
             i {

@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    @vite(['resources/js/creatina.js', 'resources/js/dropdown.js', 'resources/js/select.js', 'resources/sass/app.scss'])
+    @vite(['resources/js/app.js', 'resources/js/creatina.js', 'resources/js/select.js', 'resources/js/dropdown.js', 'resources/sass/app.scss'])
 </head>
 
 <body class="bg-dark-gray home-page">
@@ -23,7 +23,7 @@
             <h1 class="creatina__title display-5">CÁLCULO DE CREATINA</h1>
             <p class="creatina__description lead">
                 Con esta calculadora de creatina, podrás saber cuál es la cantidad de consumo de creatina monohidrato
-                diaria más óptima para ti (o para tu cliente).
+                diaria más óptima para ti.
             </p>
 
             <div class="creatina__form-wrapper row justify-content-center">

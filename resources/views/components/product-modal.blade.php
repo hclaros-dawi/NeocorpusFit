@@ -1,12 +1,13 @@
-<div class="modal fade" id="modal-{{ $id }}" tabindex="-1" aria-labelledby="modalLabel-{{ $id }}" aria-hidden="true">
+<div class="modal fade" id="modal-{{ $id }}" tabindex="-1" aria-labelledby="modalLabel-{{ $id }}"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content custom-modal-content">
-<div class="modal-header border-0 d-flex justify-content-between align-items-center">
-    <h5 class="modal-title fw-bold text-center flex-grow-1" id="modalLabel-{{ $id }}">
-        {{ $nombre }}
-    </h5>
-    <button type="button" class="btn-close ms-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-</div>
+            <div class="modal-header border-0 d-flex justify-content-between align-items-center">
+                <h5 class="modal-title fw-bold text-center flex-grow-1" id="modalLabel-{{ $id }}">
+                    {{ $nombre }}
+                </h5>
+                <button type="button" class="btn-close ms-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
 
             <div class="modal-body text-center">
                 <p class="text-muted bg-light rounded-3 p-3 fst-italic small shadow-sm">

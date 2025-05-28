@@ -32,8 +32,8 @@
         }
 
         &__image {
-            width: 6rem;
-            height: 6rem;
+            width: 5rem;
+            height: 5rem;
             object-fit: cover;
             margin-bottom: 1rem;
 
@@ -54,7 +54,7 @@
         }
 
         &__title {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: variables.$font-bold;
             color: variables.$secondary-color;
             margin-bottom: 0.75rem;
@@ -88,7 +88,7 @@
         color: variables.$light-gray;
         width: auto;
         height: 6.5rem;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
 
         @include mx.responsive(tablet) {
             height: 9.5rem;
@@ -113,7 +113,7 @@
     box-shadow: 1.1875rem 2.8125rem 4.9375rem rgba(0, 0, 0, 0.25);
 
     .card-feature__body__custom-heading {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
 
         @include mx.responsive(tablet) {
             font-size: 2rem;
@@ -133,7 +133,7 @@
         width: auto;
         height: 15.5rem;
         @include mx.flex-center;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
 
         @include mx.responsive(tablet) {
             height: 16rem;

@@ -16,7 +16,7 @@
     }
 
     &__icon {
-        width: 5rem;
+        width: 4rem;
         margin-bottom: 1.5rem;
         transition: transform 0.3s ease;
 
@@ -40,7 +40,7 @@
     &__title {
         color: variables.$primary-color;
         font-weight: variables.$font-bold;
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         margin-bottom: 2.5rem;
 
         @include mx.responsive(tablet) {
@@ -63,7 +63,7 @@
         margin-right: auto;
         margin-bottom: 4rem;
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
 
         @include mx.responsive(tablet) {
             font-size: 1.5rem;
@@ -93,7 +93,7 @@
         margin-bottom: 0.5rem;
         font-weight: variables.$font-bold;
         display: block;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
 
         @include mx.responsive(tablet) {
             font-size: 1.5rem;
@@ -112,7 +112,7 @@
         background-color: #f2f2f2;
         border: solid 0.09rem #ced4da;
         color: #212529;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
 
         &::placeholder {
             color: #6c757d;
@@ -140,7 +140,7 @@
 
     &__error {
         color: red;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
 
         @include mx.responsive(tablet) {
             font-size: 1.5rem;
@@ -160,7 +160,7 @@
     }
 
     &__result-text {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
         margin-bottom: 1.5rem;
         color: variables.$white;
         text-align: center;
@@ -180,7 +180,7 @@
 
     &__classification {
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
 
         @include mx.responsive(tablet) {
             font-size: 1.8rem;
@@ -197,7 +197,7 @@
 
     &__button {
         height: 4.5rem;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
 
         @include mx.responsive(tablet) {
             font-size: 1.5rem;

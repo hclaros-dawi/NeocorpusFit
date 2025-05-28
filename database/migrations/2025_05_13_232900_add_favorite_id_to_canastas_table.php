@@ -10,15 +10,15 @@ class AddFavoriteIdToCanastasTable extends Migration
     {
         Schema::table('canastas', function (Blueprint $table) {
             $table->foreignId('favorite_id')
-                ->nullable()   
-                ->constrained('favorites')  
-                ->onDelete('cascade');  
+                ->nullable()
+                ->constrained('favorites')
+                ->onDelete('cascade');
         });
     }
 
     public function down()
     {
-         Schema::table('canastas', function (Blueprint $table) {
+        Schema::table('canastas', function (Blueprint $table) {
             $table->dropColumn('favorite_id');
         });
     }

@@ -8,7 +8,6 @@ use App\Models\Categoria;
 
 class AppServiceProvider extends ServiceProvider
 {
-
     //para compartir la variable categorias globalmente
     public function boot()
     {

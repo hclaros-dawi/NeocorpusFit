@@ -97,7 +97,7 @@
         <div class="header__auth-buttons">
             @auth
                 <a href="{{ route('user.area') }}" class="btn header__auth-btn header__auth-btn--area">
-                        <i class="fas fa-user me-1"></i> Mi Área Personal
+                    <i class="fas fa-user me-1"></i> Mi Área Personal
                 </a>
 
                 <form method="POST" action="{{ route('logout') }}" class="header__auth-form">
@@ -112,6 +112,5 @@
                 </a>
             @endauth
         </div>
-
     </div>
 </header>

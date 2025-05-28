@@ -9,16 +9,16 @@ class AddFavoriteIdToMenusTable extends Migration
     public function up()
     {
         Schema::table('menus', function (Blueprint $table) {
-             $table->foreignId('favorite_id')
-                ->nullable() 
-                ->constrained('favorites')  
-                ->onDelete('cascade');  
+            $table->foreignId('favorite_id')
+                ->nullable()
+                ->constrained('favorites')
+                ->onDelete('cascade');
         });
     }
 
     public function down()
     {
-         Schema::table('menus', function (Blueprint $table) {
+        Schema::table('menus', function (Blueprint $table) {
             $table->dropColumn('favorite_id');
         });
     }

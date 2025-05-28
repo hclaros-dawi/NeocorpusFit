@@ -10,42 +10,42 @@ class PasoRecetaSeeder extends Seeder
 
     public function run(): void
     {
-       //::::::::::::::MEDITERRÁNEO
-       //*******DESAYUNO*********/       
-       $avenaConFrutos = DB::table('recetas')->where('nombre', 'Avena con frutos')->value('id_receta');
-       $yogurConNueces = DB::table('recetas')->where('nombre', 'Yogur con nueces')->value('id_receta');
-       $panIntegralConAceite = DB::table('recetas')->where('nombre', 'Pan integral con aceite de oliva')->value('id_receta');
-       $yogurNaturalConChia = DB::table('recetas')->where('nombre', 'Yogur natural con chía')->value('id_receta');
-       $smoothieDeFrutas = DB::table('recetas')->where('nombre', 'Smoothie de frutas')->value('id_receta');
-       $avenaYSemillas = DB::table('recetas')->where('nombre', 'Avena y semillas')->value('id_receta');
-       $tostadasIntegrales = DB::table('recetas')->where('nombre', 'Tostadas integrales')->value('id_receta');
-       
-       //*******COMIDA*********/
-       $salmonConQuinoa = DB::table('recetas')->where('nombre', 'Salmón con quinoa')->value('id_receta');
-       $pastaIntegralConVerduras = DB::table('recetas')->where('nombre', 'Pasta integral con verduras')->value('id_receta');
-       $polloAlLimón = DB::table('recetas')->where('nombre', 'Pollo al limón')->value('id_receta');
-       $polloAsadoConBatatas = DB::table('recetas')->where('nombre', 'Pollo asado con batatas')->value('id_receta');
-       $verdurasGrilladas = DB::table('recetas')->where('nombre', 'Verduras grilladas')->value('id_receta');
-       $pastaConPesto = DB::table('recetas')->where('nombre', 'Pasta con pesto')->value('id_receta');
-       $arrozIntegralConVerduras = DB::table('recetas')->where('nombre', 'Arroz integral con verduras')->value('id_receta');
-       
-       //*******CENA*********/
-       $lentejasMediterraneas = DB::table('recetas')->where('nombre', 'Lentejas mediterráneas')->value('id_receta');
-       $pescadoAlHornoConPapas = DB::table('recetas')->where('nombre', 'Pescado al horno con papas')->value('id_receta');
-       $polloConEnsaladaDeRucula = DB::table('recetas')->where('nombre', 'Pollo con ensalada de rúcula')->value('id_receta');
-       $omeletteConEspinacas = DB::table('recetas')->where('nombre', 'Omelette con espinacas')->value('id_receta');
-       $sopaDeLentejas = DB::table('recetas')->where('nombre', 'Sopa de lentejas')->value('id_receta');
-       $ensaladaDeGarbanzos = DB::table('recetas')->where('nombre', 'Ensalada de garbanzos')->value('id_receta');
-       $tortillaEspinacaQuesoFeta = DB::table('recetas')->where('nombre', 'Tortilla de espinaca y queso feta')->value('id_receta');
-       
-       //*******SNACK*********/
-       $frutaAlmendras = DB::table('recetas')->where('nombre', 'Fruta + Almendras')->value('id_receta');
-       $quesoBajoEnGrasa = DB::table('recetas')->where('nombre', 'Queso bajo en grasa')->value('id_receta');
-       $hummusConZanahorias = DB::table('recetas')->where('nombre', 'Hummus con zanahorias')->value('id_receta');
-       $yogurGriegoConMiel = DB::table('recetas')->where('nombre', 'Yogur griego con miel')->value('id_receta');
-       $panCentenoAguacate = DB::table('recetas')->where('nombre', 'Pan de centeno con aguacate')->value('id_receta');
-       $frutasVariadas = DB::table('recetas')->where('nombre', 'Frutas variadas')->value('id_receta');
-       $ensaladaGriega = DB::table('recetas')->where('nombre', 'Ensalada griega')->value('id_receta');
+        //::::::::::::::MEDITERRÁNEO
+        //*******DESAYUNO*********/       
+        $avenaConFrutos = DB::table('recetas')->where('nombre', 'Avena con frutos')->value('id_receta');
+        $yogurConNueces = DB::table('recetas')->where('nombre', 'Yogur con nueces')->value('id_receta');
+        $panIntegralConAceite = DB::table('recetas')->where('nombre', 'Pan integral con aceite de oliva')->value('id_receta');
+        $yogurNaturalConChia = DB::table('recetas')->where('nombre', 'Yogur natural con chía')->value('id_receta');
+        $smoothieDeFrutas = DB::table('recetas')->where('nombre', 'Smoothie de frutas')->value('id_receta');
+        $avenaYSemillas = DB::table('recetas')->where('nombre', 'Avena y semillas')->value('id_receta');
+        $tostadasIntegrales = DB::table('recetas')->where('nombre', 'Tostadas integrales')->value('id_receta');
+
+        //*******COMIDA*********/
+        $salmonConQuinoa = DB::table('recetas')->where('nombre', 'Salmón con quinoa')->value('id_receta');
+        $pastaIntegralConVerduras = DB::table('recetas')->where('nombre', 'Pasta integral con verduras')->value('id_receta');
+        $polloAlLimón = DB::table('recetas')->where('nombre', 'Pollo al limón')->value('id_receta');
+        $polloAsadoConBatatas = DB::table('recetas')->where('nombre', 'Pollo asado con batatas')->value('id_receta');
+        $verdurasGrilladas = DB::table('recetas')->where('nombre', 'Verduras grilladas')->value('id_receta');
+        $pastaConPesto = DB::table('recetas')->where('nombre', 'Pasta con pesto')->value('id_receta');
+        $arrozIntegralConVerduras = DB::table('recetas')->where('nombre', 'Arroz integral con verduras')->value('id_receta');
+
+        //*******CENA*********/
+        $lentejasMediterraneas = DB::table('recetas')->where('nombre', 'Lentejas mediterráneas')->value('id_receta');
+        $pescadoAlHornoConPapas = DB::table('recetas')->where('nombre', 'Pescado al horno con papas')->value('id_receta');
+        $polloConEnsaladaDeRucula = DB::table('recetas')->where('nombre', 'Pollo con ensalada de rúcula')->value('id_receta');
+        $omeletteConEspinacas = DB::table('recetas')->where('nombre', 'Omelette con espinacas')->value('id_receta');
+        $sopaDeLentejas = DB::table('recetas')->where('nombre', 'Sopa de lentejas')->value('id_receta');
+        $ensaladaDeGarbanzos = DB::table('recetas')->where('nombre', 'Ensalada de garbanzos')->value('id_receta');
+        $tortillaEspinacaQuesoFeta = DB::table('recetas')->where('nombre', 'Tortilla de espinaca y queso feta')->value('id_receta');
+
+        //*******SNACK*********/
+        $frutaAlmendras = DB::table('recetas')->where('nombre', 'Fruta + Almendras')->value('id_receta');
+        $quesoBajoEnGrasa = DB::table('recetas')->where('nombre', 'Queso bajo en grasa')->value('id_receta');
+        $hummusConZanahorias = DB::table('recetas')->where('nombre', 'Hummus con zanahorias')->value('id_receta');
+        $yogurGriegoConMiel = DB::table('recetas')->where('nombre', 'Yogur griego con miel')->value('id_receta');
+        $panCentenoAguacate = DB::table('recetas')->where('nombre', 'Pan de centeno con aguacate')->value('id_receta');
+        $frutasVariadas = DB::table('recetas')->where('nombre', 'Frutas variadas')->value('id_receta');
+        $ensaladaGriega = DB::table('recetas')->where('nombre', 'Ensalada griega')->value('id_receta');
 
         //::::::::::::::VEGANO
         //*******DESAYUNO*********/
@@ -74,7 +74,7 @@ class PasoRecetaSeeder extends Seeder
         $wrapsGarbanzos = DB::table('recetas')->where('nombre', 'Wraps de lechuga con garbanzos')->value('id_receta');
         $pastaPestoNueces = DB::table('recetas')->where('nombre', 'Pasta integral con pesto de albahaca y nueces')->value('id_receta');
         $tartaDeVerduras = DB::table('recetas')->where('nombre', 'Tarta de verduras')->value('id_receta');
-                
+
         //*******SNACK*********/
         $hummusZanahorias = DB::table('recetas')->where('nombre', 'Hummus con zanahorias')->value('id_receta');
         $frutasVariadasVeganas = DB::table('recetas')->where('nombre', 'Frutas variadas')->value('id_receta');
@@ -111,15 +111,15 @@ class PasoRecetaSeeder extends Seeder
         $panquequesCaseros = DB::table('recetas')->where('nombre', 'Panqueques caseros')->value('id_receta');
         $heladoCasero = DB::table('recetas')->where('nombre', 'Helado casero')->value('id_receta');
         $alfajorCasero = DB::table('recetas')->where('nombre', 'Alfajor casero')->value('id_receta');
-        
+
         //*******SNACK*********/
         $panConQueso = DB::table('recetas')->where('nombre', 'Pan con queso')->value('id_receta');
         $galletasDeArroz = DB::table('recetas')->where('nombre', 'Galletas de arroz')->value('id_receta');
-        $mateGalletasSnack = DB::table('recetas')->where('nombre', 'Mate con galletas')->value('id_receta'); 
-        $yogurBebibleSnack = DB::table('recetas')->where('nombre', 'Yogur bebible')->value('id_receta'); 
-        $heladoSnack = DB::table('recetas')->where('nombre', 'Helado casero')->value('id_receta'); 
-        $alfajorSnack = DB::table('recetas')->where('nombre', 'Alfajor casero')->value('id_receta'); 
-        $panquequesSnack = DB::table('recetas')->where('nombre', 'Panqueques caseros')->value('id_receta'); 
+        $mateGalletasSnack = DB::table('recetas')->where('nombre', 'Mate con galletas')->value('id_receta');
+        $yogurBebibleSnack = DB::table('recetas')->where('nombre', 'Yogur bebible')->value('id_receta');
+        $heladoSnack = DB::table('recetas')->where('nombre', 'Helado casero')->value('id_receta');
+        $alfajorSnack = DB::table('recetas')->where('nombre', 'Alfajor casero')->value('id_receta');
+        $panquequesSnack = DB::table('recetas')->where('nombre', 'Panqueques caseros')->value('id_receta');
 
         //::::::::::::::ALTO EN PROTEÍNAS
         //*******DESAYUNO*********/
@@ -202,7 +202,7 @@ class PasoRecetaSeeder extends Seeder
             //1. Avena con frutos  
             ['id_receta' => $avenaConFrutos, 'descripcion' => 'Cocina la avena con leche según las instrucciones del paquete.', 'orden' => 1],
             ['id_receta' => $avenaConFrutos, 'descripcion' => 'Sirve la avena en un bol.', 'orden' => 2],
-            ['id_receta' => $avenaConFrutos, 'descripcion' => 'Agrega banana picada y frutos rojos por encima.', 'orden' => 3],  
+            ['id_receta' => $avenaConFrutos, 'descripcion' => 'Agrega banana picada y frutos rojos por encima.', 'orden' => 3],
             //2. Yogur con nueces
             ['id_receta' => $yogurConNueces, 'descripcion' => 'Coloca el yogur natural en un bol.', 'orden' => 1],
             ['id_receta' => $yogurConNueces, 'descripcion' => 'Añade nueces picadas por encima.', 'orden' => 2],
@@ -418,7 +418,7 @@ class PasoRecetaSeeder extends Seeder
             //1. Tostadas con mermelada  
             ['id_receta' => $tostadasConMermelada, 'descripcion' => 'Tuesta el pan hasta que esté dorado.', 'orden' => 1],
             ['id_receta' => $tostadasConMermelada, 'descripcion' => 'Unta la mermelada sobre las tostadas.', 'orden' => 2],
-            ['id_receta' => $tostadasConMermelada, 'descripcion' => 'Sirve y acompaña con café o té.', 'orden' => 3],                      
+            ['id_receta' => $tostadasConMermelada, 'descripcion' => 'Sirve y acompaña con café o té.', 'orden' => 3],
             //2. Yogur con cereal
             ['id_receta' => $yogurConCereal, 'descripcion' => 'Sirve el yogur en un tazón.', 'orden' => 1],
             ['id_receta' => $yogurConCereal, 'descripcion' => 'Agrega el cereal por encima del yogur.', 'orden' => 2],
@@ -704,7 +704,7 @@ class PasoRecetaSeeder extends Seeder
             //1. Pollo grillado con ensalada  
             ['id_receta' => $polloGrilladoConEnsalada, 'descripcion' => 'Cocina el pollo en la parrilla o sartén.', 'orden' => 1],
             ['id_receta' => $polloGrilladoConEnsalada, 'descripcion' => 'Prepara una ensalada con lechuga, tomate y cebolla.', 'orden' => 2],
-            ['id_receta' => $polloGrilladoConEnsalada, 'descripcion' => 'Sirve el pollo con la ensalada y disfruta.', 'orden' => 3],          
+            ['id_receta' => $polloGrilladoConEnsalada, 'descripcion' => 'Sirve el pollo con la ensalada y disfruta.', 'orden' => 3],
             //2. Lentejas con arroz
             ['id_receta' => $lentejasConArroz, 'descripcion' => 'Cocina las lentejas y el arroz por separado.', 'orden' => 1],
             ['id_receta' => $lentejasConArroz, 'descripcion' => 'Mezcla las lentejas cocidas con el arroz.', 'orden' => 2],

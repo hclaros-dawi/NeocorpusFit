@@ -49,7 +49,7 @@ class RecetaMenuSeeder extends Seeder
                     'Viernes' => ['Pan de centeno con aguacate'],
                     'Sábado' => ['Frutas variadas'],
                     'Domingo' => ['Ensalada griega'],
-                ],    
+                ],
             ],
 
             'Vegano' => [
@@ -88,7 +88,7 @@ class RecetaMenuSeeder extends Seeder
                     'Viernes' => ['Chips de garbanzo'],
                     'Sábado' => ['Galletas veganas'],
                     'Domingo' => ['Chocolate amargo'],
-                ], 
+                ],
             ],
 
             'Clásico' => [
@@ -127,7 +127,7 @@ class RecetaMenuSeeder extends Seeder
                     'Viernes' => ['Helado casero'],
                     'Sábado' => ['Alfajor casero'],
                     'Domingo' => ['Panqueques caseros'],
-                ], 
+                ],
             ],
 
             'Alto en proteína' => [
@@ -166,7 +166,7 @@ class RecetaMenuSeeder extends Seeder
                     'Viernes' => ['Batido + banana'],
                     'Sábado' => ['Hummus + tostadas'],
                     'Domingo' => ['Bife con papas'],
-                ], 
+                ],
             ],
 
             'Plan rápido' => [
@@ -205,11 +205,11 @@ class RecetaMenuSeeder extends Seeder
                     'Viernes' => ['Gelatina light'],
                     'Sábado' => ['Helado de yogur'],
                     'Domingo' => ['Tostadas con aguacate'],
-                ], 
+                ],
             ],
         ];
 
-         $diaMap = [
+        $diaMap = [
             'Lunes' => 1,
             'Martes' => 2,
             'Miércoles' => 3,
@@ -221,24 +221,24 @@ class RecetaMenuSeeder extends Seeder
 
         foreach ($data as $menuNombre => $tiposComida) {
             $menuId = $menus[$menuNombre] ?? null;
-            if (!$menuId) continue;  // Si no se encuentra el menú, continuar con el siguiente
+            if (!$menuId) continue;
 
             foreach ($tiposComida as $tipoComida => $dias) {
                 foreach ($dias as $diaNombre => $recetasDelDia) {
                     $diaSemana = $diaMap[$diaNombre] ?? null;
-                    if (!$diaSemana) continue; // Si no se encuentra el día, continuar con el siguiente
+                    if (!$diaSemana) continue;
 
-                     foreach ($recetasDelDia as $orden => $recetaNombre) {
+                    foreach ($recetasDelDia as $orden => $recetaNombre) {
                         $recetaId = $recetas[$recetaNombre] ?? null;
-                        if (!$recetaId) continue; // Si no se encuentra la receta, continuar con la siguiente
+                        if (!$recetaId) continue;
 
                         DB::table('receta_menu')->insert([
                             'id_menu' => $menuId,
                             'id_receta' => $recetaId,
-                            'orden' => $orden + 1,  
+                            'orden' => $orden + 1,
                             'dia_semana' => $diaSemana,
-                            'tipo_comida' => ucfirst($tipoComida),  
-                            'enlace_receta' => null,  
+                            'tipo_comida' => ucfirst($tipoComida),
+                            'enlace_receta' => null,
                         ]);
                     }
                 }

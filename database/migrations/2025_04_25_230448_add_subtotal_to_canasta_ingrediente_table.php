@@ -9,13 +9,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('canasta_ingrediente', function (Blueprint $table) {
-            $table->decimal('subtotal', 10, 2)->nullable(); 
+            $table->decimal('subtotal', 10, 2)->nullable();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::table('canasta_ingrediente', function (Blueprint $table) {

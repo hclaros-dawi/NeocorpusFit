@@ -1,0 +1,130 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as mx;
+@use "../components/buttons";
+
+.custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: variables.$section-bg;
+    color: variables.$text-color;
+    border: 0.0938rem solid variables.$primary-color;
+    padding: 0.375rem 2rem 0.375rem 0.75rem;
+    font-weight: variables.$font-semibold;
+    font-size: 0.875rem;
+    cursor: pointer;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin: 0.25rem auto;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23FFC107' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 0.625rem 0.4375rem;
+
+    &:hover {
+        border-color: variables.$primary-color;
+    }
+
+    &:focus {
+        border-color: variables.$primary-color;
+        outline: none;
+        box-shadow: 0 0 0 0.25rem rgba(variables.$primary-color, 0.25);
+    }
+
+    @include mx.responsive(tablet) {
+        font-size: 1rem;
+        padding: 0.5rem 2.5rem 0.5rem 1rem;
+    }
+
+    @include mx.responsive(desktop) {
+        font-size: 1.125rem;
+    }
+
+    @include mx.responsive(large-desktop) {
+        font-size: 1.25rem;
+    }
+}
+
+.table select.custom-select {
+    max-width: 100%;
+    min-width: auto;
+    width: auto;
+}
+.nombre-receta {
+    height: 6.875rem;
+    @include mx.flex-center;
+    padding: 0.25rem;
+    margin-bottom: 3rem;
+    margin-top: 6rem;
+}
+
+.btn-guardar {
+    width: 100%;
+    max-width: 18.75rem;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    background-color: variables.$secondary-color;
+    color: variables.$black;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: variables.$font-semibold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease,
+        transform 0.2s ease;
+
+    &:hover {
+        background-color: #e0a800;
+        color: #000000;
+        box-shadow: 0 0.375rem 0.625rem rgba(224, 168, 0, 0.6);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 0.1875rem 0.3125rem rgba(224, 168, 0, 0.5);
+    }
+
+    @include mx.responsive(tablet) {
+        width: auto;
+        max-width: none;
+        font-size: 1.7rem;
+    }
+
+    @include mx.responsive(desktop) {
+        width: auto;
+        max-width: none;
+        font-size: 1.8rem;
+    }
+
+    @include mx.responsive(large-desktop) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 1.9rem;
+    }
+}
+
+@media (max-width: 1190px) {
+    .nombre-receta {
+        height: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        @include mx.flex-center;
+    }
+
+    .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table th {
+        display: none;
+    }
+
+    .table tr {
+        display: block;
+        margin-bottom: 1.5rem;
+        border-bottom: 0.0625rem solid #ccc;
+    }
+}

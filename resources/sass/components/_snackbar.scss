@@ -1,0 +1,68 @@
+@use "../base/variables" as variables;
+@use "../base/mixins" as mx;
+
+.alert {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 70rem;
+    width: 90vw;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+    font-size: 1.4rem;
+    font-weight: variables.$font-semibold;
+    color: #fff;
+    z-index: 1080;
+    @include mx.flex-center;
+    animation: slideDownFadeIn 0.5s ease forwards;
+
+    @include mx.responsive(tablet) {
+        font-size: 1.7rem;
+    }
+
+    @include mx.responsive(desktop) {
+        font-size: 1.8rem;
+    }
+
+    @include mx.responsive(large-desktop) {
+        font-size: 1.9rem;
+    }
+
+    &.alert-success {
+        background-color: #28a745;
+        border: 0.0625rem solid #28a745;
+    }
+
+    &.alert-danger {
+        background-color: #dc3545;
+        border: 0.0625rem solid #dc3545;
+    }
+}
+
+@keyframes slideDownFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes slideUpFadeOut {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+}
+
+.alert.fade-out {
+    animation: slideUpFadeOut 0.5s ease forwards;
+}

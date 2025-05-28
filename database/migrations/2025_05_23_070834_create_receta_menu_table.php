@@ -6,9 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('receta_menu', function (Blueprint $table) {
@@ -24,10 +21,7 @@ return new class extends Migration
             $table->foreign('id_menu')->references('id_menu')->on('menus');
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
+    
     public function down(): void
     {
         Schema::dropIfExists('receta_menu');
