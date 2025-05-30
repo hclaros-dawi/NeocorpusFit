@@ -23,7 +23,6 @@ class UserController extends Controller
                             ->orderBy('pivot_orden');
                     }]);
                 },
-                'suplemento',
                 'canasta'
             ])
             ->get();
@@ -37,7 +36,6 @@ class UserController extends Controller
             'favorites' => $favorites,
             'favoriteRecetas' => $favorites->where('type', 'receta'),
             'favoriteMenus' => $favorites->where('type', 'menu'),
-            'favoriteSuplementos' => $favorites->where('type', 'suplemento'),
             'favoriteCanastas' => $favorites->where('type', 'canasta'),
             'modo' => $modo,
         ]);

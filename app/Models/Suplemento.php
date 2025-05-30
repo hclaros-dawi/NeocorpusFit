@@ -23,10 +23,4 @@ class Suplemento extends Model
     {
         return $this->belongsTo(Categoria::class, 'categoria_id', 'id_categoria');
     }
-
-    public function favorites()
-    {
-        return $this->hasMany(Favorite::class, 'item_id', 'id_suplemento')
-            ->where('type', 'suplemento');
-    }
 }

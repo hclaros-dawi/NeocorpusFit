@@ -21,19 +21,4 @@ class SuplementoController extends Controller
 
         return view('pages.suplementos.show', compact('categoria', 'suplementos'));
     }
-
-    public function showSingle(Suplemento $suplemento)
-    {
-        return view('pages.suplementos.single', compact('suplemento'));
-    }
-    public function store(Request $request)
-    {
-        $data = $request->validate([
-            'nombre' => 'required|string|max:255',
-        ]);
-
-        Suplemento::create($data);
-
-        return back()->with('success', 'Suplemento guardado correctamente.');
-    }
 }

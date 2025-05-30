@@ -35,9 +35,4 @@ class Favorite extends Model
     {
         return $this->belongsTo(Canasta::class, 'item_id');
     }
-
-    public function suplemento()
-    {
-        return $this->belongsTo(Suplemento::class, 'item_id');
-    }
 }

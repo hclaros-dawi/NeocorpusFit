@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Suplemento, Receta, Menu, Canasta, Favorite};
+use App\Models\{Receta, Menu, Canasta, Favorite};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -12,7 +12,7 @@ class FavoriteController extends Controller
     {
         $user = Auth::user();
 
-        if (!in_array($type, ['suplemento', 'receta', 'menu', 'canasta'])) {
+        if (!in_array($type, ['receta', 'menu', 'canasta'])) {
             return back()->with('error', 'Tipo de elemento no válido');
         }
 
@@ -57,7 +57,6 @@ class FavoriteController extends Controller
     protected function getModel($type)
     {
         return match ($type) {
-            'suplemento' => Suplemento::class,
             'receta' => Receta::class,
             'menu' => Menu::class,
             'canasta' => Canasta::class,
