@@ -69,3 +69,59 @@ Accesibles desde el menú principal. Ofrecen resultados inmediatos y recomendaci
 | **Base de Datos**| MySQL (gestionada mediante PhpMyAdmin) |
 | **Control de versiones** | Git + GitHub       |
 | **Build Tool**   | Vite para compilar SCSS y JS |
+
+## Guía rápida de arranque local
+
+### Requisitos previos
+
+Tener instalado:
+
+- PHP >= 8.x  
+- Composer  
+- Node.js y NPM  
+- MySQL  
+- Laravel CLI
+- XAMPP (opcional, si no tienes servidor web ni MySQL instalado)  
+
+---
+
+### Pasos para levantar el proyecto en local
+
+#### 1. Clona el repositorio
+
+```bash
+git clone https://github.com/hclaros-dawi/TFG.git
+cd https://github.com/hclaros-dawi/TFG.git
+```
+
+#### 2. Instala dependencias de PHP (Laravel)
+```bash
+composer install
+```
+
+#### 3. Instala dependencias de NPM (Frontend)
+```bash
+npm install
+```
+
+#### 4. Configura la base de datos en .env
+```bash
+DB_DATABASE=nombre_de_tu_bd
+DB_USERNAME=tu_usuario
+DB_PASSWORD=tu_contraseña
+```
+#### 5. Ejecuta las migraciones (si las hay)
+```bash
+php artisan migrate
+```
+
+#### 6. Ejecución del proyecto
+A) Iniciar el servidor de Laravel (backend)
+```bash
+php artisan serve
+```
+
+B) Iniciar el compilador de assets (frontend)
+```bash
+npm run build
+```
