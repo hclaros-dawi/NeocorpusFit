@@ -158,7 +158,7 @@
             </div>
 
             <div class="container text-center py-5">
-                <a href="{{ route('home') }}" class="btn btn-outline-secondary px-4 py-2">
+                <a href="{{ route('pages.menus.index') }}" class="btn btn-outline-secondary px-4 py-2">
                     <i class="fas fa-arrow-left me-2"></i> Volver a todos los menús
                 </a>
             </div>

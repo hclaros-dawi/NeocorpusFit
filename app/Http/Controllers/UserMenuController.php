@@ -146,8 +146,15 @@ class UserMenuController extends Controller
             return redirect()->route('user.menus.edit', ['menu' => $menuPersonalizado->id_menu]);
         }
 
-        $recetas = Receta::with(['ingredientes', 'pasos'])->get();
-
+        $recetasAsociadas = RecetaMenu::where('id_menu', $menu->id_menu)
+        ->pluck('id_receta')
+        ->toArray();
+    
+    $recetas = Receta::with(['ingredientes', 'pasos'])
+        ->whereIn('id_receta', $recetasAsociadas)
+        ->get();
+        
+        
         $diasSemana = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
         $tiposComida = ['Desayuno', 'Comida', 'Cena', 'Snack'];
 
