@@ -13,6 +13,7 @@ class PasoReceta extends Model
 
     public function receta()
     {
+        //un paso pertenece a una receta  
         return $this->belongsTo(Receta::class, 'id_receta');
     }
 }

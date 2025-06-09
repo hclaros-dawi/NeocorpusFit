@@ -87,6 +87,7 @@
                     </table>
                 </div>
 
+                <!-- Modales para cada receta -->
                 @foreach ($tabla as $dia => $comidas)
                     @foreach ($comidas as $tipo => $item)
                         @if ($item && isset($item['receta']))

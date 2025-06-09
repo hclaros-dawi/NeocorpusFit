@@ -21,6 +21,7 @@
         Menú actualizado correctamente
     </div>
 
+    <!-- Muestra errores de sesión si existen -->
     @if (session('error'))
         <div class="alert alert-danger">
             {{ session('error') }}
@@ -33,6 +34,7 @@
             <h2>Bienvenid@ {{ Auth::user()->name }}</h2>
         </div>
 
+        <!-- Sección de Recetas Favoritas -->
         <div class="personal-area__card personal-area__card--recetas">
             <div class="personal-area__card-header">Mis Recetas Favoritas</div>
             <div class="personal-area__card-body">
@@ -61,6 +63,7 @@
                                         Ver Receta
                                     </button>
 
+                                    <!-- Eliminar receta de favoritos -->
                                     <form
                                         action="{{ route('favorites.destroy', ['type' => $favorite->type, 'itemId' => $favorite->item_id]) }}"
                                         method="POST">
@@ -71,6 +74,7 @@
                                 </div>
                             </div>
 
+                            <!-- Modal con detalles de la receta -->
                             <div class="modal fade recetas__modal" id="modalReceta{{ $favorite->receta->id_receta }}"
                                 tabindex="-1" aria-labelledby="modalLabelReceta{{ $favorite->receta->id_receta }}"
                                 aria-hidden="true">
@@ -133,6 +137,8 @@
                 @endif
             </div>
         </div>
+
+        <!-- Sección de Menús Favoritos -->
         <div class="personal-area__card personal-area__card--menus">
             <div class="personal-area__card-header">Mis Menús Favoritos</div>
             <div class="personal-area__card-body">
@@ -179,6 +185,7 @@
             </div>
         </div>
 
+        <!-- Sección de Canastas Favoritas -->
         <div class="personal-area__card personal-area__card--canastas">
             <div class="personal-area__card-header">Mis Canastas Favoritas</div>
             <div class="personal-area__card-body">

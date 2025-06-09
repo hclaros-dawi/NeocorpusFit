@@ -10,11 +10,13 @@ class Categoria extends Model
 
     public function suplementos()
     {
+        //una categoría tiene muchos suplementos
         return $this->hasMany(Suplemento::class, 'categoria_id', 'id_categoria');
     }
 
     public function menus()
     {
+        //categoria_id es la FK e id_categoria es la PK
         return $this->hasMany(Menu::class, 'categoria_id', 'id_categoria');
     }
 

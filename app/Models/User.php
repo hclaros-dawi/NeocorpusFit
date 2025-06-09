@@ -2,15 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
-
     protected $fillable = [
         'name',
         'email',
@@ -27,20 +22,14 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
+            'password' => 'hashed', //se hashea automáticamente al guardar
         ];
     }
 
     public function favorites()
     {
+        //un usuario tiene muchos favoritos
         return $this->hasMany(Favorite::class);
-    }
-
-    public function suplementosFavoritos()
-    {
-        return $this->belongsToMany(Suplemento::class, 'favorites', 'user_id', 'item_id')
-            ->where('type', 'suplemento')
-            ->withTimestamps();
     }
 
     public function recetasFavoritas()
@@ -64,8 +53,10 @@ class User extends Authenticatable
             ->withTimestamps();
     }
 
+    //verifica su un usuario ya ha marcado como fav un ítem
     public function hasFavorited($itemId, $type)
     {
+        //se comprueba si existe un fav con ese tipo e id 
         return $this->favorites()
             ->where('type', $type)
             ->where('item_id', $itemId)

@@ -20,9 +20,12 @@
             <img src="https://live.staticflickr.com/65535/54494799353_7a0d18885c_q.jpg" alt="Icono canastas"
                 class="canasta-show__icon">
             <h1 class="canasta-show__title">{{ mb_strtoupper($categoria->nombre, 'UTF-8') }}</h1>
+
+            <!-- Si el usuario está autenticado -->
             @auth
                 @if (isset($canasta) && $canasta)
                     <div class="mb-5">
+                        <!-- Mostrar botón para quitar de favoritos si ya está guardado -->
                         @if (auth()->user()->hasFavorited($canasta->id_canasta, 'canasta'))
                             <form
                                 action="{{ route('favorites.destroy', ['type' => 'canasta', 'itemId' => $canasta->id_canasta]) }}"
@@ -46,6 +49,7 @@
                     </div>
                 @endif
             @else
+                <!-- Si no está autenticado, muestra botón que redirige a login -->
                 <div class="mb-3">
                     <a href="{{ route('login') }}" class="btn btn-outline-secondary" title="Inicia sesión para guardar">
                         <i class="far fa-heart"></i> Favorito
@@ -53,6 +57,7 @@
                 </div>
             @endauth
 
+            <!-- Obtiene los ingredientes desde la primera canasta -->
             @php
                 $ingredientes = $canastas->first()->ingredientes;
             @endphp
@@ -69,6 +74,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Itera sobre los ingredientes de la canasta -->
                         @foreach ($ingredientes as $i => $ingrediente)
                             <tr>
                                 <td>{{ $ingrediente->nombre }}</td>
@@ -100,6 +106,7 @@
             </div>
         </div>
 
+        <!-- Modales individuales para cada producto -->
         @foreach ($ingredientes as $i => $ingrediente)
             <x-product-modal :id="$i" :nombre="$ingrediente->nombre" :descripcion="$ingrediente->descripcion" :calorias="$ingrediente->calorias . ' kcal'" :proteinas="$ingrediente->proteinas . ' g'"
                 :carbohidratos="$ingrediente->carbohidratos . ' g'" :grasas="$ingrediente->grasas . ' g'" />

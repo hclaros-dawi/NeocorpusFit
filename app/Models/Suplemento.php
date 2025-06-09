@@ -3,12 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Suplemento extends Model
 {
-    use HasFactory;
-
     protected $primaryKey = 'id_suplemento';
 
     protected $fillable = [
@@ -21,6 +18,7 @@ class Suplemento extends Model
 
     public function categoria()
     {
+        //un suplemento pertenece a una categoría
         return $this->belongsTo(Categoria::class, 'categoria_id', 'id_categoria');
     }
 }

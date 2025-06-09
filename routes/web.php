@@ -34,7 +34,6 @@ Route::get("/canastas", [CanastaController::class, "index"])->name("pages.canast
 Route::get("/canastas/{canasta}", [CanastaController::class, "show"])->name("pages.canastas.show");
 
 Route::get('/recetas', [RecetaController::class, 'index'])->name('pages.recetas');
-Route::get('/recetas/{receta}', [RecetaController::class, 'show'])->name('recetas.show');
 
 Route::get("/menus", [MenuController::class, "index"])->name("pages.menus.index");
 Route::get("/menus/{id_categoria}", [MenuController::class, "show"])->name("pages.menus.show");

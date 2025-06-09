@@ -18,6 +18,7 @@ class Menu extends Model
 
     public function categoria()
     {
+        //un menú tiene una categoria, y una categoria tiene muchos menús
         return $this->belongsTo(Categoria::class, 'categoria_id');
     }
 
@@ -30,11 +31,13 @@ class Menu extends Model
 
     public function canastas()
     {
+        //un menú tiene muchas canastas y una canasta pertenece solo a un menú
         return $this->hasMany(Canasta::class, 'menu_id');
     }
 
     public function favorites()
     {
+        //un menú tiene muchos favs, pero un fav solo pertenece a un menú
         return $this->hasMany(Favorite::class, 'item_id', 'id_menu')
             ->where('type', 'menu');
     }

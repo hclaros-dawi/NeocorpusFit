@@ -2,34 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Favorite;
 
 class UserController extends Controller
 {
     public function area()
     {
+        //verifica si usuario logueado
         if (!Auth::check()) {
             return redirect()->route('login');
         }
 
+        //obtiene favoritos de usuario
         $favorites = Auth::user()->favorites()
-            ->with([
+            ->with([ //con eager loading trae todas relaciones usuario
                 'receta',
                 'menu' => function ($query) {
-                    $query->with(['recetas' => function ($q) {
-                        $q->withPivot('orden', 'dia_semana', 'tipo_comida', 'enlace_receta')
-                            ->orderBy('pivot_orden');
+                    $query->with(['recetas' => function ($q) { //trae las recetas de esos menús
+                        $q->withPivot('orden', 'dia_semana', 'tipo_comida', 'enlace_receta') //los campos de la tabla pivote
+                            ->orderBy('pivot_orden'); //ordena recetas
                     }]);
                 },
                 'canasta'
             ])
             ->get();
 
-        $hasFavorites = $favorites->isNotEmpty();
+        $hasFavorites = $favorites->isNotEmpty(); //guarda como booleano si tiene o no fav
 
-        $modo = request()->get('modo', 'ver');
+        $modo = request()->get('modo', 'ver'); //por defecto ver, muestra forma en la que se muestra área
 
         return view('user.area', [
             'hasFavorites' => $hasFavorites,
