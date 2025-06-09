@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("proteina-form");
     const resultadoDiv = document.getElementById("resultado-proteina");
-    const imcValorSpan = document.getElementById("proteina-valor");
+    const proteinaValorSpan = document.getElementById("proteina-valor");
 
     const pesoInput = document.getElementById("peso");
     const sexoInput = document.getElementById("sexo");
@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const grasaError = document.getElementById("grasa-error");
 
     function calcularProteinas(peso, sexo, actividad, entrenamiento, grasa) {
+        //valores base
         let factorMin = 1.6;
         let factorMax = 2.2;
 
@@ -82,9 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
             pesoError.textContent = "Valor inválido. Ingresa un número.";
         } else {
             const numero = parseFloat(valor);
-            if (numero < 1 || numero > 500) {
+            if (numero < 1 || numero > 300) {
                 pesoError.textContent =
-                    "El peso debe estar entre 1 kg y 500 kg.";
+                    "El peso debe estar entre 1 kg y 300 kg.";
             } else {
                 pesoError.textContent = "";
                 pesoInput.classList.add("is-valid");
@@ -121,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return false;
         }
 
+        //si el valor de grasa es válido
         grasaError.textContent = "";
         grasaInput.classList.add("is-valid");
         grasaInput.classList.remove("is-invalid");
@@ -128,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return true;
     }
 
+    //selectInput es el elemento <select> a validar
     function validarSelect(selectInput, errorElement, mensaje) {
         const valor = selectInput.value.trim();
         if (!valor) {
@@ -145,6 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    //cuando se cambia la opción seleccionada en el select, se valida esa opción
     sexoInput.addEventListener("change", () =>
         validarSelect(sexoInput, sexoError, "Debes seleccionar tu sexo")
     );
@@ -163,12 +167,15 @@ document.addEventListener("DOMContentLoaded", () => {
         )
     );
 
+    //cuando se introducen inputs para estos, se validan los valores
     pesoInput.addEventListener("input", validarPeso);
     grasaInput.addEventListener("input", validarGrasa);
 
+    //cuando se envía el formulario
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
+        //para asegurarse de que datos a enviar correctos
         const validPeso = validarPeso();
         const validGrasa = validarGrasa();
         const validSexo = validarSelect(
@@ -187,6 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "Debes seleccionar tu entrenamiento"
         );
 
+        //si invalid--> no se calcula nada
         if (
             !validPeso ||
             !validGrasa ||
@@ -212,10 +220,11 @@ document.addEventListener("DOMContentLoaded", () => {
             grasa
         );
 
+        //si hay explicación anterior, se borra
         const explicacionAnt = resultadoDiv.querySelector(".text-info");
         if (explicacionAnt) explicacionAnt.remove();
 
-        imcValorSpan.textContent = `${proteinaMin} a ${proteinaMax} gramos / día`;
+        proteinaValorSpan.textContent = `${proteinaMin} a ${proteinaMax} gramos / día`;
 
         const explicacion = document.createElement("p");
         explicacion.textContent =

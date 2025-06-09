@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function validarPeso() {
         let valor = pesoInput.value.trim();
 
-        valor = valor.replace(",", ".");
+        valor = valor.replace(",", "."); //comas por puntos
 
         if (valor === "") {
             pesoError.textContent = "";
@@ -18,15 +18,16 @@ document.addEventListener("DOMContentLoaded", () => {
             return false;
         }
 
-        if (/[a-zA-Z]/.test(valor)) {
+        if (/[a-zA-Z]/.test(valor)) { //si hay letras mayúsculas o minúsculas en valor
             pesoError.textContent = "Solo se permiten números, no letras";
         } else if (isNaN(valor)) {
             pesoError.textContent = "Valor inválido. Ingresa un número";
         } else {
+            //si num válido a decimal
             const numero = parseFloat(valor);
-            if (numero < 1 || numero > 500) {
+            if (numero < 1 || numero > 300) {
                 pesoError.textContent =
-                    "El peso debe estar entre 1 kg y 500 kg";
+                    "El peso debe estar entre 1 kg y 300 kg";
             } else {
                 pesoError.textContent = "";
                 pesoInput.classList.add("is-valid");
@@ -49,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        if (/[a-zA-Z.,]/.test(valor)) {
+        if (/[a-zA-Z.,]/.test(valor)) { //punto de decimal
             alturaError.textContent =
                 "Solo se permiten números enteros, sin letras ni símbolos.";
         } else if (isNaN(valor)) {
@@ -71,29 +72,33 @@ document.addEventListener("DOMContentLoaded", () => {
         alturaInput.classList.remove("is-valid");
     }
 
+    //cada vez que se escribe en input o altura, se valida
     pesoInput.addEventListener("input", validarPeso);
     alturaInput.addEventListener("input", validarAltura);
 
+    //cuando se envía el formulario
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
+        //para asegurarse de que datos a enviar correctos
         validarPeso();
         validarAltura();
 
         const pesoValido = !pesoInput.classList.contains("is-invalid");
         const alturaValida = !alturaInput.classList.contains("is-invalid");
 
+        //si invalid--> no se calcula nada
         if (!pesoValido || !alturaValida) return;
 
         const peso = parseFloat(pesoInput.value);
         const alturaCm = parseInt(alturaInput.value, 10);
-        const alturaM = alturaCm / 100;
+        const alturaM = alturaCm / 100; //para calcular imc
         const imc = peso / (alturaM * alturaM);
-        const imcRounded = imc.toFixed(1);
+        const imcRounded = imc.toFixed(1); //a 1 decimal
 
         imcValorSpan.textContent = imcRounded;
-        resultadoDiv.classList.remove("d-none");
-        resultadoDiv.style.opacity = 1;
+        resultadoDiv.classList.remove("d-none"); //quita oculto
+        resultadoDiv.style.opacity = 1; //cambia opacity para que se vea
 
         const clasificacionSpan = document.getElementById("clasificacion-imc");
 
@@ -109,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         clasificacionSpan.textContent = `Clasificación: ${clasificacion}`;
-        clasificacionSpan.classList.remove(
+        clasificacionSpan.classList.remove( //quita clases previas de colores
             "text-success",
             "text-warning",
             "text-danger",

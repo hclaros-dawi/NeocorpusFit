@@ -18,12 +18,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const actividadError = document.getElementById("actividad-error");
     const objetivoError = document.getElementById("objetivo-error");
 
+    //tasa metabólica basal--> calorías que el cuerpo quema en reposo
+    //para mantener funciones vitales
     function calcularBMR(peso, altura, edad, sexo) {
         return sexo === "hombre"
             ? 66.5 + 13.75 * peso + 5.003 * altura - 6.75 * edad
             : 655 + 9.563 * peso + 1.85 * altura - 4.676 * edad;
     }
 
+    //gasto energético total diario según actividad física
+    //se multiplica por actividad física
     function calcularTDEE(bmr, actividad) {
         const factores = {
             sedentario: 1.2,
@@ -63,9 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
             pesoError.textContent = "Valor inválido. Ingresa un número";
         } else {
             const numero = parseFloat(valor);
-            if (numero < 1 || numero > 500) {
+            if (numero < 1 || numero > 300) {
                 pesoError.textContent =
-                    "El peso debe estar entre 1 kg y 500 kg";
+                    "El peso debe estar entre 1 kg y 300 kg";
             } else {
                 pesoError.textContent = "";
                 pesoInput.classList.add("is-valid");
@@ -142,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return false;
     }
 
+    //selectInput es el elemento <select> a validar
     function validarSelect(selectInput, errorElement, mensaje) {
         const valor = selectInput.value.trim();
         if (!valor) {
@@ -159,6 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    //cuando se cambia la opción seleccionada en el select, se valida esa opción
     actividadInput.addEventListener("change", () =>
         validarSelect(
             actividadInput,
@@ -178,13 +184,16 @@ document.addEventListener("DOMContentLoaded", () => {
         validarSelect(sexoInput, sexoError, "Debes seleccionar tu sexo")
     );
 
+    //cuando se introducen inputs para estos, se validan los valores
     pesoInput.addEventListener("input", validarPeso);
     alturaInput.addEventListener("input", validarAltura);
     edadInput.addEventListener("input", validarEdad);
 
+    //cuando se envía el formulario
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
+        //para asegurarse de que datos a enviar correctos
         const validPeso = validarPeso();
         const validAltura = validarAltura();
         const validEdad = validarEdad();
@@ -204,6 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "Debes seleccionar tu objetivo"
         );
 
+        //si invalid--> no se calcula nada
         if (
             !validPeso ||
             !validAltura ||
@@ -259,14 +269,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         mensajeCalorias.innerHTML = mensaje;
         mensajeCalorias.className = `mensaje-resultado ${claseColor}`;
-        mensajeCalorias.style.display = "block";
-        mensajeCalorias.style.opacity = 0;
+        mensajeCalorias.style.display = "block"; //visible
+        mensajeCalorias.style.opacity = 0; //tranparente
 
         setTimeout(() => {
             mensajeCalorias.style.opacity = 1;
-        }, 50);
+        }, 50); //en 50 miliseg lo hace visible totalmente
 
         resultadoDiv.style.opacity = 1;
-        resultadoDiv.scrollIntoView({ behavior: "smooth" });
     });
 });

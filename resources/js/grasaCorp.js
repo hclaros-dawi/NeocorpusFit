@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const alturaError = document.getElementById("altura-error");
     const sexoError = document.getElementById("sexo-error");
 
+    //calcula log en base 10 porque Math.log() devuelve log natural
     function log10(x) {
         return Math.log(x) / Math.LN10;
     }
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         max = 300
     ) {
         let valor = input.value.trim().replace(",", ".");
+
         if (valor === "") {
             errorElement.textContent = "";
             input.classList.remove("is-valid", "is-invalid");
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (isNaN(valor)) {
             errorElement.textContent = "Valor inválido. Ingresa un número.";
         } else {
+            //si tipo es int, pasa a entero y sino a decimal
             const numero = tipo === "int" ? parseInt(valor) : parseFloat(valor);
             if (numero < min || numero > max) {
                 errorElement.textContent = `Debe estar entre ${min} y ${max}`;
@@ -72,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return false;
     }
 
+    //selectInput es el elemento <select> a validar
     function validarSelect(selectInput, errorElement, mensaje) {
         const valor = selectInput.value.trim();
         if (!valor) {
@@ -89,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    //cuando se introducen inputs para estos, se validan los valores
     pesoInput.addEventListener("input", () =>
         validarCampo(pesoInput, pesoError)
     );
@@ -98,13 +103,17 @@ document.addEventListener("DOMContentLoaded", () => {
     edadInput.addEventListener("input", () =>
         validarCampo(edadInput, edadError, "int", 5, 110)
     );
+
+    //cuando se cambia la opción seleccionada en el select, se valida esa opción
     sexoInput.addEventListener("change", () =>
         validarSelect(sexoInput, sexoError, "Debes seleccionar tu sexo")
     );
 
+    //cuando se envía el formulario
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
+        //para asegurarse de que datos a enviar correctos
         const validEdad = validarCampo(edadInput, edadError, "int", 5, 110);
         const validPeso = validarCampo(pesoInput, pesoError);
         const validAltura = validarCampo(
@@ -120,6 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "Debes seleccionar tu sexo"
         );
 
+        //si invalid--> no se calcula nada
         if (!validEdad || !validPeso || !validAltura || !validSexo) {
             alert("Por favor, completa todos los campos correctamente.");
             return;
@@ -130,9 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const altura = parseFloat(alturaInput.value);
         const sexo = sexoInput.value;
 
-        const cuello = 38;
-        const cintura = sexo === "hombre" ? 90 : 75;
-        const cadera = sexo === "mujer" ? 95 : 0;
+        const cuello = 38; //valor promedio de cuello en cm
+        const cintura = sexo === "hombre" ? 90 : 75; //valor promedio
+        const cadera = sexo === "mujer" ? 95 : 0; //valor promedio y cadera no se usa en hombres
 
         const grasa = calcularGrasaCorporal(
             altura,

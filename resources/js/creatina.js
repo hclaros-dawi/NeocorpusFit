@@ -45,9 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
             pesoError.textContent = "Valor inválido. Ingresa un número";
         } else {
             const numero = parseFloat(valor);
-            if (numero < 1 || numero > 500) {
+            if (numero < 1 || numero > 300) {
                 pesoError.textContent =
-                    "El peso debe estar entre 1 kg y 500 kg";
+                    "El peso debe estar entre 1 kg y 300 kg";
             } else {
                 pesoError.textContent = "";
                 pesoInput.classList.add("is-valid");
@@ -64,9 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function validarCarga() {
         const valor = cargaBoolInput.value.trim();
 
-        if (!valor) {
+        if (!valor) { //si no ha seleccionado nada
             cargaBoolError.textContent = "Debes indicar si harás fase de carga";
-            cargaBoolError.style.display = "block";
+            cargaBoolError.style.display = "block"; //muestra mensaje
             cargaBoolInput.classList.add("is-invalid");
             cargaBoolInput.classList.remove("is-valid");
             return false;
@@ -79,23 +79,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    cargaBoolInput.addEventListener("change", () =>
-        validarSelect(
-            cargaBoolInput,
-            cargaBoolError,
-            "Debes indicar si harás fase de carga"
-        )
-    );
-
+    //cada vez que se escribe en input o selecciona carga, se valida
     pesoInput.addEventListener("input", validarPeso);
     cargaBoolInput.addEventListener("change", validarCarga);
 
+    //cuando se envía el formulario
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
+        //para asegurarse de que datos a enviar correctos
         const validPeso = validarPeso();
         const validCarga = validarCarga();
 
+        //invalid--> no se calcula
         if (!validPeso || !validCarga) {
             alert("Por favor, completa todos los campos correctamente.");
             return;
@@ -107,15 +103,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const resultado = calcularCreatina(peso, carga);
 
         const explicacionAnt = resultadoDiv.querySelector(".text-info");
-        if (explicacionAnt) explicacionAnt.remove();
+        if (explicacionAnt) explicacionAnt.remove(); //si ya existía, la elimino
 
         creatinaValorSpan.innerHTML = resultado.mensaje;
 
         const explicacion = document.createElement("p");
         explicacion.textContent = "Recomendación personalizada de creatina:";
         explicacion.classList.add("text-info");
-        resultadoDiv.prepend(explicacion);
+        resultadoDiv.prepend(explicacion); //como primer hijo de resultadoDiv
 
+        //se hace visible
         resultadoDiv.classList.remove("d-none");
         resultadoDiv.style.opacity = 1;
     });
