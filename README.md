@@ -36,3 +36,7 @@ Una plataforma integral de nutrición, ayudando a los usuarios a alcanzar sus ob
 -   **Front-End**: HTML5, SCSS, JavaScript y Bootstrap 5 para el diseño responsivo
 -   **Base de Datos**: MySQL (PhpMyAdmin)
 -   **Control de Versiones**: GitHub
+
+## Diseño en figma
+https://www.figma.com/design/bMlF7b0i0hVDcFljEqv9OB/Neocorpusfit?node-id=0-1&t=O0KCe3W3hTclpSNX-1
+
