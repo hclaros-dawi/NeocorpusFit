@@ -89,7 +89,7 @@ Make sure you have the following installed:
 ```bash
 # 1. Clone the repository
 git clone https://github.com/hclaros-dawi/NeocorpusFit.git
-cd NeocorpusFit
+cd nocorpusfit
 
 # 2. Install PHP dependencies (Laravel)
 composer install
