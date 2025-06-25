@@ -88,8 +88,8 @@ Make sure you have the following installed:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/hclaros-dawi/TFG.git
-cd TFG
+git clone https://github.com/hclaros-dawi/NeocorpusFit.git
+cd NeocorpusFit
 
 # 2. Install PHP dependencies (Laravel)
 composer install
