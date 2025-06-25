@@ -1,127 +1,112 @@
-# TFG: Página web para la gestión de nutrición y bienestar– **NeoCorpusFit**
+# NeoCorpusFit – Nutrition and Wellness Web Platform
 
-## Temática
+## Project Theme
 
-**NeoCorpusFit** es una plataforma integral enfocada en el bienestar físico y nutricional del usuario. Combina herramientas de cálculo personalizadas, recetas prácticas y planificación alimenticia inteligente para facilitar el logro de objetivos como pérdida de grasa, ganancia muscular o mantenimiento
-
-
-## Objetivos del proyecto
-
-**NeoCorpusFit** tiene como finalidad:
-
-- Ayudar al usuario a **organizar su dieta** mediante menús adaptados a sus objetivos
-- Ofrecer **recetas simples y saludables** vinculadas a los productos de las canastas seleccionadas
-- Brindar **herramientas de cálculo corporal y nutricional** personalizadas
-- Permitir la gestión y edición de contenido (menús) guardado en un **área personal protegida por login**
-
-## Funcionalidades clave
-
-### Calculadoras interactivas
-
-Accesibles desde el menú principal. Ofrecen resultados inmediatos y recomendaciones:
-
-1. **IMC**: Calcula el Índice de Masa Corporal para conocer el rango de peso ideal
-2. **Proteínas**: Estima el consumo diario recomendado de proteínas
-3. **Creatina**: Determina la cantidad sugerida según peso corporal
-4. **Harris-Benedict**: Estima el requerimiento calórico basal y total para déficit o superávit
-5. **Porcentaje de grasa corporal**: Calcula un valor aproximado útil para planificar metas de composición corporal
-
-### Canastas de compra
-
-- Canastas como: **vegana**, **de casa**, **proteica**, **express** y **mediterránea**
-- Cada canasta incluye:
-  - Modal con detalle nutricional y justificación de cada producto
-  - Factura simulada con precios estimados
-  - Posibilidad de guardarla en el área personal (si el usuario ha iniciado sesión)
-
-### Menús personalizados
-
-- 5 tipos de menús organizados por objetivo
-- Cada menú tiene:
-  - Enlace directo a sus recetas.
-  - Opción de guardado y **edición** desde el panel personal del usuario
-
-### Recetas prácticas
-
-- Filtrables por tipo: vegano, clásicos, alto en proteínas, mediterráneo, plan rápido
-- Muestran ingredientes, preparación paso a paso y están basadas en las canastas
-- Los usuarios logueados pueden **guardarlas como favoritas**
-
-### Área personal
-
-- Solo accesible tras el login
-- Permite al usuario:
-  - Ver y eliminar sus recetas, menús y canastas guardadas
-  - **Editar sus menús personalizados**
-
-### Registro e inicio de sesión
-
-- Requerido para guardar contenido personalizado
-- Si el usuario intenta guardar sin iniciar sesión, será redirigido al login
-- Registro rápido mediante email y contraseña
-
-## Tecnologías utilizadas
-
-| Categoría        | Herramientas / Lenguajes |
-|------------------|---------------------------|
-| **Back-End**     | PHP (Laravel 12.9.2)          |
-| **Front-End**    | HTML5, SCSS, JavaScript, Bootstrap 5 |
-| **Base de Datos**| MySQL (gestionada mediante PhpMyAdmin) |
-| **Control de versiones** | Git + GitHub       |
-| **Build Tool**   | Vite para compilar SCSS y JS |
-
-## Guía rápida de arranque local
-
-### Requisitos previos
-
-Tener instalado:
-
-- PHP >= 8.x  
-- Composer  
-- Node.js y NPM  
-- MySQL  
-- Laravel CLI
-- XAMPP (opcional, si no tienes servidor web ni MySQL instalado)  
+**NeoCorpusFit** is a comprehensive web platform focused on users' physical and nutritional well-being. It combines personalized calculation tools, practical recipes, and smart meal planning to help users achieve goals such as fat loss, muscle gain, or weight maintenance.
 
 ---
 
-### Pasos para levantar el proyecto en local
+## Project Objectives
 
-#### 1. Clona el repositorio
+- Organize users' diets through goal-oriented menus.
+- Offer simple and healthy recipes linked to shopping basket products.
+- Provide personalized body and nutritional calculation tools.
+- Enable users to manage and edit saved content (menus, recipes, baskets) in a secure personal area.
+
+---
+
+## Key Features
+
+### Interactive Calculators
+Accessible from the main menu, offering immediate results and tailored recommendations:
+
+- **BMI** – Body Mass Index
+- **Protein** – Daily recommended protein intake
+- **Creatine** – Suggested creatine intake based on weight
+- **Harris-Benedict** – Basal and total caloric needs
+- **Body Fat %** – Useful for setting body composition goals
+
+### Smart Shopping Baskets
+- Types: Vegan, Home-style, High-Protein, Express, Mediterranean
+- Each includes:
+  - Nutrition info with justification per product
+  - Simulated invoice with estimated prices
+  - Save to user’s personal area (if logged in)
+
+### Personalized Menus
+- 5 types of menus based on dietary goals
+- Each includes:
+  - Direct links to associated recipes
+  - Save and edit options from the user dashboard
+
+### Practical Recipes
+- Filterable by category: Vegan, Classic, High-Protein, Mediterranean, Quick Plan
+- Include ingredients, steps, and are based on baskets
+- Logged-in users can save them as favorites
+
+### Personal Area
+- Login required
+- Users can:
+  - View/delete saved menus, baskets, and recipes
+  - Edit personalized menus
+
+### Authentication
+- Required for saving personalized content
+- Unauthenticated users are redirected to login
+- Quick registration via email and password
+
+---
+
+## Technologies Used
+
+| Category         | Tools / Languages                        |
+|------------------|------------------------------------------|
+| **Back-End**     | PHP (Laravel 12.9.2)                     |
+| **Front-End**    | HTML5, SCSS, JavaScript, Bootstrap 5     |
+| **Database**     | MySQL (managed with PhpMyAdmin)          |
+| **Version Control** | Git + GitHub                         |
+| **Build Tool**   | Vite (for SCSS and JS compilation)       |
+
+---
+
+## Local Setup Guide
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- PHP ≥ 8.x  
+- Composer  
+- Node.js + NPM  
+- MySQL  
+- Laravel CLI  
+- XAMPP (optional, for local web server and DB)
+
+---
+
+### Steps to Run Locally
 
 ```bash
+# 1. Clone the repository
 git clone https://github.com/hclaros-dawi/TFG.git
-cd https://github.com/hclaros-dawi/TFG.git
-```
+cd TFG
 
-#### 2. Instala dependencias de PHP (Laravel)
-```bash
+# 2. Install PHP dependencies (Laravel)
 composer install
-```
 
-#### 3. Instala dependencias de NPM (Frontend)
-```bash
+# 3. Install Frontend dependencies
 npm install
-```
 
-#### 4. Configura la base de datos en .env
-```bash
-DB_DATABASE=nombre_de_tu_bd
-DB_USERNAME=tu_usuario
-DB_PASSWORD=tu_contraseña
-```
-#### 5. Ejecuta las migraciones (si las hay)
-```bash
+# 4. Configure your .env file
+DB_DATABASE=your_database_name
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+
+# 5. Run database migrations
 php artisan migrate
-```
 
-#### 6. Ejecución del proyecto
-A) Iniciar el servidor de Laravel (backend)
-```bash
+# 6A. Start Laravel backend server
 php artisan serve
-```
 
-B) Iniciar el compilador de assets (frontend)
-```bash
+# 6B. Compile frontend assets
 npm run build
-```
